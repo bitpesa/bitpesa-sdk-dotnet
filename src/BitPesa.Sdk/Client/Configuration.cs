@@ -37,7 +37,7 @@ namespace BitPesa.Sdk.Client
         /// Version of the package.
         /// </summary>
         /// <value>Version of the package.</value>
-        public const string Version = "0.1.0";
+        public const string Version = "0.2.0";
 
         /// <summary>
         /// Identifier for ISO 8601 DateTime Format
@@ -126,7 +126,7 @@ namespace BitPesa.Sdk.Client
         /// </summary>
         public Configuration()
         {
-            UserAgent = "OpenAPI-Generator/0.1.0/csharp";
+            UserAgent = "BitPesa .NET Client";
             BasePath = "https://api-sandbox.bitpesa.co/v1";
             DefaultHeader = new ConcurrentDictionary<string, string>();
             ApiKey = "KEY";
@@ -183,7 +183,7 @@ namespace BitPesa.Sdk.Client
             string tempFolderPath = null,
             string dateTimeFormat = null,
             int timeout = 100000,
-            string userAgent = "OpenAPI-Generator/0.1.0/csharp"
+            string userAgent = "BitPesa .NET Client"
             // ReSharper restore UnusedParameter.Local
             )
         {
@@ -390,7 +390,7 @@ namespace BitPesa.Sdk.Client
             report += "    OS: " + System.Environment.OSVersion + "\n";
             report += "    .NET Framework Version: " + System.Environment.Version  + "\n";
             report += "    Version of the API: 1.0\n";
-            report += "    SDK Package Version: 0.1.0\n";
+            report += "    SDK Package Version: 0.2.0\n";
 
             return report;
         }
