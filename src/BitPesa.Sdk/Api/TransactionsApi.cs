@@ -75,8 +75,9 @@ namespace BitPesa.Sdk.Api
         /// <exception cref="BitPesa.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">The page number to request (defaults to 1) (optional)</param>
         /// <param name="per">The number of results to load per page (defaults to 10) (optional)</param>
+        /// <param name="externalId">Allows filtering results by &#x60;external_id&#x60;.  Example: &#x60;/v1/senders?external_id&#x3D;26ec8517-2f0d-48c0-b74f-0bccb9ab3a87&#x60; (optional)</param>
         /// <returns>TransactionListResponse</returns>
-        TransactionListResponse GetTransactions (int? page = null, int? per = null);
+        TransactionListResponse GetTransactions (int? page = null, int? per = null, string externalId = null);
 
         /// <summary>
         /// Get a list of transactions
@@ -87,8 +88,9 @@ namespace BitPesa.Sdk.Api
         /// <exception cref="BitPesa.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">The page number to request (defaults to 1) (optional)</param>
         /// <param name="per">The number of results to load per page (defaults to 10) (optional)</param>
+        /// <param name="externalId">Allows filtering results by &#x60;external_id&#x60;.  Example: &#x60;/v1/senders?external_id&#x3D;26ec8517-2f0d-48c0-b74f-0bccb9ab3a87&#x60; (optional)</param>
         /// <returns>ApiResponse of TransactionListResponse</returns>
-        ApiResponse<TransactionListResponse> GetTransactionsWithHttpInfo (int? page = null, int? per = null);
+        ApiResponse<TransactionListResponse> GetTransactionsWithHttpInfo (int? page = null, int? per = null, string externalId = null);
         /// <summary>
         /// Creates a fake payin for transaction
         /// </summary>
@@ -228,8 +230,9 @@ namespace BitPesa.Sdk.Api
         /// <exception cref="BitPesa.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">The page number to request (defaults to 1) (optional)</param>
         /// <param name="per">The number of results to load per page (defaults to 10) (optional)</param>
+        /// <param name="externalId">Allows filtering results by &#x60;external_id&#x60;.  Example: &#x60;/v1/senders?external_id&#x3D;26ec8517-2f0d-48c0-b74f-0bccb9ab3a87&#x60; (optional)</param>
         /// <returns>Task of TransactionListResponse</returns>
-        System.Threading.Tasks.Task<TransactionListResponse> GetTransactionsAsync (int? page = null, int? per = null);
+        System.Threading.Tasks.Task<TransactionListResponse> GetTransactionsAsync (int? page = null, int? per = null, string externalId = null);
 
         /// <summary>
         /// Get a list of transactions
@@ -240,8 +243,9 @@ namespace BitPesa.Sdk.Api
         /// <exception cref="BitPesa.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">The page number to request (defaults to 1) (optional)</param>
         /// <param name="per">The number of results to load per page (defaults to 10) (optional)</param>
+        /// <param name="externalId">Allows filtering results by &#x60;external_id&#x60;.  Example: &#x60;/v1/senders?external_id&#x3D;26ec8517-2f0d-48c0-b74f-0bccb9ab3a87&#x60; (optional)</param>
         /// <returns>Task of ApiResponse (TransactionListResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<TransactionListResponse>> GetTransactionsAsyncWithHttpInfo (int? page = null, int? per = null);
+        System.Threading.Tasks.Task<ApiResponse<TransactionListResponse>> GetTransactionsAsyncWithHttpInfo (int? page = null, int? per = null, string externalId = null);
         /// <summary>
         /// Creates a fake payin for transaction
         /// </summary>
@@ -783,10 +787,11 @@ namespace BitPesa.Sdk.Api
         /// <exception cref="BitPesa.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">The page number to request (defaults to 1) (optional)</param>
         /// <param name="per">The number of results to load per page (defaults to 10) (optional)</param>
+        /// <param name="externalId">Allows filtering results by &#x60;external_id&#x60;.  Example: &#x60;/v1/senders?external_id&#x3D;26ec8517-2f0d-48c0-b74f-0bccb9ab3a87&#x60; (optional)</param>
         /// <returns>TransactionListResponse</returns>
-        public TransactionListResponse GetTransactions (int? page = null, int? per = null)
+        public TransactionListResponse GetTransactions (int? page = null, int? per = null, string externalId = null)
         {
-             ApiResponse<TransactionListResponse> localVarResponse = GetTransactionsWithHttpInfo(page, per);
+             ApiResponse<TransactionListResponse> localVarResponse = GetTransactionsWithHttpInfo(page, per, externalId);
              return localVarResponse.Data;
         }
 
@@ -796,8 +801,9 @@ namespace BitPesa.Sdk.Api
         /// <exception cref="BitPesa.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">The page number to request (defaults to 1) (optional)</param>
         /// <param name="per">The number of results to load per page (defaults to 10) (optional)</param>
+        /// <param name="externalId">Allows filtering results by &#x60;external_id&#x60;.  Example: &#x60;/v1/senders?external_id&#x3D;26ec8517-2f0d-48c0-b74f-0bccb9ab3a87&#x60; (optional)</param>
         /// <returns>ApiResponse of TransactionListResponse</returns>
-        public ApiResponse< TransactionListResponse > GetTransactionsWithHttpInfo (int? page = null, int? per = null)
+        public ApiResponse< TransactionListResponse > GetTransactionsWithHttpInfo (int? page = null, int? per = null, string externalId = null)
         {
 
             var localVarPath = "/transactions";
@@ -823,6 +829,7 @@ namespace BitPesa.Sdk.Api
 
             if (page != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "page", page)); // query parameter
             if (per != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "per", per)); // query parameter
+            if (externalId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "external_id", externalId)); // query parameter
 
             var request = new RestRequest(localVarPath, Method.GET);
             
@@ -863,10 +870,11 @@ namespace BitPesa.Sdk.Api
         /// <exception cref="BitPesa.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">The page number to request (defaults to 1) (optional)</param>
         /// <param name="per">The number of results to load per page (defaults to 10) (optional)</param>
+        /// <param name="externalId">Allows filtering results by &#x60;external_id&#x60;.  Example: &#x60;/v1/senders?external_id&#x3D;26ec8517-2f0d-48c0-b74f-0bccb9ab3a87&#x60; (optional)</param>
         /// <returns>Task of TransactionListResponse</returns>
-        public async System.Threading.Tasks.Task<TransactionListResponse> GetTransactionsAsync (int? page = null, int? per = null)
+        public async System.Threading.Tasks.Task<TransactionListResponse> GetTransactionsAsync (int? page = null, int? per = null, string externalId = null)
         {
-             ApiResponse<TransactionListResponse> localVarResponse = await GetTransactionsAsyncWithHttpInfo(page, per);
+             ApiResponse<TransactionListResponse> localVarResponse = await GetTransactionsAsyncWithHttpInfo(page, per, externalId);
              return localVarResponse.Data;
 
         }
@@ -877,8 +885,9 @@ namespace BitPesa.Sdk.Api
         /// <exception cref="BitPesa.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">The page number to request (defaults to 1) (optional)</param>
         /// <param name="per">The number of results to load per page (defaults to 10) (optional)</param>
+        /// <param name="externalId">Allows filtering results by &#x60;external_id&#x60;.  Example: &#x60;/v1/senders?external_id&#x3D;26ec8517-2f0d-48c0-b74f-0bccb9ab3a87&#x60; (optional)</param>
         /// <returns>Task of ApiResponse (TransactionListResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<TransactionListResponse>> GetTransactionsAsyncWithHttpInfo (int? page = null, int? per = null)
+        public async System.Threading.Tasks.Task<ApiResponse<TransactionListResponse>> GetTransactionsAsyncWithHttpInfo (int? page = null, int? per = null, string externalId = null)
         {
 
             var localVarPath = "/transactions";
@@ -904,6 +913,7 @@ namespace BitPesa.Sdk.Api
 
             if (page != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "page", page)); // query parameter
             if (per != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "per", per)); // query parameter
+            if (externalId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "external_id", externalId)); // query parameter
 
             var request = new RestRequest(localVarPath, Method.GET);
             

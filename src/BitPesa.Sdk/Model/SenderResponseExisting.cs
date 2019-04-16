@@ -25,33 +25,25 @@ using OpenAPIDateConverter = BitPesa.Sdk.Client.OpenAPIDateConverter;
 namespace BitPesa.Sdk.Model
 {
     /// <summary>
-    /// TransactionResponse
+    /// SenderResponseExisting
     /// </summary>
     [DataContract]
-    public partial class TransactionResponse :  IEquatable<TransactionResponse>, IValidatableObject
+    public partial class SenderResponseExisting :  IEquatable<SenderResponseExisting>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TransactionResponse" /> class.
+        /// Initializes a new instance of the <see cref="SenderResponseExisting" /> class.
         /// </summary>
-        /// <param name="_object">_object.</param>
-        /// <param name="meta">meta.</param>
-        public TransactionResponse(Transaction _object = default(Transaction), TransactionResponseMeta meta = default(TransactionResponseMeta))
+        /// <param name="sender">sender.</param>
+        public SenderResponseExisting(Sender sender = default(Sender))
         {
-            this.Object = _object;
-            this.Meta = meta;
+            this.Sender = sender;
         }
         
         /// <summary>
-        /// Gets or Sets Object
+        /// Gets or Sets Sender
         /// </summary>
-        [DataMember(Name="object", EmitDefaultValue=false)]
-        public Transaction Object { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Meta
-        /// </summary>
-        [DataMember(Name="meta", EmitDefaultValue=false)]
-        public TransactionResponseMeta Meta { get; set; }
+        [DataMember(Name="sender", EmitDefaultValue=false)]
+        public Sender Sender { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -60,9 +52,8 @@ namespace BitPesa.Sdk.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class TransactionResponse {\n");
-            sb.Append("  Object: ").Append(Object).Append("\n");
-            sb.Append("  Meta: ").Append(Meta).Append("\n");
+            sb.Append("class SenderResponseExisting {\n");
+            sb.Append("  Sender: ").Append(Sender).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -83,29 +74,24 @@ namespace BitPesa.Sdk.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as TransactionResponse);
+            return this.Equals(input as SenderResponseExisting);
         }
 
         /// <summary>
-        /// Returns true if TransactionResponse instances are equal
+        /// Returns true if SenderResponseExisting instances are equal
         /// </summary>
-        /// <param name="input">Instance of TransactionResponse to be compared</param>
+        /// <param name="input">Instance of SenderResponseExisting to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(TransactionResponse input)
+        public bool Equals(SenderResponseExisting input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.Object == input.Object ||
-                    (this.Object != null &&
-                    this.Object.Equals(input.Object))
-                ) && 
-                (
-                    this.Meta == input.Meta ||
-                    (this.Meta != null &&
-                    this.Meta.Equals(input.Meta))
+                    this.Sender == input.Sender ||
+                    (this.Sender != null &&
+                    this.Sender.Equals(input.Sender))
                 );
         }
 
@@ -118,10 +104,8 @@ namespace BitPesa.Sdk.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Object != null)
-                    hashCode = hashCode * 59 + this.Object.GetHashCode();
-                if (this.Meta != null)
-                    hashCode = hashCode * 59 + this.Meta.GetHashCode();
+                if (this.Sender != null)
+                    hashCode = hashCode * 59 + this.Sender.GetHashCode();
                 return hashCode;
             }
         }

@@ -1,10 +1,10 @@
-# BitPesa.Sdk.Model.TransactionResponse
+# BitPesa.Sdk.Model.TransactionResponseExisting
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Object** | [**Transaction**](Transaction.md) |  | [optional] 
-**Meta** | [**TransactionResponseMeta**](TransactionResponseMeta.md) |  | [optional] 
+**Sender** | [**Sender**](Sender.md) |  | [optional] 
+**Transaction** | [**Transaction**](Transaction.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

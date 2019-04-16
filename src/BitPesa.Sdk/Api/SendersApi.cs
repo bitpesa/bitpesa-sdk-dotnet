@@ -77,8 +77,9 @@ namespace BitPesa.Sdk.Api
         /// <param name="per">The number of results to load per page (defaults to 10) (optional)</param>
         /// <param name="createdAtFrom">Start date to filter recipients by created_at range Allows filtering results by the specified &#x60;created_at&#x60; timeframe.  Example: &#x60;/v1/recipients?created_at_from&#x3D;2018-06-06&amp;created_at_to&#x3D;2018-06-08&#x60; (optional)</param>
         /// <param name="createdAtTo">End date to filter recipients by created_at range Allows filtering results by the specified &#x60;created_at&#x60; timeframe.  Example: &#x60;/v1/recipients?created_at_from&#x3D;2018-06-06&amp;created_at_to&#x3D;2018-06-08&#x60; (optional)</param>
+        /// <param name="externalId">Allows filtering results by &#x60;external_id&#x60;.  Example: &#x60;/v1/senders?external_id&#x3D;26ec8517-2f0d-48c0-b74f-0bccb9ab3a87&#x60; (optional)</param>
         /// <returns>SenderListResponse</returns>
-        SenderListResponse GetSenders (int? page = null, int? per = null, string createdAtFrom = null, string createdAtTo = null);
+        SenderListResponse GetSenders (int? page = null, int? per = null, string createdAtFrom = null, string createdAtTo = null, string externalId = null);
 
         /// <summary>
         /// Listing senders
@@ -91,8 +92,9 @@ namespace BitPesa.Sdk.Api
         /// <param name="per">The number of results to load per page (defaults to 10) (optional)</param>
         /// <param name="createdAtFrom">Start date to filter recipients by created_at range Allows filtering results by the specified &#x60;created_at&#x60; timeframe.  Example: &#x60;/v1/recipients?created_at_from&#x3D;2018-06-06&amp;created_at_to&#x3D;2018-06-08&#x60; (optional)</param>
         /// <param name="createdAtTo">End date to filter recipients by created_at range Allows filtering results by the specified &#x60;created_at&#x60; timeframe.  Example: &#x60;/v1/recipients?created_at_from&#x3D;2018-06-06&amp;created_at_to&#x3D;2018-06-08&#x60; (optional)</param>
+        /// <param name="externalId">Allows filtering results by &#x60;external_id&#x60;.  Example: &#x60;/v1/senders?external_id&#x3D;26ec8517-2f0d-48c0-b74f-0bccb9ab3a87&#x60; (optional)</param>
         /// <returns>ApiResponse of SenderListResponse</returns>
-        ApiResponse<SenderListResponse> GetSendersWithHttpInfo (int? page = null, int? per = null, string createdAtFrom = null, string createdAtTo = null);
+        ApiResponse<SenderListResponse> GetSendersWithHttpInfo (int? page = null, int? per = null, string createdAtFrom = null, string createdAtTo = null, string externalId = null);
         /// <summary>
         /// Updating a sender
         /// </summary>
@@ -192,8 +194,9 @@ namespace BitPesa.Sdk.Api
         /// <param name="per">The number of results to load per page (defaults to 10) (optional)</param>
         /// <param name="createdAtFrom">Start date to filter recipients by created_at range Allows filtering results by the specified &#x60;created_at&#x60; timeframe.  Example: &#x60;/v1/recipients?created_at_from&#x3D;2018-06-06&amp;created_at_to&#x3D;2018-06-08&#x60; (optional)</param>
         /// <param name="createdAtTo">End date to filter recipients by created_at range Allows filtering results by the specified &#x60;created_at&#x60; timeframe.  Example: &#x60;/v1/recipients?created_at_from&#x3D;2018-06-06&amp;created_at_to&#x3D;2018-06-08&#x60; (optional)</param>
+        /// <param name="externalId">Allows filtering results by &#x60;external_id&#x60;.  Example: &#x60;/v1/senders?external_id&#x3D;26ec8517-2f0d-48c0-b74f-0bccb9ab3a87&#x60; (optional)</param>
         /// <returns>Task of SenderListResponse</returns>
-        System.Threading.Tasks.Task<SenderListResponse> GetSendersAsync (int? page = null, int? per = null, string createdAtFrom = null, string createdAtTo = null);
+        System.Threading.Tasks.Task<SenderListResponse> GetSendersAsync (int? page = null, int? per = null, string createdAtFrom = null, string createdAtTo = null, string externalId = null);
 
         /// <summary>
         /// Listing senders
@@ -206,8 +209,9 @@ namespace BitPesa.Sdk.Api
         /// <param name="per">The number of results to load per page (defaults to 10) (optional)</param>
         /// <param name="createdAtFrom">Start date to filter recipients by created_at range Allows filtering results by the specified &#x60;created_at&#x60; timeframe.  Example: &#x60;/v1/recipients?created_at_from&#x3D;2018-06-06&amp;created_at_to&#x3D;2018-06-08&#x60; (optional)</param>
         /// <param name="createdAtTo">End date to filter recipients by created_at range Allows filtering results by the specified &#x60;created_at&#x60; timeframe.  Example: &#x60;/v1/recipients?created_at_from&#x3D;2018-06-06&amp;created_at_to&#x3D;2018-06-08&#x60; (optional)</param>
+        /// <param name="externalId">Allows filtering results by &#x60;external_id&#x60;.  Example: &#x60;/v1/senders?external_id&#x3D;26ec8517-2f0d-48c0-b74f-0bccb9ab3a87&#x60; (optional)</param>
         /// <returns>Task of ApiResponse (SenderListResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<SenderListResponse>> GetSendersAsyncWithHttpInfo (int? page = null, int? per = null, string createdAtFrom = null, string createdAtTo = null);
+        System.Threading.Tasks.Task<ApiResponse<SenderListResponse>> GetSendersAsyncWithHttpInfo (int? page = null, int? per = null, string createdAtFrom = null, string createdAtTo = null, string externalId = null);
         /// <summary>
         /// Updating a sender
         /// </summary>
@@ -693,10 +697,11 @@ namespace BitPesa.Sdk.Api
         /// <param name="per">The number of results to load per page (defaults to 10) (optional)</param>
         /// <param name="createdAtFrom">Start date to filter recipients by created_at range Allows filtering results by the specified &#x60;created_at&#x60; timeframe.  Example: &#x60;/v1/recipients?created_at_from&#x3D;2018-06-06&amp;created_at_to&#x3D;2018-06-08&#x60; (optional)</param>
         /// <param name="createdAtTo">End date to filter recipients by created_at range Allows filtering results by the specified &#x60;created_at&#x60; timeframe.  Example: &#x60;/v1/recipients?created_at_from&#x3D;2018-06-06&amp;created_at_to&#x3D;2018-06-08&#x60; (optional)</param>
+        /// <param name="externalId">Allows filtering results by &#x60;external_id&#x60;.  Example: &#x60;/v1/senders?external_id&#x3D;26ec8517-2f0d-48c0-b74f-0bccb9ab3a87&#x60; (optional)</param>
         /// <returns>SenderListResponse</returns>
-        public SenderListResponse GetSenders (int? page = null, int? per = null, string createdAtFrom = null, string createdAtTo = null)
+        public SenderListResponse GetSenders (int? page = null, int? per = null, string createdAtFrom = null, string createdAtTo = null, string externalId = null)
         {
-             ApiResponse<SenderListResponse> localVarResponse = GetSendersWithHttpInfo(page, per, createdAtFrom, createdAtTo);
+             ApiResponse<SenderListResponse> localVarResponse = GetSendersWithHttpInfo(page, per, createdAtFrom, createdAtTo, externalId);
              return localVarResponse.Data;
         }
 
@@ -708,8 +713,9 @@ namespace BitPesa.Sdk.Api
         /// <param name="per">The number of results to load per page (defaults to 10) (optional)</param>
         /// <param name="createdAtFrom">Start date to filter recipients by created_at range Allows filtering results by the specified &#x60;created_at&#x60; timeframe.  Example: &#x60;/v1/recipients?created_at_from&#x3D;2018-06-06&amp;created_at_to&#x3D;2018-06-08&#x60; (optional)</param>
         /// <param name="createdAtTo">End date to filter recipients by created_at range Allows filtering results by the specified &#x60;created_at&#x60; timeframe.  Example: &#x60;/v1/recipients?created_at_from&#x3D;2018-06-06&amp;created_at_to&#x3D;2018-06-08&#x60; (optional)</param>
+        /// <param name="externalId">Allows filtering results by &#x60;external_id&#x60;.  Example: &#x60;/v1/senders?external_id&#x3D;26ec8517-2f0d-48c0-b74f-0bccb9ab3a87&#x60; (optional)</param>
         /// <returns>ApiResponse of SenderListResponse</returns>
-        public ApiResponse< SenderListResponse > GetSendersWithHttpInfo (int? page = null, int? per = null, string createdAtFrom = null, string createdAtTo = null)
+        public ApiResponse< SenderListResponse > GetSendersWithHttpInfo (int? page = null, int? per = null, string createdAtFrom = null, string createdAtTo = null, string externalId = null)
         {
 
             var localVarPath = "/senders";
@@ -737,6 +743,7 @@ namespace BitPesa.Sdk.Api
             if (per != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "per", per)); // query parameter
             if (createdAtFrom != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "created_at_from", createdAtFrom)); // query parameter
             if (createdAtTo != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "created_at_to", createdAtTo)); // query parameter
+            if (externalId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "external_id", externalId)); // query parameter
 
             var request = new RestRequest(localVarPath, Method.GET);
             
@@ -779,10 +786,11 @@ namespace BitPesa.Sdk.Api
         /// <param name="per">The number of results to load per page (defaults to 10) (optional)</param>
         /// <param name="createdAtFrom">Start date to filter recipients by created_at range Allows filtering results by the specified &#x60;created_at&#x60; timeframe.  Example: &#x60;/v1/recipients?created_at_from&#x3D;2018-06-06&amp;created_at_to&#x3D;2018-06-08&#x60; (optional)</param>
         /// <param name="createdAtTo">End date to filter recipients by created_at range Allows filtering results by the specified &#x60;created_at&#x60; timeframe.  Example: &#x60;/v1/recipients?created_at_from&#x3D;2018-06-06&amp;created_at_to&#x3D;2018-06-08&#x60; (optional)</param>
+        /// <param name="externalId">Allows filtering results by &#x60;external_id&#x60;.  Example: &#x60;/v1/senders?external_id&#x3D;26ec8517-2f0d-48c0-b74f-0bccb9ab3a87&#x60; (optional)</param>
         /// <returns>Task of SenderListResponse</returns>
-        public async System.Threading.Tasks.Task<SenderListResponse> GetSendersAsync (int? page = null, int? per = null, string createdAtFrom = null, string createdAtTo = null)
+        public async System.Threading.Tasks.Task<SenderListResponse> GetSendersAsync (int? page = null, int? per = null, string createdAtFrom = null, string createdAtTo = null, string externalId = null)
         {
-             ApiResponse<SenderListResponse> localVarResponse = await GetSendersAsyncWithHttpInfo(page, per, createdAtFrom, createdAtTo);
+             ApiResponse<SenderListResponse> localVarResponse = await GetSendersAsyncWithHttpInfo(page, per, createdAtFrom, createdAtTo, externalId);
              return localVarResponse.Data;
 
         }
@@ -795,8 +803,9 @@ namespace BitPesa.Sdk.Api
         /// <param name="per">The number of results to load per page (defaults to 10) (optional)</param>
         /// <param name="createdAtFrom">Start date to filter recipients by created_at range Allows filtering results by the specified &#x60;created_at&#x60; timeframe.  Example: &#x60;/v1/recipients?created_at_from&#x3D;2018-06-06&amp;created_at_to&#x3D;2018-06-08&#x60; (optional)</param>
         /// <param name="createdAtTo">End date to filter recipients by created_at range Allows filtering results by the specified &#x60;created_at&#x60; timeframe.  Example: &#x60;/v1/recipients?created_at_from&#x3D;2018-06-06&amp;created_at_to&#x3D;2018-06-08&#x60; (optional)</param>
+        /// <param name="externalId">Allows filtering results by &#x60;external_id&#x60;.  Example: &#x60;/v1/senders?external_id&#x3D;26ec8517-2f0d-48c0-b74f-0bccb9ab3a87&#x60; (optional)</param>
         /// <returns>Task of ApiResponse (SenderListResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<SenderListResponse>> GetSendersAsyncWithHttpInfo (int? page = null, int? per = null, string createdAtFrom = null, string createdAtTo = null)
+        public async System.Threading.Tasks.Task<ApiResponse<SenderListResponse>> GetSendersAsyncWithHttpInfo (int? page = null, int? per = null, string createdAtFrom = null, string createdAtTo = null, string externalId = null)
         {
 
             var localVarPath = "/senders";
@@ -824,6 +833,7 @@ namespace BitPesa.Sdk.Api
             if (per != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "per", per)); // query parameter
             if (createdAtFrom != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "created_at_from", createdAtFrom)); // query parameter
             if (createdAtTo != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "created_at_to", createdAtTo)); // query parameter
+            if (externalId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "external_id", externalId)); // query parameter
 
             var request = new RestRequest(localVarPath, Method.GET);
             

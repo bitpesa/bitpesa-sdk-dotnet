@@ -45,7 +45,8 @@ namespace BitPesa.Sdk.Model
         /// <param name="recipients">The details of where the payment should go. although transactions can support paying out multiple recipients, usually one is provided.  (required).</param>
         /// <param name="traits">traits.</param>
         /// <param name="state">state.</param>
-        public Transaction(string inputCurrency = default(string), List<PayinMethod> payinMethods = default(List<PayinMethod>), Object metadata = default(Object), Sender sender = default(Sender), List<Recipient> recipients = default(List<Recipient>), TransactionTraits traits = default(TransactionTraits), TransactionState state = default(TransactionState))
+        /// <param name="externalId">Optional ID that is supplied by partner linking it to the partner&#39;s own Sender ID. Note: if present we will validate whether the sent ID is a duplicate in our system or not..</param>
+        public Transaction(string inputCurrency = default(string), List<PayinMethod> payinMethods = default(List<PayinMethod>), Object metadata = default(Object), Sender sender = default(Sender), List<Recipient> recipients = default(List<Recipient>), TransactionTraits traits = default(TransactionTraits), TransactionState state = default(TransactionState), string externalId = default(string))
         {
             this.InputCurrency = inputCurrency;
             this.Sender = sender;
@@ -54,6 +55,7 @@ namespace BitPesa.Sdk.Model
             this.Metadata = metadata;
             this.Traits = traits;
             this.State = state;
+            this.ExternalId = externalId;
         }
         
         /// <summary>
@@ -145,6 +147,13 @@ namespace BitPesa.Sdk.Model
         public DateTime? ExpiresAt { get; private set; }
 
         /// <summary>
+        /// Optional ID that is supplied by partner linking it to the partner&#39;s own Sender ID. Note: if present we will validate whether the sent ID is a duplicate in our system or not.
+        /// </summary>
+        /// <value>Optional ID that is supplied by partner linking it to the partner&#39;s own Sender ID. Note: if present we will validate whether the sent ID is a duplicate in our system or not.</value>
+        [DataMember(Name="external_id", EmitDefaultValue=false)]
+        public string ExternalId { get; set; }
+
+        /// <summary>
         /// Gets or Sets Id
         /// </summary>
         [DataMember(Name="id", EmitDefaultValue=false)]
@@ -178,6 +187,7 @@ namespace BitPesa.Sdk.Model
             sb.Append("  DueAmount: ").Append(DueAmount).Append("\n");
             sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
             sb.Append("  ExpiresAt: ").Append(ExpiresAt).Append("\n");
+            sb.Append("  ExternalId: ").Append(ExternalId).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Errors: ").Append(Errors).Append("\n");
             sb.Append("}\n");
@@ -280,6 +290,11 @@ namespace BitPesa.Sdk.Model
                     this.ExpiresAt.Equals(input.ExpiresAt))
                 ) && 
                 (
+                    this.ExternalId == input.ExternalId ||
+                    (this.ExternalId != null &&
+                    this.ExternalId.Equals(input.ExternalId))
+                ) && 
+                (
                     this.Id == input.Id ||
                     (this.Id != null &&
                     this.Id.Equals(input.Id))
@@ -326,6 +341,8 @@ namespace BitPesa.Sdk.Model
                     hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
                 if (this.ExpiresAt != null)
                     hashCode = hashCode * 59 + this.ExpiresAt.GetHashCode();
+                if (this.ExternalId != null)
+                    hashCode = hashCode * 59 + this.ExternalId.GetHashCode();
                 if (this.Id != null)
                     hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.Errors != null)

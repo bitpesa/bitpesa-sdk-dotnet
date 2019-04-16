@@ -239,7 +239,7 @@ Name | Type | Description  | Notes
 
 <a name="getsenders"></a>
 # **GetSenders**
-> SenderListResponse GetSenders (int? page = null, int? per = null, string createdAtFrom = null, string createdAtTo = null)
+> SenderListResponse GetSenders (int? page = null, int? per = null, string createdAtFrom = null, string createdAtTo = null, string externalId = null)
 
 Listing senders
 
@@ -272,10 +272,11 @@ namespace Example
             var per = 10;  // int? | The number of results to load per page (defaults to 10) (optional) 
             var createdAtFrom = createdAtFrom_example;  // string | Start date to filter recipients by created_at range Allows filtering results by the specified `created_at` timeframe.  Example: `/v1/recipients?created_at_from=2018-06-06&created_at_to=2018-06-08` (optional) 
             var createdAtTo = createdAtTo_example;  // string | End date to filter recipients by created_at range Allows filtering results by the specified `created_at` timeframe.  Example: `/v1/recipients?created_at_from=2018-06-06&created_at_to=2018-06-08` (optional) 
+            var externalId = externalId_example;  // string | Allows filtering results by `external_id`.  Example: `/v1/senders?external_id=26ec8517-2f0d-48c0-b74f-0bccb9ab3a87` (optional) 
 
             try {
                 // Listing senders
-                SenderListResponse result = apiInstance.GetSenders(page, per, createdAtFrom, createdAtTo);
+                SenderListResponse result = apiInstance.GetSenders(page, per, createdAtFrom, createdAtTo, externalId);
                 Debug.WriteLine(result);
             } catch (ApiException e)
             {
@@ -319,11 +320,12 @@ Module Example
         Dim per = 10 REM int? | The number of results to load per page (defaults to 10) (optional) 
         Dim createdAtFrom = createdAtFrom_example REM string | Start date to filter recipients by created_at range Allows filtering results by the specified `created_at` timeframe.  Example: `/v1/recipients?created_at_from=2018-06-06&created_at_to=2018-06-08` (optional) 
         Dim createdAtTo = createdAtTo_example REM string | End date to filter recipients by created_at range Allows filtering results by the specified `created_at` timeframe.  Example: `/v1/recipients?created_at_from=2018-06-06&created_at_to=2018-06-08` (optional) 
+        Dim externalId = externalId_example REM string | Allows filtering results by `external_id`.  Example: `/v1/senders?external_id=26ec8517-2f0d-48c0-b74f-0bccb9ab3a87` (optional) 
 
 
         Try
             REM Listing senders
-            Dim result As SenderListResponse = apiInstance.GetSenders(page, per, createdAtFrom, createdAtTo)
+            Dim result As SenderListResponse = apiInstance.GetSenders(page, per, createdAtFrom, createdAtTo, externalId)
             Debug.WriteLine(result)
         Catch e as ApiException
             If e.IsValidationError Then
@@ -347,6 +349,7 @@ Name | Type | Description  | Notes
  **per** | **int?**| The number of results to load per page (defaults to 10) | [optional] 
  **createdAtFrom** | **string**| Start date to filter recipients by created_at range Allows filtering results by the specified &#x60;created_at&#x60; timeframe.  Example: &#x60;/v1/recipients?created_at_from&#x3D;2018-06-06&amp;created_at_to&#x3D;2018-06-08&#x60; | [optional] 
  **createdAtTo** | **string**| End date to filter recipients by created_at range Allows filtering results by the specified &#x60;created_at&#x60; timeframe.  Example: &#x60;/v1/recipients?created_at_from&#x3D;2018-06-06&amp;created_at_to&#x3D;2018-06-08&#x60; | [optional] 
+ **externalId** | **string**| Allows filtering results by &#x60;external_id&#x60;.  Example: &#x60;/v1/senders?external_id&#x3D;26ec8517-2f0d-48c0-b74f-0bccb9ab3a87&#x60; | [optional] 
 
 ### Return type
 

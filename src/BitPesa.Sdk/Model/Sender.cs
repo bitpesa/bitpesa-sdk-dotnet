@@ -25,7 +25,7 @@ using OpenAPIDateConverter = BitPesa.Sdk.Client.OpenAPIDateConverter;
 namespace BitPesa.Sdk.Model
 {
     /// <summary>
-    /// This contains the details of the sender. The first time a specific sender is used the full details should be provided. Once a sender is created and is used, the next time you MUST only send the ID of the sender. This is so we can match the same sender across multiple transactions for KYC and audit purposes.  Personal Sender Example: &#x60;&#x60;&#x60;json {   \&quot;country\&quot;: \&quot;UG\&quot;,   \&quot;phone_country\&quot;: \&quot;UG\&quot;,   \&quot;phone_number\&quot;: \&quot;752403639\&quot;,   \&quot;email\&quot;: \&quot;example@home.org\&quot;,   \&quot;first_name\&quot;: \&quot;Johnny\&quot;,   \&quot;last_name\&quot;: \&quot;English\&quot;,   \&quot;city\&quot;: \&quot;Kampala\&quot;,   \&quot;street\&quot;: \&quot;Unknown 17-3\&quot;,   \&quot;address_description\&quot;: \&quot;Description of address\&quot;,   \&quot;postal_code\&quot;: \&quot;798983\&quot;,   \&quot;birth_date\&quot;: \&quot;1900-12-31\&quot;,   \&quot;documents\&quot;: [ ],   \&quot;ip\&quot;: \&quot;127.0.0.1\&quot;,   \&quot;metadata\&quot;: { } } &#x60;&#x60;&#x60;  Business Sender Example:  &#x60;&#x60;&#x60;json {   \&quot;type\&quot;: \&quot;business\&quot;,   \&quot;country\&quot;: \&quot;UG\&quot;,   \&quot;phone_country\&quot;: \&quot;UG\&quot;,   \&quot;phone_number\&quot;: \&quot;752403639\&quot;,   \&quot;email\&quot;: \&quot;example@home.org\&quot;,   \&quot;name\&quot;: \&quot;MyCompany\&quot;,   \&quot;city\&quot;: \&quot;Kampala\&quot;,   \&quot;street\&quot;: \&quot;Unknown 17-3\&quot;,   \&quot;postal_code\&quot;: \&quot;798983\&quot;,   \&quot;address_description\&quot;: \&quot;Description of address\&quot;,   \&quot;documents\&quot;: [ ],   \&quot;ip\&quot;: \&quot;127.0.0.1\&quot;,   \&quot;metadata\&quot;: { } } &#x60;&#x60;&#x60;  [Sender in the API documentation](https://github.com/bitpesa/api-documentation/blob/master/transaction-flow.md#sender)
+    /// This contains the details of the sender. The first time a specific sender is used the full details should be provided. Once a sender is created and is used, the next time you MUST only send the ID of the sender. This is so we can match the same sender across multiple transactions for KYC and audit purposes.  Personal Sender Example: &#x60;&#x60;&#x60;json {   \&quot;country\&quot;: \&quot;UG\&quot;,   \&quot;phone_country\&quot;: \&quot;UG\&quot;,   \&quot;phone_number\&quot;: \&quot;752403639\&quot;,   \&quot;email\&quot;: \&quot;example@home.org\&quot;,   \&quot;first_name\&quot;: \&quot;Johnny\&quot;,   \&quot;last_name\&quot;: \&quot;English\&quot;,   \&quot;city\&quot;: \&quot;Kampala\&quot;,   \&quot;street\&quot;: \&quot;Unknown 17-3\&quot;,   \&quot;address_description\&quot;: \&quot;Description of address\&quot;,   \&quot;postal_code\&quot;: \&quot;798983\&quot;,   \&quot;birth_date\&quot;: \&quot;1900-12-31\&quot;,   \&quot;documents\&quot;: [ ],   \&quot;ip\&quot;: \&quot;127.0.0.1\&quot;,   \&quot;external_id\&quot;: \&quot;806ec63a-a5a7-43cc-9d75-1ee74fbcc026\&quot;,   \&quot;metadata\&quot;: { } } &#x60;&#x60;&#x60;  Business Sender Example:  &#x60;&#x60;&#x60;json {   \&quot;type\&quot;: \&quot;business\&quot;,   \&quot;country\&quot;: \&quot;UG\&quot;,   \&quot;phone_country\&quot;: \&quot;UG\&quot;,   \&quot;phone_number\&quot;: \&quot;752403639\&quot;,   \&quot;email\&quot;: \&quot;example@home.org\&quot;,   \&quot;name\&quot;: \&quot;MyCompany\&quot;,   \&quot;city\&quot;: \&quot;Kampala\&quot;,   \&quot;street\&quot;: \&quot;Unknown 17-3\&quot;,   \&quot;postal_code\&quot;: \&quot;798983\&quot;,   \&quot;address_description\&quot;: \&quot;Description of address\&quot;,   \&quot;documents\&quot;: [ ],   \&quot;ip\&quot;: \&quot;127.0.0.1\&quot;,   \&quot;external_id\&quot;: \&quot;806ec63a-a5a7-43cc-9d75-1ee74fbcc026\&quot;,   \&quot;metadata\&quot;: { } } &#x60;&#x60;&#x60;  [Sender in the API documentation](https://github.com/bitpesa/api-documentation/blob/master/transaction-flow.md#sender)
     /// </summary>
     [DataContract]
     public partial class Sender :  IEquatable<Sender>, IValidatableObject
@@ -89,7 +89,8 @@ namespace BitPesa.Sdk.Model
         /// <param name="metadata">Metadata of sender. You can store any detail specific to your integration here (for example the local ID of the sender on your end). When requesting sender details you will receive the sent metadata back. Also when sending sender related webhooks you will receive the details stored here as well..</param>
         /// <param name="state">state.</param>
         /// <param name="id">id.</param>
-        public Sender(TypeEnum? type = default(TypeEnum?), string country = default(string), string phoneCountry = default(string), string phoneNumber = default(string), string email = default(string), string firstName = default(string), string middleName = default(string), string lastName = default(string), string occupation = default(string), string nationality = default(string), string onboardingStatus = default(string), string address = default(string), string description = default(string), string name = default(string), string city = default(string), string street = default(string), string addressDescription = default(string), string postalCode = default(string), DateTime? birthDate = default(DateTime?), string ip = default(string), List<Document> documents = default(List<Document>), Object metadata = default(Object), SenderState state = default(SenderState), Guid? id = default(Guid?))
+        /// <param name="externalId">Optional ID that is supplied by partner linking it to the partner&#39;s own Sender ID. Note: if present we will validate whether the sent ID is a duplicate in our system or not..</param>
+        public Sender(TypeEnum? type = default(TypeEnum?), string country = default(string), string phoneCountry = default(string), string phoneNumber = default(string), string email = default(string), string firstName = default(string), string middleName = default(string), string lastName = default(string), string occupation = default(string), string nationality = default(string), string onboardingStatus = default(string), string address = default(string), string description = default(string), string name = default(string), string city = default(string), string street = default(string), string addressDescription = default(string), string postalCode = default(string), DateTime? birthDate = default(DateTime?), string ip = default(string), List<Document> documents = default(List<Document>), Object metadata = default(Object), SenderState state = default(SenderState), Guid? id = default(Guid?), string externalId = default(string))
         {
             this.Country = country;
             this.PhoneCountry = phoneCountry;
@@ -115,6 +116,7 @@ namespace BitPesa.Sdk.Model
             this.Metadata = metadata;
             this.State = state;
             this.Id = id;
+            this.ExternalId = externalId;
         }
         
 
@@ -279,6 +281,13 @@ namespace BitPesa.Sdk.Model
         public Guid? Id { get; set; }
 
         /// <summary>
+        /// Optional ID that is supplied by partner linking it to the partner&#39;s own Sender ID. Note: if present we will validate whether the sent ID is a duplicate in our system or not.
+        /// </summary>
+        /// <value>Optional ID that is supplied by partner linking it to the partner&#39;s own Sender ID. Note: if present we will validate whether the sent ID is a duplicate in our system or not.</value>
+        [DataMember(Name="external_id", EmitDefaultValue=false)]
+        public string ExternalId { get; set; }
+
+        /// <summary>
         /// The fields that have some problems and don&#39;t pass validation
         /// </summary>
         /// <value>The fields that have some problems and don&#39;t pass validation</value>
@@ -317,6 +326,7 @@ namespace BitPesa.Sdk.Model
             sb.Append("  Metadata: ").Append(Metadata).Append("\n");
             sb.Append("  State: ").Append(State).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
+            sb.Append("  ExternalId: ").Append(ExternalId).Append("\n");
             sb.Append("  Errors: ").Append(Errors).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -473,6 +483,11 @@ namespace BitPesa.Sdk.Model
                     this.Id.Equals(input.Id))
                 ) && 
                 (
+                    this.ExternalId == input.ExternalId ||
+                    (this.ExternalId != null &&
+                    this.ExternalId.Equals(input.ExternalId))
+                ) && 
+                (
                     this.Errors == input.Errors ||
                     this.Errors != null &&
                     this.Errors.SequenceEqual(input.Errors)
@@ -536,6 +551,8 @@ namespace BitPesa.Sdk.Model
                     hashCode = hashCode * 59 + this.State.GetHashCode();
                 if (this.Id != null)
                     hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.ExternalId != null)
+                    hashCode = hashCode * 59 + this.ExternalId.GetHashCode();
                 if (this.Errors != null)
                     hashCode = hashCode * 59 + this.Errors.GetHashCode();
                 return hashCode;

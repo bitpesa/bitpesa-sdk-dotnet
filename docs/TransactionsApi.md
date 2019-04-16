@@ -241,7 +241,7 @@ Name | Type | Description  | Notes
 
 <a name="gettransactions"></a>
 # **GetTransactions**
-> TransactionListResponse GetTransactions (int? page = null, int? per = null)
+> TransactionListResponse GetTransactions (int? page = null, int? per = null, string externalId = null)
 
 Get a list of transactions
 
@@ -272,10 +272,11 @@ namespace Example
             var apiInstance = new TransactionsApi(configuration);
             var page = 1;  // int? | The page number to request (defaults to 1) (optional) 
             var per = 10;  // int? | The number of results to load per page (defaults to 10) (optional) 
+            var externalId = externalId_example;  // string | Allows filtering results by `external_id`.  Example: `/v1/senders?external_id=26ec8517-2f0d-48c0-b74f-0bccb9ab3a87` (optional) 
 
             try {
                 // Get a list of transactions
-                TransactionListResponse result = apiInstance.GetTransactions(page, per);
+                TransactionListResponse result = apiInstance.GetTransactions(page, per, externalId);
                 Debug.WriteLine(result);
             } catch (ApiException e)
             {
@@ -317,11 +318,12 @@ Module Example
         Dim apiInstance = new TransactionsApi(configuration)
         Dim page = 1 REM int? | The page number to request (defaults to 1) (optional) 
         Dim per = 10 REM int? | The number of results to load per page (defaults to 10) (optional) 
+        Dim externalId = externalId_example REM string | Allows filtering results by `external_id`.  Example: `/v1/senders?external_id=26ec8517-2f0d-48c0-b74f-0bccb9ab3a87` (optional) 
 
 
         Try
             REM Get a list of transactions
-            Dim result As TransactionListResponse = apiInstance.GetTransactions(page, per)
+            Dim result As TransactionListResponse = apiInstance.GetTransactions(page, per, externalId)
             Debug.WriteLine(result)
         Catch e as ApiException
             If e.IsValidationError Then
@@ -343,6 +345,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **int?**| The page number to request (defaults to 1) | [optional] 
  **per** | **int?**| The number of results to load per page (defaults to 10) | [optional] 
+ **externalId** | **string**| Allows filtering results by &#x60;external_id&#x60;.  Example: &#x60;/v1/senders?external_id&#x3D;26ec8517-2f0d-48c0-b74f-0bccb9ab3a87&#x60; | [optional] 
 
 ### Return type
 

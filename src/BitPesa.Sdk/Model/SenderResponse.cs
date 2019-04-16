@@ -34,9 +34,11 @@ namespace BitPesa.Sdk.Model
         /// Initializes a new instance of the <see cref="SenderResponse" /> class.
         /// </summary>
         /// <param name="_object">_object.</param>
-        public SenderResponse(Sender _object = default(Sender))
+        /// <param name="meta">meta.</param>
+        public SenderResponse(Sender _object = default(Sender), SenderResponseMeta meta = default(SenderResponseMeta))
         {
             this.Object = _object;
+            this.Meta = meta;
         }
         
         /// <summary>
@@ -44,6 +46,12 @@ namespace BitPesa.Sdk.Model
         /// </summary>
         [DataMember(Name="object", EmitDefaultValue=false)]
         public Sender Object { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Meta
+        /// </summary>
+        [DataMember(Name="meta", EmitDefaultValue=false)]
+        public SenderResponseMeta Meta { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -54,6 +62,7 @@ namespace BitPesa.Sdk.Model
             var sb = new StringBuilder();
             sb.Append("class SenderResponse {\n");
             sb.Append("  Object: ").Append(Object).Append("\n");
+            sb.Append("  Meta: ").Append(Meta).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -92,6 +101,11 @@ namespace BitPesa.Sdk.Model
                     this.Object == input.Object ||
                     (this.Object != null &&
                     this.Object.Equals(input.Object))
+                ) && 
+                (
+                    this.Meta == input.Meta ||
+                    (this.Meta != null &&
+                    this.Meta.Equals(input.Meta))
                 );
         }
 
@@ -106,6 +120,8 @@ namespace BitPesa.Sdk.Model
                 int hashCode = 41;
                 if (this.Object != null)
                     hashCode = hashCode * 59 + this.Object.GetHashCode();
+                if (this.Meta != null)
+                    hashCode = hashCode * 59 + this.Meta.GetHashCode();
                 return hashCode;
             }
         }
