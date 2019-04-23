@@ -33,6 +33,10 @@ Module Example
 
     Function CreateTransactionExample(ByVal configuration As Configuration) As Guid?
         Dim api As TransactionsApi = New TransactionsApi(configuration)
+
+        ' When adding a sender to transaction, please use either an id Or external_id. Providing both will result in a validation error.
+        ' Please see our documentation at https://github.com/bitpesa/api-documentation/blob/master/transaction-flow.md#sender
+
         Dim sender As Sender = New Sender(id:=Guid.Parse("058de445-ffff-ffff-ffff-da9c751d14bf"))
         Dim ngnBankDetails As PayoutMethodDetails = New PayoutMethodDetails(
             bankAccount:="123456789",
@@ -50,7 +54,8 @@ Module Example
             sender:=sender,
             recipients:=New List(Of Recipient)() From {
                 recipient
-            })
+            },
+            externalId:="TRANSACTION-00001")
 
         Try
             Dim transactionRequest As TransactionRequest = New TransactionRequest(transaction:=transaction)
@@ -110,6 +115,22 @@ Module Example
         Return response.Object.Recipients(0).StateReason
     End Function
 
+    Function GetTransactionFromExternalId(ByVal configuration As Configuration) As Transaction
+        Dim transactionsApi As TransactionsApi = New TransactionsApi(configuration)
+        Dim externalId As String = "TRANSACTION-00001"
+        Dim transactionListResponse As TransactionListResponse = transactionsApi.GetTransactions(externalId:=externalId)
+
+        If transactionListResponse.Object.Count > 0 Then
+            System.Console.WriteLine("Transaction found")
+            Dim result As Transaction = transactionListResponse.Object(0)
+            System.Console.WriteLine(result)
+            Return result
+        Else
+            System.Console.WriteLine("Transaction not found")
+            Return Nothing
+        End If
+    End Function
+
     Sub ParseWebhookExample(ByVal configuration As Configuration)
         Dim webhookContent As String = "{  ""webhook"": ""02b769ff-ffff-ffff-ffff-820d285d76c7"",  ""event"": ""transaction.created"",  ""object"": {    ""id"": ""9170b966-ffff-ffff-ffff-7af5ad7e335f"",    ""metadata"": {},    ""state"": ""approved"",    ""input_amount"": 50.00,    ""input_currency"": ""EUR"",    ""sender"": {      ""id"": ""4be2a144-ffff-ffff-ffff-8ebcbfbbbe0c"",      ""type"": ""person"",      ""state"": ""initial"",      ""state_reason"": null,      ""country"": ""GB"",      ""street"": ""Test"",      ""postal_code"": ""EH1 1TT"",      ""city"": ""London"",      ""phone_country"": ""GB"",      ""phone_number"": ""+447123456789"",      ""email"": ""test@example.com"",      ""ip"": ""127.0.0.1"",      ""first_name"": ""Test"",      ""last_name"": ""Name"",      ""birth_date"": ""1990-01-01"",      ""metadata"": {},      ""providers"": {}    },    ""payin_methods"": [],    ""paid_amount"": 50.00,    ""due_amount"": 0,    ""recipients"": [      {        ""id"": ""69dee5aa-ffff-ffff-ffff-0a2c06353c6b"",        ""transaction_id"": ""9170b966-ffff-ffff-ffff-7af5ad7e335f"",        ""created_at"": ""2017-07-24T15:08:58Z"",        ""input_usd_amount"": 60.00,        ""state"": ""initial"",        ""transaction_state"": ""initial"",        ""requested_amount"": 50.00,        ""requested_currency"": ""EUR"",        ""input_amount"": 50.00,        ""input_currency"": ""EUR"",        ""output_amount"": 20001,        ""output_currency"": ""NGN"",        ""payout_method"": {          ""id"": ""c67580ee-ffff-ffff-ffff-ac51f1d0c035"",          ""type"": ""NGN::Bank"",          ""details"": {            ""email"": """",            ""bank_code"": ""011"",            ""last_name"": ""Test"",            ""first_name"": ""User"",            ""bank_account"": ""1111111111"",            ""bank_account_type"": ""10""          },          ""metadata"": {},          ""provider"": ""interswitch"",          ""fields"": {            ""email"": {              ""type"": ""input"",              ""validations"": {                ""format"": ""\\A((\\w+([\\-+.]\\w+)*@[a-zA-Z0-9]+([\\-\\.][a-zA-Z0-9]+)*)*){3,320}\\z""              }            },            ""first_name"": {              ""type"": ""input"",              ""validations"": {                ""presence"": true              }            },            ""last_name"": {              ""type"": ""input"",              ""validations"": {                ""presence"": true              }            },            ""bank_code"": {              ""type"": ""select"",              ""options"": {                ""063"": ""Diamond Bank"",                ""050"": ""EcoBank"",                ""214"": ""FCMB Bank"",                ""070"": ""Fidelity Bank"",                ""011"": ""First Bank of Nigeria"",                ""058"": ""Guaranty Trust Bank "",                ""030"": ""Heritage Bank"",                ""301"": ""Jaiz Bank"",                ""082"": ""Keystone "",                ""014"": ""Mainstreet "",                ""076"": ""Skye Bank"",                ""039"": ""Stanbic IBTC Bank "",                ""232"": ""Sterling bank"",                ""032"": ""Union Bank"",                ""033"": ""United Bank for Africa "",                ""215"": ""Unity Bank"",                ""035"": ""Wema Bank"",                ""057"": ""Zenith International ""              },              ""validations"": {                ""presence"": true,                ""inclusion"": {                  ""in"": {                    ""063"": ""Diamond Bank"",                    ""050"": ""EcoBank"",                    ""214"": ""FCMB Bank"",                    ""070"": ""Fidelity Bank"",                    ""011"": ""First Bank of Nigeria"",                    ""058"": ""Guaranty Trust Bank "",                    ""030"": ""Heritage Bank"",                    ""301"": ""Jaiz Bank"",                    ""082"": ""Keystone "",                    ""014"": ""Mainstreet "",                    ""076"": ""Skye Bank"",                    ""039"": ""Stanbic IBTC Bank "",                    ""232"": ""Sterling bank"",                    ""032"": ""Union Bank"",                    ""033"": ""United Bank for Africa "",                    ""215"": ""Unity Bank"",                    ""035"": ""Wema Bank"",                    ""057"": ""Zenith International ""                  }                }              }            },            ""bank_account"": {              ""type"": ""input"",              ""validations"": {                ""presence"": true              }            },            ""bank_account_type"": {              ""type"": ""select"",              ""options"": {                ""20"": ""Current"",                ""10"": ""Savings""              },              ""validations"": {                ""presence"": true,                ""inclusion"": {                  ""in"": {                    ""20"": ""Current"",                    ""10"": ""Savings""                  }                }              }            }          }        },        ""metadata"": {}      }    ],    ""created_at"": ""2017-07-24T15:08:58Z"",    ""expires_at"": ""2017-07-24T16:08:58Z""  }}"
         Dim webhook As Webhook = configuration.ParseString(Of Webhook)(webhookContent)
@@ -147,6 +168,7 @@ Module Example
             birthDate:=DateTime.Parse("1980-01-01"),
             ip:="127.0.0.1",
             addressDescription:="Description",
+            externalId:="SENDER-00001",
             documents:=New List(Of Document)())
         Dim senderRequest As SenderRequest = New SenderRequest(sender:=sender)
 
@@ -166,6 +188,22 @@ Module Example
                 Throw e
             End If
         End Try
+    End Function
+
+    Function GetSenderFromExternalId(ByVal configuration As Configuration) As Sender
+        Dim sendersApi As SendersApi = New SendersApi(configuration)
+        Dim externalId As String = "SENDER-00001"
+        Dim senderListResponse As SenderListResponse = sendersApi.GetSenders(externalId:=externalId)
+
+        If senderListResponse.Object.Count > 0 Then
+            System.Console.WriteLine("Sender found")
+            Dim result As Sender = senderListResponse.Object(0)
+            System.Console.WriteLine(result)
+            Return result
+        Else
+            System.Console.WriteLine("Sender not found")
+            Return Nothing
+        End If
     End Function
 
     Sub UpdateSenderExample(ByVal configuration As Configuration)
@@ -196,13 +234,15 @@ Module Example
         configuration.ApiSecret = "SECRET"
         configuration.BasePath = "https://api-sandbox.bitpesa.co/v1"
 
-        REM AccountValidationExample(configuration)
-        REM CreateSenderExample(configuration)
-        REM UpdateSenderExample(configuration)
-        REM CreateTransactionExample(configuration)
-        REM CreateAndFundTransactionExample(configuration)
-        REM GetTransactionFromErrorMessageExample(configuration)
-        REM ParseWebhookExample(configuration)
+        ' AccountValidationExample(configuration)
+        ' CreateSenderExample(configuration)
+        ' GetSenderFromExternalId(configuration)
+        ' UpdateSenderExample(configuration)
+        ' CreateTransactionExample(configuration)
+        ' CreateAndFundTransactionExample(configuration)
+        ' GetTransactionFromErrorMessageExample(configuration)
+        ' GetTransactionFromExternalId(configuration)
+        ' ParseWebhookExample(configuration)
         System.Console.ReadLine()
     End Sub
 End Module
