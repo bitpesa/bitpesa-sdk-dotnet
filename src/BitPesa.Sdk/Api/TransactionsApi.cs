@@ -499,10 +499,13 @@ namespace BitPesa.Sdk.Api
             }
 
             var request = new RestRequest(localVarPath, Method.POST);
-            
-            // add path parameter, if any
+
+            // add path and query parameter, if any
             foreach (var param in localVarPathParams)
                 request.AddParameter(param.Key, param.Value, ParameterType.UrlSegment);
+
+            foreach (var param in localVarQueryPathParams)
+                request.AddQueryParameter(param.Key, param.Value);
 
             // generate full URL
             string fullUri = this.Configuration.ApiClient.RestClient.BuildUri(request).AbsoluteUri;
@@ -588,7 +591,7 @@ namespace BitPesa.Sdk.Api
             }
 
             var request = new RestRequest(localVarPath, Method.POST);
-            
+
             // add path parameter, if any
             foreach (var param in localVarPathParams)
                 request.AddParameter(param.Key, param.Value, ParameterType.UrlSegment);
@@ -668,10 +671,13 @@ namespace BitPesa.Sdk.Api
             if (transactionID != null) localVarPathParams.Add("Transaction ID", this.Configuration.ApiClient.ParameterToString(transactionID)); // path parameter
 
             var request = new RestRequest(localVarPath, Method.GET);
-            
-            // add path parameter, if any
+
+            // add path and query parameter, if any
             foreach (var param in localVarPathParams)
                 request.AddParameter(param.Key, param.Value, ParameterType.UrlSegment);
+
+            foreach (var param in localVarQueryPathParams)
+                request.AddQueryParameter(param.Key, param.Value);
 
             // generate full URL
             string fullUri = this.Configuration.ApiClient.RestClient.BuildUri(request).AbsoluteUri;
@@ -749,7 +755,7 @@ namespace BitPesa.Sdk.Api
             if (transactionID != null) localVarPathParams.Add("Transaction ID", this.Configuration.ApiClient.ParameterToString(transactionID)); // path parameter
 
             var request = new RestRequest(localVarPath, Method.GET);
-            
+
             // add path parameter, if any
             foreach (var param in localVarPathParams)
                 request.AddParameter(param.Key, param.Value, ParameterType.UrlSegment);
@@ -832,10 +838,13 @@ namespace BitPesa.Sdk.Api
             if (externalId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "external_id", externalId)); // query parameter
 
             var request = new RestRequest(localVarPath, Method.GET);
-            
-            // add path parameter, if any
+
+            // add path and query parameter, if any
             foreach (var param in localVarPathParams)
                 request.AddParameter(param.Key, param.Value, ParameterType.UrlSegment);
+
+            foreach (var param in localVarQueryPathParams)
+                request.AddQueryParameter(param.Key, param.Value);
 
             // generate full URL
             string fullUri = this.Configuration.ApiClient.RestClient.BuildUri(request).AbsoluteUri;
@@ -916,7 +925,7 @@ namespace BitPesa.Sdk.Api
             if (externalId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "external_id", externalId)); // query parameter
 
             var request = new RestRequest(localVarPath, Method.GET);
-            
+
             // add path parameter, if any
             foreach (var param in localVarPathParams)
                 request.AddParameter(param.Key, param.Value, ParameterType.UrlSegment);
@@ -1010,10 +1019,13 @@ namespace BitPesa.Sdk.Api
             }
 
             var request = new RestRequest(localVarPath, Method.POST);
-            
-            // add path parameter, if any
+
+            // add path and query parameter, if any
             foreach (var param in localVarPathParams)
                 request.AddParameter(param.Key, param.Value, ParameterType.UrlSegment);
+
+            foreach (var param in localVarQueryPathParams)
+                request.AddQueryParameter(param.Key, param.Value);
 
             // generate full URL
             string fullUri = this.Configuration.ApiClient.RestClient.BuildUri(request).AbsoluteUri;
@@ -1105,7 +1117,7 @@ namespace BitPesa.Sdk.Api
             }
 
             var request = new RestRequest(localVarPath, Method.POST);
-            
+
             // add path parameter, if any
             foreach (var param in localVarPathParams)
                 request.AddParameter(param.Key, param.Value, ParameterType.UrlSegment);
@@ -1185,10 +1197,13 @@ namespace BitPesa.Sdk.Api
             if (transactionID != null) localVarPathParams.Add("Transaction ID", this.Configuration.ApiClient.ParameterToString(transactionID)); // path parameter
 
             var request = new RestRequest(localVarPath, Method.POST);
-            
-            // add path parameter, if any
+
+            // add path and query parameter, if any
             foreach (var param in localVarPathParams)
                 request.AddParameter(param.Key, param.Value, ParameterType.UrlSegment);
+
+            foreach (var param in localVarQueryPathParams)
+                request.AddQueryParameter(param.Key, param.Value);
 
             // generate full URL
             string fullUri = this.Configuration.ApiClient.RestClient.BuildUri(request).AbsoluteUri;
@@ -1266,7 +1281,7 @@ namespace BitPesa.Sdk.Api
             if (transactionID != null) localVarPathParams.Add("Transaction ID", this.Configuration.ApiClient.ParameterToString(transactionID)); // path parameter
 
             var request = new RestRequest(localVarPath, Method.POST);
-            
+
             // add path parameter, if any
             foreach (var param in localVarPathParams)
                 request.AddParameter(param.Key, param.Value, ParameterType.UrlSegment);
@@ -1354,10 +1369,13 @@ namespace BitPesa.Sdk.Api
             }
 
             var request = new RestRequest(localVarPath, Method.POST);
-            
-            // add path parameter, if any
+
+            // add path and query parameter, if any
             foreach (var param in localVarPathParams)
                 request.AddParameter(param.Key, param.Value, ParameterType.UrlSegment);
+
+            foreach (var param in localVarQueryPathParams)
+                request.AddQueryParameter(param.Key, param.Value);
 
             // generate full URL
             string fullUri = this.Configuration.ApiClient.RestClient.BuildUri(request).AbsoluteUri;
@@ -1443,7 +1461,7 @@ namespace BitPesa.Sdk.Api
             }
 
             var request = new RestRequest(localVarPath, Method.POST);
-            
+
             // add path parameter, if any
             foreach (var param in localVarPathParams)
                 request.AddParameter(param.Key, param.Value, ParameterType.UrlSegment);
@@ -1531,10 +1549,13 @@ namespace BitPesa.Sdk.Api
             }
 
             var request = new RestRequest(localVarPath, Method.POST);
-            
-            // add path parameter, if any
+
+            // add path and query parameter, if any
             foreach (var param in localVarPathParams)
                 request.AddParameter(param.Key, param.Value, ParameterType.UrlSegment);
+
+            foreach (var param in localVarQueryPathParams)
+                request.AddQueryParameter(param.Key, param.Value);
 
             // generate full URL
             string fullUri = this.Configuration.ApiClient.RestClient.BuildUri(request).AbsoluteUri;
@@ -1620,7 +1641,7 @@ namespace BitPesa.Sdk.Api
             }
 
             var request = new RestRequest(localVarPath, Method.POST);
-            
+
             // add path parameter, if any
             foreach (var param in localVarPathParams)
                 request.AddParameter(param.Key, param.Value, ParameterType.UrlSegment);
