@@ -298,7 +298,7 @@ namespace BitPesa.Sdk.Api
             foreach (var param in localVarPathParams)
                 request.AddParameter(param.Key, param.Value, ParameterType.UrlSegment);
 
-            foreach (var param in localVarQueryPathParams)
+            foreach (var param in localVarQueryParams)
                 request.AddQueryParameter(param.Key, param.Value);
 
             // generate full URL
@@ -450,7 +450,7 @@ namespace BitPesa.Sdk.Api
             foreach (var param in localVarPathParams)
                 request.AddParameter(param.Key, param.Value, ParameterType.UrlSegment);
 
-            foreach (var param in localVarQueryPathParams)
+            foreach (var param in localVarQueryParams)
                 request.AddQueryParameter(param.Key, param.Value);
 
             // generate full URL
@@ -602,7 +602,7 @@ namespace BitPesa.Sdk.Api
             foreach (var param in localVarPathParams)
                 request.AddParameter(param.Key, param.Value, ParameterType.UrlSegment);
 
-            foreach (var param in localVarQueryPathParams)
+            foreach (var param in localVarQueryParams)
                 request.AddQueryParameter(param.Key, param.Value);
 
             // generate full URL
