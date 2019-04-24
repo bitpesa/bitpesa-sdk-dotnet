@@ -47,6 +47,9 @@ namespace BitPesa.Example.CS
         {
             TransactionsApi api = new TransactionsApi(configuration);
 
+            // When adding a sender to transaction, please use either an id or external_id. Providing both will result in a validation error.
+            // Please see our documentation at https://github.com/bitpesa/api-documentation/blob/master/transaction-flow.md#sender
+
             Sender sender = new Sender(id: Guid.Parse("058de445-ffff-ffff-ffff-da9c751d14bf"));
 
             PayoutMethodDetails ngnBankDetails = new PayoutMethodDetails(
@@ -71,7 +74,8 @@ namespace BitPesa.Example.CS
             Transaction transaction = new Transaction(
                 inputCurrency: "USD",
                 sender: sender,
-                recipients: new List<Recipient>() { recipient }
+                recipients: new List<Recipient>() { recipient },
+                externalId: "TRANSACTION-00001"
             );
 
             try
@@ -150,6 +154,26 @@ namespace BitPesa.Example.CS
             System.Console.WriteLine("Payout error message on recipient: " + response.Object.Recipients[0].StateReason);
 
             return response.Object.Recipients[0].StateReason;
+        }
+
+        static Transaction GetTransactionFromExternalId(Configuration configuration)
+        {
+            TransactionsApi transactionsApi = new TransactionsApi(configuration);
+            String externalId = "TRANSACTION-00001";
+
+            TransactionListResponse transactionListResponse = transactionsApi.GetTransactions(externalId: externalId);
+            if (transactionListResponse.Object.Count > 0)
+            {
+                System.Console.WriteLine("Transaction found");
+                Transaction result = transactionListResponse.Object[0];
+                System.Console.WriteLine(result);
+                return result;
+            }
+            else
+            {
+                System.Console.WriteLine("Transaction not found");
+                return null;
+            }
         }
 
         static void ParseWebhookExample(Configuration configuration)
@@ -356,7 +380,8 @@ namespace BitPesa.Example.CS
                     birthDate: DateTime.Parse("1980-01-01"),
                     ip: "127.0.0.1",
                     addressDescription: "Description",
-                    documents: new List<Document>()
+                    documents: new List<Document>(),
+                    externalId: "SENDER-00001"
                 );
 
             SenderRequest senderRequest = new SenderRequest(
@@ -383,6 +408,26 @@ namespace BitPesa.Example.CS
                 {
                     throw e;
                 }
+            }
+        }
+
+        static Sender GetSenderFromExternalId(Configuration configuration)
+        {
+            SendersApi sendersApi = new SendersApi(configuration);
+            String externalId = "SENDER-00001";
+
+            SenderListResponse senderListResponse = sendersApi.GetSenders(externalId: externalId);
+            if (senderListResponse.Object.Count > 0)
+            {
+                System.Console.WriteLine("Sender found");
+                Sender result = senderListResponse.Object[0];
+                System.Console.WriteLine(result);
+                return result;
+            }
+            else
+            {
+                System.Console.WriteLine("Sender not found");
+                return null;
             }
         }
 
@@ -425,9 +470,11 @@ namespace BitPesa.Example.CS
 
             //AccountValidationExample(configuration);
             //CreateSenderExample(configuration);
+            //GetSenderFromExternalId(configuration);
             //UpdateSenderExample(configuration);
             //CreateTransactionExample(configuration);
             //CreateAndFundTransactionExample(configuration);
+            //GetTransactionFromExternalId(configuration);
             //GetTransactionFromErrorMessageExample(configuration);
             //ParseWebhookExample(configuration);
             System.Console.ReadLine();
