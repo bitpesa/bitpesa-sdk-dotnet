@@ -6,7 +6,7 @@
         <title>BitPesa .NET SDK</title>
 
         <!-- The package version number that is used when resolving dependencies -->
-        <version>0.2.0</version>
+        <version>0.3.0</version>
 
         <!-- Authors contain text that appears directly on the gallery -->
         <authors>BitPesa</authors>
