@@ -484,6 +484,9 @@ namespace BitPesa.Sdk.Api
             foreach (var param in localVarPathParams)
                 request.AddParameter(param.Key, param.Value, ParameterType.UrlSegment);
 
+            foreach (var param in localVarQueryParams)
+                request.AddQueryParameter(param.Key, param.Value);
+
             // generate full URL
             string fullUri = this.Configuration.ApiClient.RestClient.BuildUri(request).AbsoluteUri;
 
@@ -648,6 +651,9 @@ namespace BitPesa.Sdk.Api
             foreach (var param in localVarPathParams)
                 request.AddParameter(param.Key, param.Value, ParameterType.UrlSegment);
 
+            foreach (var param in localVarQueryParams)
+                request.AddQueryParameter(param.Key, param.Value);
+
             // generate full URL
             string fullUri = this.Configuration.ApiClient.RestClient.BuildUri(request).AbsoluteUri;
 
@@ -799,6 +805,9 @@ namespace BitPesa.Sdk.Api
             // add path parameter, if any
             foreach (var param in localVarPathParams)
                 request.AddParameter(param.Key, param.Value, ParameterType.UrlSegment);
+
+            foreach (var param in localVarQueryParams)
+                request.AddQueryParameter(param.Key, param.Value);
 
             // generate full URL
             string fullUri = this.Configuration.ApiClient.RestClient.BuildUri(request).AbsoluteUri;
@@ -963,6 +972,9 @@ namespace BitPesa.Sdk.Api
             // add path parameter, if any
             foreach (var param in localVarPathParams)
                 request.AddParameter(param.Key, param.Value, ParameterType.UrlSegment);
+
+            foreach (var param in localVarQueryParams)
+                request.AddQueryParameter(param.Key, param.Value);
 
             // generate full URL
             string fullUri = this.Configuration.ApiClient.RestClient.BuildUri(request).AbsoluteUri;
@@ -1143,6 +1155,9 @@ namespace BitPesa.Sdk.Api
             // add path parameter, if any
             foreach (var param in localVarPathParams)
                 request.AddParameter(param.Key, param.Value, ParameterType.UrlSegment);
+
+            foreach (var param in localVarQueryParams)
+                request.AddQueryParameter(param.Key, param.Value);
 
             // generate full URL
             string fullUri = this.Configuration.ApiClient.RestClient.BuildUri(request).AbsoluteUri;
