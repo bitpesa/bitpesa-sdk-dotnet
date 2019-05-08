@@ -1,4 +1,6 @@
+
 # BitPesa.Sdk.Model.WebhookLogMetadata
+
 ## Properties
 
 Name | Type | Description | Notes
@@ -14,5 +16,7 @@ Name | Type | Description | Notes
 **AppId** | **string** | ID of app on which webhook event was triggered | [optional] 
 **ApiKeyId** | **string** | ID of API key in use at point of webhook event | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to README]](../README.md)
 

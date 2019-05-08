@@ -42,7 +42,7 @@ namespace BitPesa.Sdk.Model
         /// <summary>
         /// Gets or Sets Webhook
         /// </summary>
-        [DataMember(Name="webhook", EmitDefaultValue=false)]
+        [DataMember(Name="webhook", EmitDefaultValue=)]
         public WebhookDefinition Webhook { get; set; }
 
         /// <summary>

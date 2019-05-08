@@ -1,4 +1,6 @@
+
 # BitPesa.Sdk.Model.Pagination
+
 ## Properties
 
 Name | Type | Description | Notes
@@ -9,5 +11,7 @@ Name | Type | Description | Notes
 **TotalPages** | **int?** | The number of pages in the result set | [optional] 
 **TotalCount** | **int?** | The total number of results in the set | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to README]](../README.md)
 

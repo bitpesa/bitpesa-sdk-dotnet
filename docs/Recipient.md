@@ -1,4 +1,6 @@
+
 # BitPesa.Sdk.Model.Recipient
+
 ## Properties
 
 Name | Type | Description | Notes
@@ -24,5 +26,7 @@ Name | Type | Description | Notes
 **Id** | **Guid?** |  | [optional] 
 **Errors** | **Dictionary&lt;string, List&lt;ValidationErrorDescription&gt;&gt;** | The fields that have some problems and don&#39;t pass validation | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to README]](../README.md)
 

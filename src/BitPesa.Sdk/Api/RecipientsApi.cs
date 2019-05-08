@@ -61,7 +61,7 @@ namespace BitPesa.Sdk.Api
         /// <param name="state">Allows filtering results by &#x60;state&#x60; of recipient. See [API Documentation - Recipient state](https://github.com/bitpesa/api-documentation/blob/master/transaction-flow.md#state-1) for possible states.  Example: &#x60;/v1/recipients?state[]&#x3D;error&amp;state[]&#x3D;initial&#x60; (optional)</param>
         /// <param name="currency">Allows filtering results by &#x60;input_currency&#x60;.  Additionally required when filtering by an amount range Example: &#x60;/v1/recipients?currency[]&#x3D;KES&amp;currency[]&#x3D;NGN&#x60; (optional)</param>
         /// <returns>RecipientListResponse</returns>
-        RecipientListResponse GetRecipients (int? page = null, int? per = null, string createdAtFrom = null, string createdAtTo = null, string amountFrom = null, string amountTo = null, List<string> state = null, List<string> currency = null);
+        RecipientListResponse GetRecipients (int?? page = null, int?? per = null, string? createdAtFrom = null, string? createdAtTo = null, string? amountFrom = null, string? amountTo = null, List<string>? state = null, List<string>? currency = null);
 
         /// <summary>
         /// Getting a list of recipients with filtering
@@ -79,7 +79,7 @@ namespace BitPesa.Sdk.Api
         /// <param name="state">Allows filtering results by &#x60;state&#x60; of recipient. See [API Documentation - Recipient state](https://github.com/bitpesa/api-documentation/blob/master/transaction-flow.md#state-1) for possible states.  Example: &#x60;/v1/recipients?state[]&#x3D;error&amp;state[]&#x3D;initial&#x60; (optional)</param>
         /// <param name="currency">Allows filtering results by &#x60;input_currency&#x60;.  Additionally required when filtering by an amount range Example: &#x60;/v1/recipients?currency[]&#x3D;KES&amp;currency[]&#x3D;NGN&#x60; (optional)</param>
         /// <returns>ApiResponse of RecipientListResponse</returns>
-        ApiResponse<RecipientListResponse> GetRecipientsWithHttpInfo (int? page = null, int? per = null, string createdAtFrom = null, string createdAtTo = null, string amountFrom = null, string amountTo = null, List<string> state = null, List<string> currency = null);
+        ApiResponse<RecipientListResponse> GetRecipientsWithHttpInfo (int?? page = null, int?? per = null, string? createdAtFrom = null, string? createdAtTo = null, string? amountFrom = null, string? amountTo = null, List<string>? state = null, List<string>? currency = null);
         /// <summary>
         /// Updating a recipient
         /// </summary>
@@ -142,7 +142,7 @@ namespace BitPesa.Sdk.Api
         /// <param name="state">Allows filtering results by &#x60;state&#x60; of recipient. See [API Documentation - Recipient state](https://github.com/bitpesa/api-documentation/blob/master/transaction-flow.md#state-1) for possible states.  Example: &#x60;/v1/recipients?state[]&#x3D;error&amp;state[]&#x3D;initial&#x60; (optional)</param>
         /// <param name="currency">Allows filtering results by &#x60;input_currency&#x60;.  Additionally required when filtering by an amount range Example: &#x60;/v1/recipients?currency[]&#x3D;KES&amp;currency[]&#x3D;NGN&#x60; (optional)</param>
         /// <returns>Task of RecipientListResponse</returns>
-        System.Threading.Tasks.Task<RecipientListResponse> GetRecipientsAsync (int? page = null, int? per = null, string createdAtFrom = null, string createdAtTo = null, string amountFrom = null, string amountTo = null, List<string> state = null, List<string> currency = null);
+        System.Threading.Tasks.Task<RecipientListResponse> GetRecipientsAsync (int?? page = null, int?? per = null, string? createdAtFrom = null, string? createdAtTo = null, string? amountFrom = null, string? amountTo = null, List<string>? state = null, List<string>? currency = null);
 
         /// <summary>
         /// Getting a list of recipients with filtering
@@ -160,7 +160,7 @@ namespace BitPesa.Sdk.Api
         /// <param name="state">Allows filtering results by &#x60;state&#x60; of recipient. See [API Documentation - Recipient state](https://github.com/bitpesa/api-documentation/blob/master/transaction-flow.md#state-1) for possible states.  Example: &#x60;/v1/recipients?state[]&#x3D;error&amp;state[]&#x3D;initial&#x60; (optional)</param>
         /// <param name="currency">Allows filtering results by &#x60;input_currency&#x60;.  Additionally required when filtering by an amount range Example: &#x60;/v1/recipients?currency[]&#x3D;KES&amp;currency[]&#x3D;NGN&#x60; (optional)</param>
         /// <returns>Task of ApiResponse (RecipientListResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<RecipientListResponse>> GetRecipientsAsyncWithHttpInfo (int? page = null, int? per = null, string createdAtFrom = null, string createdAtTo = null, string amountFrom = null, string amountTo = null, List<string> state = null, List<string> currency = null);
+        System.Threading.Tasks.Task<ApiResponse<RecipientListResponse>> GetRecipientsAsyncWithHttpInfo (int?? page = null, int?? per = null, string? createdAtFrom = null, string? createdAtTo = null, string? amountFrom = null, string? amountTo = null, List<string>? state = null, List<string>? currency = null);
         /// <summary>
         /// Updating a recipient
         /// </summary>
@@ -475,7 +475,7 @@ namespace BitPesa.Sdk.Api
         /// <param name="state">Allows filtering results by &#x60;state&#x60; of recipient. See [API Documentation - Recipient state](https://github.com/bitpesa/api-documentation/blob/master/transaction-flow.md#state-1) for possible states.  Example: &#x60;/v1/recipients?state[]&#x3D;error&amp;state[]&#x3D;initial&#x60; (optional)</param>
         /// <param name="currency">Allows filtering results by &#x60;input_currency&#x60;.  Additionally required when filtering by an amount range Example: &#x60;/v1/recipients?currency[]&#x3D;KES&amp;currency[]&#x3D;NGN&#x60; (optional)</param>
         /// <returns>RecipientListResponse</returns>
-        public RecipientListResponse GetRecipients (int? page = null, int? per = null, string createdAtFrom = null, string createdAtTo = null, string amountFrom = null, string amountTo = null, List<string> state = null, List<string> currency = null)
+        public RecipientListResponse GetRecipients (int?? page = null, int?? per = null, string? createdAtFrom = null, string? createdAtTo = null, string? amountFrom = null, string? amountTo = null, List<string>? state = null, List<string>? currency = null)
         {
              ApiResponse<RecipientListResponse> localVarResponse = GetRecipientsWithHttpInfo(page, per, createdAtFrom, createdAtTo, amountFrom, amountTo, state, currency);
              return localVarResponse.Data;
@@ -494,7 +494,7 @@ namespace BitPesa.Sdk.Api
         /// <param name="state">Allows filtering results by &#x60;state&#x60; of recipient. See [API Documentation - Recipient state](https://github.com/bitpesa/api-documentation/blob/master/transaction-flow.md#state-1) for possible states.  Example: &#x60;/v1/recipients?state[]&#x3D;error&amp;state[]&#x3D;initial&#x60; (optional)</param>
         /// <param name="currency">Allows filtering results by &#x60;input_currency&#x60;.  Additionally required when filtering by an amount range Example: &#x60;/v1/recipients?currency[]&#x3D;KES&amp;currency[]&#x3D;NGN&#x60; (optional)</param>
         /// <returns>ApiResponse of RecipientListResponse</returns>
-        public ApiResponse< RecipientListResponse > GetRecipientsWithHttpInfo (int? page = null, int? per = null, string createdAtFrom = null, string createdAtTo = null, string amountFrom = null, string amountTo = null, List<string> state = null, List<string> currency = null)
+        public ApiResponse< RecipientListResponse > GetRecipientsWithHttpInfo (int?? page = null, int?? per = null, string? createdAtFrom = null, string? createdAtTo = null, string? amountFrom = null, string? amountTo = null, List<string>? state = null, List<string>? currency = null)
         {
 
             var localVarPath = "/recipients";
@@ -576,7 +576,7 @@ namespace BitPesa.Sdk.Api
         /// <param name="state">Allows filtering results by &#x60;state&#x60; of recipient. See [API Documentation - Recipient state](https://github.com/bitpesa/api-documentation/blob/master/transaction-flow.md#state-1) for possible states.  Example: &#x60;/v1/recipients?state[]&#x3D;error&amp;state[]&#x3D;initial&#x60; (optional)</param>
         /// <param name="currency">Allows filtering results by &#x60;input_currency&#x60;.  Additionally required when filtering by an amount range Example: &#x60;/v1/recipients?currency[]&#x3D;KES&amp;currency[]&#x3D;NGN&#x60; (optional)</param>
         /// <returns>Task of RecipientListResponse</returns>
-        public async System.Threading.Tasks.Task<RecipientListResponse> GetRecipientsAsync (int? page = null, int? per = null, string createdAtFrom = null, string createdAtTo = null, string amountFrom = null, string amountTo = null, List<string> state = null, List<string> currency = null)
+        public async System.Threading.Tasks.Task<RecipientListResponse> GetRecipientsAsync (int?? page = null, int?? per = null, string? createdAtFrom = null, string? createdAtTo = null, string? amountFrom = null, string? amountTo = null, List<string>? state = null, List<string>? currency = null)
         {
              ApiResponse<RecipientListResponse> localVarResponse = await GetRecipientsAsyncWithHttpInfo(page, per, createdAtFrom, createdAtTo, amountFrom, amountTo, state, currency);
              return localVarResponse.Data;
@@ -596,7 +596,7 @@ namespace BitPesa.Sdk.Api
         /// <param name="state">Allows filtering results by &#x60;state&#x60; of recipient. See [API Documentation - Recipient state](https://github.com/bitpesa/api-documentation/blob/master/transaction-flow.md#state-1) for possible states.  Example: &#x60;/v1/recipients?state[]&#x3D;error&amp;state[]&#x3D;initial&#x60; (optional)</param>
         /// <param name="currency">Allows filtering results by &#x60;input_currency&#x60;.  Additionally required when filtering by an amount range Example: &#x60;/v1/recipients?currency[]&#x3D;KES&amp;currency[]&#x3D;NGN&#x60; (optional)</param>
         /// <returns>Task of ApiResponse (RecipientListResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<RecipientListResponse>> GetRecipientsAsyncWithHttpInfo (int? page = null, int? per = null, string createdAtFrom = null, string createdAtTo = null, string amountFrom = null, string amountTo = null, List<string> state = null, List<string> currency = null)
+        public async System.Threading.Tasks.Task<ApiResponse<RecipientListResponse>> GetRecipientsAsyncWithHttpInfo (int?? page = null, int?? per = null, string? createdAtFrom = null, string? createdAtTo = null, string? amountFrom = null, string? amountTo = null, List<string>? state = null, List<string>? currency = null)
         {
 
             var localVarPath = "/recipients";

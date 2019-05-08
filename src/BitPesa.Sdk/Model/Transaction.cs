@@ -62,108 +62,108 @@ namespace BitPesa.Sdk.Model
         /// The input currency describes what currency the transaction will be paid in (3-character alpha ISO 4217 currency format). For example if you wish to create an EUR to NGN transaction then input currency should be set to EUR.
         /// </summary>
         /// <value>The input currency describes what currency the transaction will be paid in (3-character alpha ISO 4217 currency format). For example if you wish to create an EUR to NGN transaction then input currency should be set to EUR.</value>
-        [DataMember(Name="input_currency", EmitDefaultValue=false)]
+        [DataMember(Name="input_currency", EmitDefaultValue=)]
         public string InputCurrency { get; set; }
 
         /// <summary>
         /// Allows setting alternative collections, where funding the transaction is done through alternative means and not via account balance.  For more information please see [Collections from senders](https://github.com/bitpesa/api-documentation/blob/master/additional-features.md#collections-from-senders) in the API documentation
         /// </summary>
         /// <value>Allows setting alternative collections, where funding the transaction is done through alternative means and not via account balance.  For more information please see [Collections from senders](https://github.com/bitpesa/api-documentation/blob/master/additional-features.md#collections-from-senders) in the API documentation</value>
-        [DataMember(Name="payin_methods", EmitDefaultValue=false)]
+        [DataMember(Name="payin_methods", EmitDefaultValue=)]
         public List<PayinMethod> PayinMethods { get; set; }
 
         /// <summary>
         /// Additional metadata to store on the transaction. If you widh to store your local transaction ID, you should add it here inside a &#x60;sendRef&#x60; field, and we will return this value back to you in the daily transaction reports.
         /// </summary>
         /// <value>Additional metadata to store on the transaction. If you widh to store your local transaction ID, you should add it here inside a &#x60;sendRef&#x60; field, and we will return this value back to you in the daily transaction reports.</value>
-        [DataMember(Name="metadata", EmitDefaultValue=false)]
+        [DataMember(Name="metadata", EmitDefaultValue=)]
         public Object Metadata { get; set; }
 
         /// <summary>
         /// Gets or Sets Sender
         /// </summary>
-        [DataMember(Name="sender", EmitDefaultValue=false)]
+        [DataMember(Name="sender", EmitDefaultValue=)]
         public Sender Sender { get; set; }
 
         /// <summary>
         /// The details of where the payment should go. although transactions can support paying out multiple recipients, usually one is provided. 
         /// </summary>
         /// <value>The details of where the payment should go. although transactions can support paying out multiple recipients, usually one is provided. </value>
-        [DataMember(Name="recipients", EmitDefaultValue=false)]
+        [DataMember(Name="recipients", EmitDefaultValue=)]
         public List<Recipient> Recipients { get; set; }
 
         /// <summary>
         /// Gets or Sets Traits
         /// </summary>
-        [DataMember(Name="traits", EmitDefaultValue=false)]
+        [DataMember(Name="traits", EmitDefaultValue=)]
         public TransactionTraits Traits { get; set; }
 
         /// <summary>
         /// Gets or Sets State
         /// </summary>
-        [DataMember(Name="state", EmitDefaultValue=false)]
+        [DataMember(Name="state", EmitDefaultValue=)]
         public TransactionState State { get; set; }
 
         /// <summary>
         /// The amount that was requested in the input currency
         /// </summary>
         /// <value>The amount that was requested in the input currency</value>
-        [DataMember(Name="input_amount", EmitDefaultValue=false)]
+        [DataMember(Name="input_amount", EmitDefaultValue=)]
         public decimal? InputAmount { get; private set; }
 
         /// <summary>
         /// The reference number that has to be provided in case the transaction is not funded through account balance
         /// </summary>
         /// <value>The reference number that has to be provided in case the transaction is not funded through account balance</value>
-        [DataMember(Name="payin_reference", EmitDefaultValue=false)]
+        [DataMember(Name="payin_reference", EmitDefaultValue=)]
         public string PayinReference { get; private set; }
 
         /// <summary>
         /// The amount that was already paid in to the transaction
         /// </summary>
         /// <value>The amount that was already paid in to the transaction</value>
-        [DataMember(Name="paid_amount", EmitDefaultValue=false)]
+        [DataMember(Name="paid_amount", EmitDefaultValue=)]
         public decimal? PaidAmount { get; private set; }
 
         /// <summary>
         /// The amount needed to be paid in for the transaction to get funded
         /// </summary>
         /// <value>The amount needed to be paid in for the transaction to get funded</value>
-        [DataMember(Name="due_amount", EmitDefaultValue=false)]
+        [DataMember(Name="due_amount", EmitDefaultValue=)]
         public decimal? DueAmount { get; private set; }
 
         /// <summary>
         /// The time the transaction was created
         /// </summary>
         /// <value>The time the transaction was created</value>
-        [DataMember(Name="created_at", EmitDefaultValue=false)]
+        [DataMember(Name="created_at", EmitDefaultValue=)]
         public DateTime? CreatedAt { get; private set; }
 
         /// <summary>
         /// The latest time when the transaction has to be funded, otherwise it will be cancelled
         /// </summary>
         /// <value>The latest time when the transaction has to be funded, otherwise it will be cancelled</value>
-        [DataMember(Name="expires_at", EmitDefaultValue=false)]
+        [DataMember(Name="expires_at", EmitDefaultValue=)]
         public DateTime? ExpiresAt { get; private set; }
 
         /// <summary>
         /// Optional ID that is supplied by partner linking it to the partner&#39;s own Sender ID. Note: if present we will validate whether the sent ID is a duplicate in our system or not.
         /// </summary>
         /// <value>Optional ID that is supplied by partner linking it to the partner&#39;s own Sender ID. Note: if present we will validate whether the sent ID is a duplicate in our system or not.</value>
-        [DataMember(Name="external_id", EmitDefaultValue=false)]
+        [DataMember(Name="external_id", EmitDefaultValue=)]
         public string ExternalId { get; set; }
 
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name="id", EmitDefaultValue=)]
         public Guid? Id { get; private set; }
 
         /// <summary>
         /// The fields that have some problems and don&#39;t pass validation
         /// </summary>
         /// <value>The fields that have some problems and don&#39;t pass validation</value>
-        [DataMember(Name="errors", EmitDefaultValue=false)]
+        [DataMember(Name="errors", EmitDefaultValue=)]
         public Dictionary<string, List<ValidationErrorDescription>> Errors { get; private set; }
 
         /// <summary>

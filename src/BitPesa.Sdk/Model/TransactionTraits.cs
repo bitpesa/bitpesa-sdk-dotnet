@@ -45,14 +45,14 @@ namespace BitPesa.Sdk.Model
         /// Enables or disables the auto refund functionality. Please see [Auto cancellation and refund of transactions](https://github.com/bitpesa/api-documentation/blob/master/additional-features.md#auto-cancellation-and-refund-of-transactions) for more details
         /// </summary>
         /// <value>Enables or disables the auto refund functionality. Please see [Auto cancellation and refund of transactions](https://github.com/bitpesa/api-documentation/blob/master/additional-features.md#auto-cancellation-and-refund-of-transactions) for more details</value>
-        [DataMember(Name="auto_refund", EmitDefaultValue=false)]
+        [DataMember(Name="auto_refund", EmitDefaultValue=)]
         public bool? AutoRefund { get; set; }
 
         /// <summary>
         /// Enabled or disables the name validation functionality. Please see [Name validation in transactions](https://github.com/bitpesa/api-documentation/blob/master/additional-features.md#name-validation-in-transactions) for more details
         /// </summary>
         /// <value>Enabled or disables the name validation functionality. Please see [Name validation in transactions](https://github.com/bitpesa/api-documentation/blob/master/additional-features.md#name-validation-in-transactions) for more details</value>
-        [DataMember(Name="account_validation", EmitDefaultValue=false)]
+        [DataMember(Name="account_validation", EmitDefaultValue=)]
         public bool? AccountValidation { get; set; }
 
         /// <summary>

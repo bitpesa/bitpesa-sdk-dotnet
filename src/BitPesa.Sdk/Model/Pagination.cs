@@ -42,35 +42,35 @@ namespace BitPesa.Sdk.Model
         /// The number of the current page
         /// </summary>
         /// <value>The number of the current page</value>
-        [DataMember(Name="current_page", EmitDefaultValue=false)]
+        [DataMember(Name="current_page", EmitDefaultValue=)]
         public int? CurrentPage { get; private set; }
 
         /// <summary>
         /// The number of the next page. If no next page exists, this will be &#x60;null&#x60;
         /// </summary>
         /// <value>The number of the next page. If no next page exists, this will be &#x60;null&#x60;</value>
-        [DataMember(Name="next_page", EmitDefaultValue=false)]
+        [DataMember(Name="next_page", EmitDefaultValue=)]
         public int? NextPage { get; private set; }
 
         /// <summary>
         /// The number of the previous page. If no previous page exists, this will be &#x60;null&#x60;
         /// </summary>
         /// <value>The number of the previous page. If no previous page exists, this will be &#x60;null&#x60;</value>
-        [DataMember(Name="prev_page", EmitDefaultValue=false)]
+        [DataMember(Name="prev_page", EmitDefaultValue=)]
         public int? PrevPage { get; private set; }
 
         /// <summary>
         /// The number of pages in the result set
         /// </summary>
         /// <value>The number of pages in the result set</value>
-        [DataMember(Name="total_pages", EmitDefaultValue=false)]
+        [DataMember(Name="total_pages", EmitDefaultValue=)]
         public int? TotalPages { get; private set; }
 
         /// <summary>
         /// The total number of results in the set
         /// </summary>
         /// <value>The total number of results in the set</value>
-        [DataMember(Name="total_count", EmitDefaultValue=false)]
+        [DataMember(Name="total_count", EmitDefaultValue=)]
         public int? TotalCount { get; private set; }
 
         /// <summary>

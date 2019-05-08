@@ -51,19 +51,19 @@ namespace BitPesa.Sdk.Model
         /// <summary>
         /// Gets or Sets FirstName
         /// </summary>
-        [DataMember(Name="first_name", EmitDefaultValue=false)]
+        [DataMember(Name="first_name", EmitDefaultValue=)]
         public string FirstName { get; set; }
 
         /// <summary>
         /// Gets or Sets LastName
         /// </summary>
-        [DataMember(Name="last_name", EmitDefaultValue=false)]
+        [DataMember(Name="last_name", EmitDefaultValue=)]
         public string LastName { get; set; }
 
         /// <summary>
         /// Gets or Sets PhoneNumber
         /// </summary>
-        [DataMember(Name="phone_number", EmitDefaultValue=false)]
+        [DataMember(Name="phone_number", EmitDefaultValue=)]
         public string PhoneNumber { get; set; }
 
         /// <summary>

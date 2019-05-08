@@ -1,4 +1,6 @@
+
 # BitPesa.Sdk.Model.ApiLog
+
 ## Properties
 
 Name | Type | Description | Notes
@@ -13,5 +15,7 @@ Name | Type | Description | Notes
 **ResponseHeaders** | **Dictionary&lt;string, string&gt;** | Headers returned with response | [optional] 
 **CreatedAt** | **string** | Date and time of response | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to README]](../README.md)
 

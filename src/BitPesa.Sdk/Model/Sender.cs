@@ -55,7 +55,7 @@ namespace BitPesa.Sdk.Model
         /// Type of sender to create - either person or business (defaults to person) 
         /// </summary>
         /// <value>Type of sender to create - either person or business (defaults to person) </value>
-        [DataMember(Name="type", EmitDefaultValue=false)]
+        [DataMember(Name="type", EmitDefaultValue=)]
         public TypeEnum? Type { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="Sender" /> class.
@@ -124,126 +124,126 @@ namespace BitPesa.Sdk.Model
         /// Country of sender in 2-character alpha ISO 3166-2 country format
         /// </summary>
         /// <value>Country of sender in 2-character alpha ISO 3166-2 country format</value>
-        [DataMember(Name="country", EmitDefaultValue=false)]
+        [DataMember(Name="country", EmitDefaultValue=)]
         public string Country { get; set; }
 
         /// <summary>
         /// Phone country of sender in 2-character alpha ISO 3166-2 country format
         /// </summary>
         /// <value>Phone country of sender in 2-character alpha ISO 3166-2 country format</value>
-        [DataMember(Name="phone_country", EmitDefaultValue=false)]
+        [DataMember(Name="phone_country", EmitDefaultValue=)]
         public string PhoneCountry { get; set; }
 
         /// <summary>
         /// Phone number of sender (without country callcode)
         /// </summary>
         /// <value>Phone number of sender (without country callcode)</value>
-        [DataMember(Name="phone_number", EmitDefaultValue=false)]
+        [DataMember(Name="phone_number", EmitDefaultValue=)]
         public string PhoneNumber { get; set; }
 
         /// <summary>
         /// Email of sender
         /// </summary>
         /// <value>Email of sender</value>
-        [DataMember(Name="email", EmitDefaultValue=false)]
+        [DataMember(Name="email", EmitDefaultValue=)]
         public string Email { get; set; }
 
         /// <summary>
         /// First name of sender (used only with a Personal sender)
         /// </summary>
         /// <value>First name of sender (used only with a Personal sender)</value>
-        [DataMember(Name="first_name", EmitDefaultValue=false)]
+        [DataMember(Name="first_name", EmitDefaultValue=)]
         public string FirstName { get; set; }
 
         /// <summary>
         /// Middle name of sender (used only with a Personal sender)
         /// </summary>
         /// <value>Middle name of sender (used only with a Personal sender)</value>
-        [DataMember(Name="middle_name", EmitDefaultValue=false)]
+        [DataMember(Name="middle_name", EmitDefaultValue=)]
         public string MiddleName { get; set; }
 
         /// <summary>
         /// Last name of sender (used only with a Personal sender)
         /// </summary>
         /// <value>Last name of sender (used only with a Personal sender)</value>
-        [DataMember(Name="last_name", EmitDefaultValue=false)]
+        [DataMember(Name="last_name", EmitDefaultValue=)]
         public string LastName { get; set; }
 
         /// <summary>
         /// Occupation of sender (used only with a Personal sender)
         /// </summary>
         /// <value>Occupation of sender (used only with a Personal sender)</value>
-        [DataMember(Name="occupation", EmitDefaultValue=false)]
+        [DataMember(Name="occupation", EmitDefaultValue=)]
         public string Occupation { get; set; }
 
         /// <summary>
         /// The nationality of the sender (used only with a Personal sender)
         /// </summary>
         /// <value>The nationality of the sender (used only with a Personal sender)</value>
-        [DataMember(Name="nationality", EmitDefaultValue=false)]
+        [DataMember(Name="nationality", EmitDefaultValue=)]
         public string Nationality { get; set; }
 
         /// <summary>
         /// The onboarding status of the sender
         /// </summary>
         /// <value>The onboarding status of the sender</value>
-        [DataMember(Name="onboarding_status", EmitDefaultValue=false)]
+        [DataMember(Name="onboarding_status", EmitDefaultValue=)]
         public string OnboardingStatus { get; set; }
 
         /// <summary>
         /// The address of the sender
         /// </summary>
         /// <value>The address of the sender</value>
-        [DataMember(Name="address", EmitDefaultValue=false)]
+        [DataMember(Name="address", EmitDefaultValue=)]
         public string Address { get; set; }
 
         /// <summary>
         /// Description of the sender
         /// </summary>
         /// <value>Description of the sender</value>
-        [DataMember(Name="description", EmitDefaultValue=false)]
+        [DataMember(Name="description", EmitDefaultValue=)]
         public string Description { get; set; }
 
         /// <summary>
         /// Name of sender (used only with a Business sender)
         /// </summary>
         /// <value>Name of sender (used only with a Business sender)</value>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        [DataMember(Name="name", EmitDefaultValue=)]
         public string Name { get; set; }
 
         /// <summary>
         /// Sender&#39;s city
         /// </summary>
         /// <value>Sender&#39;s city</value>
-        [DataMember(Name="city", EmitDefaultValue=false)]
+        [DataMember(Name="city", EmitDefaultValue=)]
         public string City { get; set; }
 
         /// <summary>
         /// Sender&#39;s street
         /// </summary>
         /// <value>Sender&#39;s street</value>
-        [DataMember(Name="street", EmitDefaultValue=false)]
+        [DataMember(Name="street", EmitDefaultValue=)]
         public string Street { get; set; }
 
         /// <summary>
         /// Description of address
         /// </summary>
         /// <value>Description of address</value>
-        [DataMember(Name="address_description", EmitDefaultValue=false)]
+        [DataMember(Name="address_description", EmitDefaultValue=)]
         public string AddressDescription { get; set; }
 
         /// <summary>
         /// Zip code of sender
         /// </summary>
         /// <value>Zip code of sender</value>
-        [DataMember(Name="postal_code", EmitDefaultValue=false)]
+        [DataMember(Name="postal_code", EmitDefaultValue=)]
         public string PostalCode { get; set; }
 
         /// <summary>
         /// Date of birth of sender
         /// </summary>
         /// <value>Date of birth of sender</value>
-        [DataMember(Name="birth_date", EmitDefaultValue=false)]
+        [DataMember(Name="birth_date", EmitDefaultValue=)]
         [JsonConverter(typeof(OpenAPIDateConverter))]
         public DateTime? BirthDate { get; set; }
 
@@ -251,47 +251,47 @@ namespace BitPesa.Sdk.Model
         /// IP of sender
         /// </summary>
         /// <value>IP of sender</value>
-        [DataMember(Name="ip", EmitDefaultValue=false)]
+        [DataMember(Name="ip", EmitDefaultValue=)]
         public string Ip { get; set; }
 
         /// <summary>
         /// Needed for KYC checks. Required to approve the sender unless KYC is waived for your account. Please send us an empty list of documents: &#x60;\&quot;documents\&quot;: [ ]&#x60; in the request if KYC has been waived.  If the documents already exist, please send the Document ID eg. &#x60;&#x60;&#x60;JSON \&quot;documents\&quot;: [   {     \&quot;id\&quot;: \&quot;b6648ba3-1c7b-4f59-8580-684899c84a07\&quot;   } ] &#x60;&#x60;&#x60;
         /// </summary>
         /// <value>Needed for KYC checks. Required to approve the sender unless KYC is waived for your account. Please send us an empty list of documents: &#x60;\&quot;documents\&quot;: [ ]&#x60; in the request if KYC has been waived.  If the documents already exist, please send the Document ID eg. &#x60;&#x60;&#x60;JSON \&quot;documents\&quot;: [   {     \&quot;id\&quot;: \&quot;b6648ba3-1c7b-4f59-8580-684899c84a07\&quot;   } ] &#x60;&#x60;&#x60;</value>
-        [DataMember(Name="documents", EmitDefaultValue=false)]
+        [DataMember(Name="documents", EmitDefaultValue=)]
         public List<Document> Documents { get; set; }
 
         /// <summary>
         /// Metadata of sender. You can store any detail specific to your integration here (for example the local ID of the sender on your end). When requesting sender details you will receive the sent metadata back. Also when sending sender related webhooks you will receive the details stored here as well.
         /// </summary>
         /// <value>Metadata of sender. You can store any detail specific to your integration here (for example the local ID of the sender on your end). When requesting sender details you will receive the sent metadata back. Also when sending sender related webhooks you will receive the details stored here as well.</value>
-        [DataMember(Name="metadata", EmitDefaultValue=false)]
+        [DataMember(Name="metadata", EmitDefaultValue=)]
         public Object Metadata { get; set; }
 
         /// <summary>
         /// Gets or Sets State
         /// </summary>
-        [DataMember(Name="state", EmitDefaultValue=false)]
+        [DataMember(Name="state", EmitDefaultValue=)]
         public SenderState State { get; set; }
 
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name="id", EmitDefaultValue=)]
         public Guid? Id { get; set; }
 
         /// <summary>
         /// Optional ID that is supplied by partner linking it to the partner&#39;s own Sender ID. Note: if present we will validate whether the sent ID is a duplicate in our system or not.
         /// </summary>
         /// <value>Optional ID that is supplied by partner linking it to the partner&#39;s own Sender ID. Note: if present we will validate whether the sent ID is a duplicate in our system or not.</value>
-        [DataMember(Name="external_id", EmitDefaultValue=false)]
+        [DataMember(Name="external_id", EmitDefaultValue=)]
         public string ExternalId { get; set; }
 
         /// <summary>
         /// The fields that have some problems and don&#39;t pass validation
         /// </summary>
         /// <value>The fields that have some problems and don&#39;t pass validation</value>
-        [DataMember(Name="errors", EmitDefaultValue=false)]
+        [DataMember(Name="errors", EmitDefaultValue=)]
         public Dictionary<string, List<ValidationErrorDescription>> Errors { get; private set; }
 
         /// <summary>

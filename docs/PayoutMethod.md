@@ -1,4 +1,6 @@
+
 # BitPesa.Sdk.Model.PayoutMethod
+
 ## Properties
 
 Name | Type | Description | Notes
@@ -10,5 +12,7 @@ Name | Type | Description | Notes
 **Errors** | **Dictionary&lt;string, List&lt;ValidationErrorDescription&gt;&gt;** | The fields that have some problems and don&#39;t pass validation | [optional] 
 **Fields** | [**Dictionary&lt;string, FieldDescription&gt;**](FieldDescription.md) | The fields needed for payments with this payment method with details on validation requirements | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to README]](../README.md)
 

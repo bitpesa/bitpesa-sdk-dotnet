@@ -42,14 +42,14 @@ namespace BitPesa.Sdk.Model
         /// Describes the valid options for this selectbox
         /// </summary>
         /// <value>Describes the valid options for this selectbox</value>
-        [DataMember(Name="in", EmitDefaultValue=false)]
+        [DataMember(Name="in", EmitDefaultValue=)]
         public Object In { get; private set; }
 
         /// <summary>
         /// Describes whether the field is optional or not
         /// </summary>
         /// <value>Describes whether the field is optional or not</value>
-        [DataMember(Name="allow_blank", EmitDefaultValue=false)]
+        [DataMember(Name="allow_blank", EmitDefaultValue=)]
         public bool? AllowBlank { get; private set; }
 
         /// <summary>

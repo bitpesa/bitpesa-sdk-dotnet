@@ -42,7 +42,7 @@ namespace BitPesa.Sdk.Model
         /// <summary>
         /// Gets or Sets Document
         /// </summary>
-        [DataMember(Name="document", EmitDefaultValue=false)]
+        [DataMember(Name="document", EmitDefaultValue=)]
         public Document Document { get; set; }
 
         /// <summary>

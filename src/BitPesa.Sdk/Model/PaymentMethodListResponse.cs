@@ -41,7 +41,7 @@ namespace BitPesa.Sdk.Model
         /// <summary>
         /// Gets or Sets Object
         /// </summary>
-        [DataMember(Name="object", EmitDefaultValue=false)]
+        [DataMember(Name="object", EmitDefaultValue=)]
         public List<PaymentMethodOpposite> Object { get; private set; }
 
         /// <summary>

@@ -42,49 +42,49 @@ namespace BitPesa.Sdk.Model
         /// Details currency and type of payment.
         /// </summary>
         /// <value>Details currency and type of payment.</value>
-        [DataMember(Name="type", EmitDefaultValue=false)]
+        [DataMember(Name="type", EmitDefaultValue=)]
         public string Type { get; private set; }
 
         /// <summary>
         /// Identifies the payment provider.
         /// </summary>
         /// <value>Identifies the payment provider.</value>
-        [DataMember(Name="provider", EmitDefaultValue=false)]
+        [DataMember(Name="provider", EmitDefaultValue=)]
         public string Provider { get; private set; }
 
         /// <summary>
         /// Are over the counter transactions permitted?
         /// </summary>
         /// <value>Are over the counter transactions permitted?</value>
-        [DataMember(Name="otc_permitted", EmitDefaultValue=false)]
+        [DataMember(Name="otc_permitted", EmitDefaultValue=)]
         public bool? OtcPermitted { get; private set; }
 
         /// <summary>
         /// Fields required to make the payment depending on type.
         /// </summary>
         /// <value>Fields required to make the payment depending on type.</value>
-        [DataMember(Name="details", EmitDefaultValue=false)]
+        [DataMember(Name="details", EmitDefaultValue=)]
         public List<string> Details { get; private set; }
 
         /// <summary>
         /// Boolean revealing whether this is the default payout method. Only present on payout methods
         /// </summary>
         /// <value>Boolean revealing whether this is the default payout method. Only present on payout methods</value>
-        [DataMember(Name="default", EmitDefaultValue=false)]
+        [DataMember(Name="default", EmitDefaultValue=)]
         public bool? Default { get; private set; }
 
         /// <summary>
         /// The fields needed for payments with this payment method with details on validation requirements
         /// </summary>
         /// <value>The fields needed for payments with this payment method with details on validation requirements</value>
-        [DataMember(Name="fields", EmitDefaultValue=false)]
+        [DataMember(Name="fields", EmitDefaultValue=)]
         public Dictionary<string, FieldDescription> Fields { get; private set; }
 
         /// <summary>
         /// List of all providers that can be used in conjunction with the main provider
         /// </summary>
         /// <value>List of all providers that can be used in conjunction with the main provider</value>
-        [DataMember(Name="opposites", EmitDefaultValue=false)]
+        [DataMember(Name="opposites", EmitDefaultValue=)]
         public List<PaymentMethod> Opposites { get; private set; }
 
         /// <summary>

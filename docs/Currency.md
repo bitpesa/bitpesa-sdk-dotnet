@@ -1,4 +1,6 @@
+
 # BitPesa.Sdk.Model.Currency
+
 ## Properties
 
 Name | Type | Description | Notes
@@ -14,5 +16,7 @@ Name | Type | Description | Notes
 **Margin** | **string** | The margin set for transactions in this currency | [optional] 
 **UsdEquivalent** | **string** | The equivalent of the currency to 1 USD | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to README]](../README.md)
 

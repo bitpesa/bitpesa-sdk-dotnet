@@ -1,4 +1,6 @@
+
 # BitPesa.Sdk.Model.PaymentMethodOpposite
+
 ## Properties
 
 Name | Type | Description | Notes
@@ -11,5 +13,7 @@ Name | Type | Description | Notes
 **Fields** | [**Dictionary&lt;string, FieldDescription&gt;**](FieldDescription.md) | The fields needed for payments with this payment method with details on validation requirements | [optional] 
 **Opposites** | [**List&lt;PaymentMethod&gt;**](PaymentMethod.md) | List of all providers that can be used in conjunction with the main provider | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to README]](../README.md)
 

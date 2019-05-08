@@ -41,21 +41,21 @@ namespace BitPesa.Sdk.Model
         /// <summary>
         /// Gets or Sets Headers
         /// </summary>
-        [DataMember(Name="headers", EmitDefaultValue=false)]
+        [DataMember(Name="headers", EmitDefaultValue=)]
         public Dictionary<string, string> Headers { get; private set; }
 
         /// <summary>
         /// The body that was sent in the webhook
         /// </summary>
         /// <value>The body that was sent in the webhook</value>
-        [DataMember(Name="body", EmitDefaultValue=false)]
+        [DataMember(Name="body", EmitDefaultValue=)]
         public string Body { get; private set; }
 
         /// <summary>
         /// Webhook URL
         /// </summary>
         /// <value>Webhook URL</value>
-        [DataMember(Name="url", EmitDefaultValue=false)]
+        [DataMember(Name="url", EmitDefaultValue=)]
         public string Url { get; private set; }
 
         /// <summary>

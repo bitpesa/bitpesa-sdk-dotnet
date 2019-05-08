@@ -47,34 +47,34 @@ namespace BitPesa.Sdk.Model
         /// Describes how the payment should be requested from the user.  Possible values: - &#x60;NGN::Bank&#x60;: NGN card collection requests - &#x60;GHS::Mobile&#x60;: GHS mobile collections - &#x60;TZS::Mobile&#x60;: TZS mobile collections - &#x60;UGX::Mobile&#x60;: UGX mobile collections 
         /// </summary>
         /// <value>Describes how the payment should be requested from the user.  Possible values: - &#x60;NGN::Bank&#x60;: NGN card collection requests - &#x60;GHS::Mobile&#x60;: GHS mobile collections - &#x60;TZS::Mobile&#x60;: TZS mobile collections - &#x60;UGX::Mobile&#x60;: UGX mobile collections </value>
-        [DataMember(Name="type", EmitDefaultValue=false)]
+        [DataMember(Name="type", EmitDefaultValue=)]
         public string Type { get; set; }
 
         /// <summary>
         /// Gets or Sets InDetails
         /// </summary>
-        [DataMember(Name="in_details", EmitDefaultValue=false)]
+        [DataMember(Name="in_details", EmitDefaultValue=)]
         public PayinMethodDetails InDetails { get; set; }
 
         /// <summary>
         /// This will contain the description on where to pay the funds. Please see the [Collections from Senders](https://github.com/bitpesa/api-documentation/blob/master/additional-features.md#collections-from-senders) in the API documentation on what to expect here.
         /// </summary>
         /// <value>This will contain the description on where to pay the funds. Please see the [Collections from Senders](https://github.com/bitpesa/api-documentation/blob/master/additional-features.md#collections-from-senders) in the API documentation on what to expect here.</value>
-        [DataMember(Name="out_details", EmitDefaultValue=false)]
+        [DataMember(Name="out_details", EmitDefaultValue=)]
         public Object OutDetails { get; private set; }
 
         /// <summary>
         /// This will contain the instructions on how to pay the funds. Please see the [Collections from Senders](https://github.com/bitpesa/api-documentation/blob/master/additional-features.md#collections-from-senders) in the API documentation on what to expect here.
         /// </summary>
         /// <value>This will contain the instructions on how to pay the funds. Please see the [Collections from Senders](https://github.com/bitpesa/api-documentation/blob/master/additional-features.md#collections-from-senders) in the API documentation on what to expect here.</value>
-        [DataMember(Name="instructions", EmitDefaultValue=false)]
+        [DataMember(Name="instructions", EmitDefaultValue=)]
         public Object Instructions { get; private set; }
 
         /// <summary>
         /// Describes which provider to use for collection. Please see the [Collections from Senders](https://github.com/bitpesa/api-documentation/blob/master/additional-features.md#collections-from-senders) in the API documentation on the valid values
         /// </summary>
         /// <value>Describes which provider to use for collection. Please see the [Collections from Senders](https://github.com/bitpesa/api-documentation/blob/master/additional-features.md#collections-from-senders) in the API documentation on the valid values</value>
-        [DataMember(Name="provider", EmitDefaultValue=false)]
+        [DataMember(Name="provider", EmitDefaultValue=)]
         public string Provider { get; set; }
 
         /// <summary>

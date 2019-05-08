@@ -42,7 +42,7 @@ namespace BitPesa.Sdk.Model
         /// <summary>
         /// Gets or Sets Sender
         /// </summary>
-        [DataMember(Name="sender", EmitDefaultValue=false)]
+        [DataMember(Name="sender", EmitDefaultValue=)]
         public Sender Sender { get; set; }
 
         /// <summary>

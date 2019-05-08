@@ -42,63 +42,63 @@ namespace BitPesa.Sdk.Model
         /// ID of the API log
         /// </summary>
         /// <value>ID of the API log</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name="id", EmitDefaultValue=)]
         public Guid? Id { get; private set; }
 
         /// <summary>
         /// Initial HTTP request method
         /// </summary>
         /// <value>Initial HTTP request method</value>
-        [DataMember(Name="request_method", EmitDefaultValue=false)]
+        [DataMember(Name="request_method", EmitDefaultValue=)]
         public string RequestMethod { get; private set; }
 
         /// <summary>
         /// URL to which initial request was sent
         /// </summary>
         /// <value>URL to which initial request was sent</value>
-        [DataMember(Name="request_url", EmitDefaultValue=false)]
+        [DataMember(Name="request_url", EmitDefaultValue=)]
         public string RequestUrl { get; private set; }
 
         /// <summary>
         /// Body sent with initial request returned as a string
         /// </summary>
         /// <value>Body sent with initial request returned as a string</value>
-        [DataMember(Name="request_body", EmitDefaultValue=false)]
+        [DataMember(Name="request_body", EmitDefaultValue=)]
         public string RequestBody { get; private set; }
 
         /// <summary>
         /// Authorization and access information sent with initial request
         /// </summary>
         /// <value>Authorization and access information sent with initial request</value>
-        [DataMember(Name="request_headers", EmitDefaultValue=false)]
+        [DataMember(Name="request_headers", EmitDefaultValue=)]
         public Dictionary<string, string> RequestHeaders { get; private set; }
 
         /// <summary>
         /// Status of response
         /// </summary>
         /// <value>Status of response</value>
-        [DataMember(Name="response_status", EmitDefaultValue=false)]
+        [DataMember(Name="response_status", EmitDefaultValue=)]
         public string ResponseStatus { get; private set; }
 
         /// <summary>
         /// Full response body returned as a string
         /// </summary>
         /// <value>Full response body returned as a string</value>
-        [DataMember(Name="response_body", EmitDefaultValue=false)]
+        [DataMember(Name="response_body", EmitDefaultValue=)]
         public string ResponseBody { get; private set; }
 
         /// <summary>
         /// Headers returned with response
         /// </summary>
         /// <value>Headers returned with response</value>
-        [DataMember(Name="response_headers", EmitDefaultValue=false)]
+        [DataMember(Name="response_headers", EmitDefaultValue=)]
         public Dictionary<string, string> ResponseHeaders { get; private set; }
 
         /// <summary>
         /// Date and time of response
         /// </summary>
         /// <value>Date and time of response</value>
-        [DataMember(Name="created_at", EmitDefaultValue=false)]
+        [DataMember(Name="created_at", EmitDefaultValue=)]
         public string CreatedAt { get; private set; }
 
         /// <summary>

@@ -1,4 +1,6 @@
+
 # BitPesa.Sdk.Model.AccountValidationRequest
+
 ## Properties
 
 Name | Type | Description | Notes
@@ -9,5 +11,7 @@ Name | Type | Description | Notes
 **Currency** | **string** | The currency the bank account is in | 
 **Method** | **string** | The method of the payment. Currently only bank is supported | 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to README]](../README.md)
 

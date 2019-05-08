@@ -81,7 +81,7 @@ namespace BitPesa.Sdk.Api
         /// <param name="createdAtFrom">Start date to filter recipients by created_at range Allows filtering results by the specified &#x60;created_at&#x60; timeframe.  Example: &#x60;/v1/recipients?created_at_from&#x3D;2018-06-06&amp;created_at_to&#x3D;2018-06-08&#x60; (optional)</param>
         /// <param name="createdAtTo">End date to filter recipients by created_at range Allows filtering results by the specified &#x60;created_at&#x60; timeframe.  Example: &#x60;/v1/recipients?created_at_from&#x3D;2018-06-06&amp;created_at_to&#x3D;2018-06-08&#x60; (optional)</param>
         /// <returns>PayoutMethodListResponse</returns>
-        PayoutMethodListResponse GetPayoutMethods (List<string> state = null, List<string> type = null, string senderId = null, int? page = null, int? per = null, string createdAtFrom = null, string createdAtTo = null);
+        PayoutMethodListResponse GetPayoutMethods (List<string>? state = null, List<string>? type = null, string? senderId = null, int?? page = null, int?? per = null, string? createdAtFrom = null, string? createdAtTo = null);
 
         /// <summary>
         /// Listing payout methods
@@ -98,7 +98,7 @@ namespace BitPesa.Sdk.Api
         /// <param name="createdAtFrom">Start date to filter recipients by created_at range Allows filtering results by the specified &#x60;created_at&#x60; timeframe.  Example: &#x60;/v1/recipients?created_at_from&#x3D;2018-06-06&amp;created_at_to&#x3D;2018-06-08&#x60; (optional)</param>
         /// <param name="createdAtTo">End date to filter recipients by created_at range Allows filtering results by the specified &#x60;created_at&#x60; timeframe.  Example: &#x60;/v1/recipients?created_at_from&#x3D;2018-06-06&amp;created_at_to&#x3D;2018-06-08&#x60; (optional)</param>
         /// <returns>ApiResponse of PayoutMethodListResponse</returns>
-        ApiResponse<PayoutMethodListResponse> GetPayoutMethodsWithHttpInfo (List<string> state = null, List<string> type = null, string senderId = null, int? page = null, int? per = null, string createdAtFrom = null, string createdAtTo = null);
+        ApiResponse<PayoutMethodListResponse> GetPayoutMethodsWithHttpInfo (List<string>? state = null, List<string>? type = null, string? senderId = null, int?? page = null, int?? per = null, string? createdAtFrom = null, string? createdAtTo = null);
         /// <summary>
         /// Updating a payout method
         /// </summary>
@@ -202,7 +202,7 @@ namespace BitPesa.Sdk.Api
         /// <param name="createdAtFrom">Start date to filter recipients by created_at range Allows filtering results by the specified &#x60;created_at&#x60; timeframe.  Example: &#x60;/v1/recipients?created_at_from&#x3D;2018-06-06&amp;created_at_to&#x3D;2018-06-08&#x60; (optional)</param>
         /// <param name="createdAtTo">End date to filter recipients by created_at range Allows filtering results by the specified &#x60;created_at&#x60; timeframe.  Example: &#x60;/v1/recipients?created_at_from&#x3D;2018-06-06&amp;created_at_to&#x3D;2018-06-08&#x60; (optional)</param>
         /// <returns>Task of PayoutMethodListResponse</returns>
-        System.Threading.Tasks.Task<PayoutMethodListResponse> GetPayoutMethodsAsync (List<string> state = null, List<string> type = null, string senderId = null, int? page = null, int? per = null, string createdAtFrom = null, string createdAtTo = null);
+        System.Threading.Tasks.Task<PayoutMethodListResponse> GetPayoutMethodsAsync (List<string>? state = null, List<string>? type = null, string? senderId = null, int?? page = null, int?? per = null, string? createdAtFrom = null, string? createdAtTo = null);
 
         /// <summary>
         /// Listing payout methods
@@ -219,7 +219,7 @@ namespace BitPesa.Sdk.Api
         /// <param name="createdAtFrom">Start date to filter recipients by created_at range Allows filtering results by the specified &#x60;created_at&#x60; timeframe.  Example: &#x60;/v1/recipients?created_at_from&#x3D;2018-06-06&amp;created_at_to&#x3D;2018-06-08&#x60; (optional)</param>
         /// <param name="createdAtTo">End date to filter recipients by created_at range Allows filtering results by the specified &#x60;created_at&#x60; timeframe.  Example: &#x60;/v1/recipients?created_at_from&#x3D;2018-06-06&amp;created_at_to&#x3D;2018-06-08&#x60; (optional)</param>
         /// <returns>Task of ApiResponse (PayoutMethodListResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<PayoutMethodListResponse>> GetPayoutMethodsAsyncWithHttpInfo (List<string> state = null, List<string> type = null, string senderId = null, int? page = null, int? per = null, string createdAtFrom = null, string createdAtTo = null);
+        System.Threading.Tasks.Task<ApiResponse<PayoutMethodListResponse>> GetPayoutMethodsAsyncWithHttpInfo (List<string>? state = null, List<string>? type = null, string? senderId = null, int?? page = null, int?? per = null, string? createdAtFrom = null, string? createdAtTo = null);
         /// <summary>
         /// Updating a payout method
         /// </summary>
@@ -721,7 +721,7 @@ namespace BitPesa.Sdk.Api
         /// <param name="createdAtFrom">Start date to filter recipients by created_at range Allows filtering results by the specified &#x60;created_at&#x60; timeframe.  Example: &#x60;/v1/recipients?created_at_from&#x3D;2018-06-06&amp;created_at_to&#x3D;2018-06-08&#x60; (optional)</param>
         /// <param name="createdAtTo">End date to filter recipients by created_at range Allows filtering results by the specified &#x60;created_at&#x60; timeframe.  Example: &#x60;/v1/recipients?created_at_from&#x3D;2018-06-06&amp;created_at_to&#x3D;2018-06-08&#x60; (optional)</param>
         /// <returns>PayoutMethodListResponse</returns>
-        public PayoutMethodListResponse GetPayoutMethods (List<string> state = null, List<string> type = null, string senderId = null, int? page = null, int? per = null, string createdAtFrom = null, string createdAtTo = null)
+        public PayoutMethodListResponse GetPayoutMethods (List<string>? state = null, List<string>? type = null, string? senderId = null, int?? page = null, int?? per = null, string? createdAtFrom = null, string? createdAtTo = null)
         {
              ApiResponse<PayoutMethodListResponse> localVarResponse = GetPayoutMethodsWithHttpInfo(state, type, senderId, page, per, createdAtFrom, createdAtTo);
              return localVarResponse.Data;
@@ -739,7 +739,7 @@ namespace BitPesa.Sdk.Api
         /// <param name="createdAtFrom">Start date to filter recipients by created_at range Allows filtering results by the specified &#x60;created_at&#x60; timeframe.  Example: &#x60;/v1/recipients?created_at_from&#x3D;2018-06-06&amp;created_at_to&#x3D;2018-06-08&#x60; (optional)</param>
         /// <param name="createdAtTo">End date to filter recipients by created_at range Allows filtering results by the specified &#x60;created_at&#x60; timeframe.  Example: &#x60;/v1/recipients?created_at_from&#x3D;2018-06-06&amp;created_at_to&#x3D;2018-06-08&#x60; (optional)</param>
         /// <returns>ApiResponse of PayoutMethodListResponse</returns>
-        public ApiResponse< PayoutMethodListResponse > GetPayoutMethodsWithHttpInfo (List<string> state = null, List<string> type = null, string senderId = null, int? page = null, int? per = null, string createdAtFrom = null, string createdAtTo = null)
+        public ApiResponse< PayoutMethodListResponse > GetPayoutMethodsWithHttpInfo (List<string>? state = null, List<string>? type = null, string? senderId = null, int?? page = null, int?? per = null, string? createdAtFrom = null, string? createdAtTo = null)
         {
 
             var localVarPath = "/payout_methods";
@@ -819,7 +819,7 @@ namespace BitPesa.Sdk.Api
         /// <param name="createdAtFrom">Start date to filter recipients by created_at range Allows filtering results by the specified &#x60;created_at&#x60; timeframe.  Example: &#x60;/v1/recipients?created_at_from&#x3D;2018-06-06&amp;created_at_to&#x3D;2018-06-08&#x60; (optional)</param>
         /// <param name="createdAtTo">End date to filter recipients by created_at range Allows filtering results by the specified &#x60;created_at&#x60; timeframe.  Example: &#x60;/v1/recipients?created_at_from&#x3D;2018-06-06&amp;created_at_to&#x3D;2018-06-08&#x60; (optional)</param>
         /// <returns>Task of PayoutMethodListResponse</returns>
-        public async System.Threading.Tasks.Task<PayoutMethodListResponse> GetPayoutMethodsAsync (List<string> state = null, List<string> type = null, string senderId = null, int? page = null, int? per = null, string createdAtFrom = null, string createdAtTo = null)
+        public async System.Threading.Tasks.Task<PayoutMethodListResponse> GetPayoutMethodsAsync (List<string>? state = null, List<string>? type = null, string? senderId = null, int?? page = null, int?? per = null, string? createdAtFrom = null, string? createdAtTo = null)
         {
              ApiResponse<PayoutMethodListResponse> localVarResponse = await GetPayoutMethodsAsyncWithHttpInfo(state, type, senderId, page, per, createdAtFrom, createdAtTo);
              return localVarResponse.Data;
@@ -838,7 +838,7 @@ namespace BitPesa.Sdk.Api
         /// <param name="createdAtFrom">Start date to filter recipients by created_at range Allows filtering results by the specified &#x60;created_at&#x60; timeframe.  Example: &#x60;/v1/recipients?created_at_from&#x3D;2018-06-06&amp;created_at_to&#x3D;2018-06-08&#x60; (optional)</param>
         /// <param name="createdAtTo">End date to filter recipients by created_at range Allows filtering results by the specified &#x60;created_at&#x60; timeframe.  Example: &#x60;/v1/recipients?created_at_from&#x3D;2018-06-06&amp;created_at_to&#x3D;2018-06-08&#x60; (optional)</param>
         /// <returns>Task of ApiResponse (PayoutMethodListResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<PayoutMethodListResponse>> GetPayoutMethodsAsyncWithHttpInfo (List<string> state = null, List<string> type = null, string senderId = null, int? page = null, int? per = null, string createdAtFrom = null, string createdAtTo = null)
+        public async System.Threading.Tasks.Task<ApiResponse<PayoutMethodListResponse>> GetPayoutMethodsAsyncWithHttpInfo (List<string>? state = null, List<string>? type = null, string? senderId = null, int?? page = null, int?? per = null, string? createdAtFrom = null, string? createdAtTo = null)
         {
 
             var localVarPath = "/payout_methods";

@@ -52,21 +52,21 @@ namespace BitPesa.Sdk.Model
         /// This is where the user should be redirected back when the payment has been finished
         /// </summary>
         /// <value>This is where the user should be redirected back when the payment has been finished</value>
-        [DataMember(Name="redirect_url", EmitDefaultValue=false)]
+        [DataMember(Name="redirect_url", EmitDefaultValue=)]
         public string RedirectUrl { get; set; }
 
         /// <summary>
         /// The phone number where the funds should be collected from
         /// </summary>
         /// <value>The phone number where the funds should be collected from</value>
-        [DataMember(Name="phone_number", EmitDefaultValue=false)]
+        [DataMember(Name="phone_number", EmitDefaultValue=)]
         public string PhoneNumber { get; set; }
 
         /// <summary>
         /// States whether to send out the instructions to the phone number on how to pay the funds or not. This shuold always be set to true, otherwise the sender might not receive a prompt for payment.
         /// </summary>
         /// <value>States whether to send out the instructions to the phone number on how to pay the funds or not. This shuold always be set to true, otherwise the sender might not receive a prompt for payment.</value>
-        [DataMember(Name="send_instructions", EmitDefaultValue=false)]
+        [DataMember(Name="send_instructions", EmitDefaultValue=)]
         public bool? SendInstructions { get; set; }
 
         /// <summary>

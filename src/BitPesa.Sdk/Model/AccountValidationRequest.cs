@@ -55,7 +55,7 @@ namespace BitPesa.Sdk.Model
         /// Country of account in 2-character alpha ISO 3166-2 country format (only NG is currently supported)
         /// </summary>
         /// <value>Country of account in 2-character alpha ISO 3166-2 country format (only NG is currently supported)</value>
-        [DataMember(Name="country", EmitDefaultValue=false)]
+        [DataMember(Name="country", EmitDefaultValue=)]
         public CountryEnum Country { get; set; }
         /// <summary>
         /// The currency the bank account is in
@@ -82,7 +82,7 @@ namespace BitPesa.Sdk.Model
         /// The currency the bank account is in
         /// </summary>
         /// <value>The currency the bank account is in</value>
-        [DataMember(Name="currency", EmitDefaultValue=false)]
+        [DataMember(Name="currency", EmitDefaultValue=)]
         public CurrencyEnum Currency { get; set; }
         /// <summary>
         /// The method of the payment. Currently only bank is supported
@@ -103,7 +103,7 @@ namespace BitPesa.Sdk.Model
         /// The method of the payment. Currently only bank is supported
         /// </summary>
         /// <value>The method of the payment. Currently only bank is supported</value>
-        [DataMember(Name="method", EmitDefaultValue=false)]
+        [DataMember(Name="method", EmitDefaultValue=)]
         public MethodEnum Method { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="AccountValidationRequest" /> class.
@@ -131,14 +131,14 @@ namespace BitPesa.Sdk.Model
         /// Account Number to query
         /// </summary>
         /// <value>Account Number to query</value>
-        [DataMember(Name="bank_account", EmitDefaultValue=false)]
+        [DataMember(Name="bank_account", EmitDefaultValue=)]
         public string BankAccount { get; set; }
 
         /// <summary>
         /// Bank Code to query - same codes are used as for creating the transactions
         /// </summary>
         /// <value>Bank Code to query - same codes are used as for creating the transactions</value>
-        [DataMember(Name="bank_code", EmitDefaultValue=false)]
+        [DataMember(Name="bank_code", EmitDefaultValue=)]
         public string BankCode { get; set; }
 
 

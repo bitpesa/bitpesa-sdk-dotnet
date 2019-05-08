@@ -42,21 +42,21 @@ namespace BitPesa.Sdk.Model
         /// Full body of response
         /// </summary>
         /// <value>Full body of response</value>
-        [DataMember(Name="body", EmitDefaultValue=false)]
+        [DataMember(Name="body", EmitDefaultValue=)]
         public string Body { get; private set; }
 
         /// <summary>
         /// Headers delivered with webhook response
         /// </summary>
         /// <value>Headers delivered with webhook response</value>
-        [DataMember(Name="headers", EmitDefaultValue=false)]
+        [DataMember(Name="headers", EmitDefaultValue=)]
         public Dictionary<string, string> Headers { get; private set; }
 
         /// <summary>
         /// Status of response
         /// </summary>
         /// <value>Status of response</value>
-        [DataMember(Name="status", EmitDefaultValue=false)]
+        [DataMember(Name="status", EmitDefaultValue=)]
         public string Status { get; private set; }
 
         /// <summary>

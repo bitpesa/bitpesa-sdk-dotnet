@@ -42,70 +42,70 @@ namespace BitPesa.Sdk.Model
         /// The currency code in 3-character alpha ISO 4217 currency format
         /// </summary>
         /// <value>The currency code in 3-character alpha ISO 4217 currency format</value>
-        [DataMember(Name="code", EmitDefaultValue=false)]
+        [DataMember(Name="code", EmitDefaultValue=)]
         public string Code { get; private set; }
 
         /// <summary>
         /// Name of currency
         /// </summary>
         /// <value>Name of currency</value>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        [DataMember(Name="name", EmitDefaultValue=)]
         public string Name { get; private set; }
 
         /// <summary>
         /// Symbol of currency
         /// </summary>
         /// <value>Symbol of currency</value>
-        [DataMember(Name="symbol", EmitDefaultValue=false)]
+        [DataMember(Name="symbol", EmitDefaultValue=)]
         public string Symbol { get; private set; }
 
         /// <summary>
         /// Number of decimal points
         /// </summary>
         /// <value>Number of decimal points</value>
-        [DataMember(Name="decimals", EmitDefaultValue=false)]
+        [DataMember(Name="decimals", EmitDefaultValue=)]
         public decimal? Decimals { get; private set; }
 
         /// <summary>
         /// Subunits in Unit (eg. there are 100 cents in 1 US Dollar)
         /// </summary>
         /// <value>Subunits in Unit (eg. there are 100 cents in 1 US Dollar)</value>
-        [DataMember(Name="subunit_to_unit", EmitDefaultValue=false)]
+        [DataMember(Name="subunit_to_unit", EmitDefaultValue=)]
         public string SubunitToUnit { get; private set; }
 
         /// <summary>
         /// Is this a primary currency?
         /// </summary>
         /// <value>Is this a primary currency?</value>
-        [DataMember(Name="primary", EmitDefaultValue=false)]
+        [DataMember(Name="primary", EmitDefaultValue=)]
         public bool? Primary { get; private set; }
 
         /// <summary>
         /// The minimum amount allowed in a transaction
         /// </summary>
         /// <value>The minimum amount allowed in a transaction</value>
-        [DataMember(Name="min", EmitDefaultValue=false)]
+        [DataMember(Name="min", EmitDefaultValue=)]
         public string Min { get; private set; }
 
         /// <summary>
         /// The maximum amount allowed in a transaction
         /// </summary>
         /// <value>The maximum amount allowed in a transaction</value>
-        [DataMember(Name="max", EmitDefaultValue=false)]
+        [DataMember(Name="max", EmitDefaultValue=)]
         public string Max { get; private set; }
 
         /// <summary>
         /// The margin set for transactions in this currency
         /// </summary>
         /// <value>The margin set for transactions in this currency</value>
-        [DataMember(Name="margin", EmitDefaultValue=false)]
+        [DataMember(Name="margin", EmitDefaultValue=)]
         public string Margin { get; private set; }
 
         /// <summary>
         /// The equivalent of the currency to 1 USD
         /// </summary>
         /// <value>The equivalent of the currency to 1 USD</value>
-        [DataMember(Name="usd_equivalent", EmitDefaultValue=false)]
+        [DataMember(Name="usd_equivalent", EmitDefaultValue=)]
         public string UsdEquivalent { get; private set; }
 
         /// <summary>

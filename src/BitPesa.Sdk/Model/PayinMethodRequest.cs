@@ -42,7 +42,7 @@ namespace BitPesa.Sdk.Model
         /// <summary>
         /// Gets or Sets PayinMethod
         /// </summary>
-        [DataMember(Name="payin_method", EmitDefaultValue=false)]
+        [DataMember(Name="payin_method", EmitDefaultValue=)]
         public PayinMethod PayinMethod { get; set; }
 
         /// <summary>

@@ -42,7 +42,7 @@ namespace BitPesa.Sdk.Model
         /// <summary>
         /// Gets or Sets Debit
         /// </summary>
-        [DataMember(Name="debit", EmitDefaultValue=false)]
+        [DataMember(Name="debit", EmitDefaultValue=)]
         public Debit Debit { get; set; }
 
         /// <summary>

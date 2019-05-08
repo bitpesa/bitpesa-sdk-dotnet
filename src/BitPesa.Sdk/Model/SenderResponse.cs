@@ -44,13 +44,13 @@ namespace BitPesa.Sdk.Model
         /// <summary>
         /// Gets or Sets Object
         /// </summary>
-        [DataMember(Name="object", EmitDefaultValue=false)]
+        [DataMember(Name="object", EmitDefaultValue=)]
         public Sender Object { get; set; }
 
         /// <summary>
         /// Gets or Sets Meta
         /// </summary>
-        [DataMember(Name="meta", EmitDefaultValue=false)]
+        [DataMember(Name="meta", EmitDefaultValue=)]
         public SenderResponseMeta Meta { get; set; }
 
         /// <summary>

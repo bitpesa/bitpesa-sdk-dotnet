@@ -67,67 +67,67 @@ namespace BitPesa.Sdk.Model
         /// <summary>
         /// Gets or Sets FirstName
         /// </summary>
-        [DataMember(Name="first_name", EmitDefaultValue=false)]
+        [DataMember(Name="first_name", EmitDefaultValue=)]
         public string FirstName { get; set; }
 
         /// <summary>
         /// Gets or Sets LastName
         /// </summary>
-        [DataMember(Name="last_name", EmitDefaultValue=false)]
+        [DataMember(Name="last_name", EmitDefaultValue=)]
         public string LastName { get; set; }
 
         /// <summary>
         /// Gets or Sets PhoneNumber
         /// </summary>
-        [DataMember(Name="phone_number", EmitDefaultValue=false)]
+        [DataMember(Name="phone_number", EmitDefaultValue=)]
         public string PhoneNumber { get; set; }
 
         /// <summary>
         /// Gets or Sets SenderIdentityCardType
         /// </summary>
-        [DataMember(Name="sender_identity_card_type", EmitDefaultValue=false)]
+        [DataMember(Name="sender_identity_card_type", EmitDefaultValue=)]
         public PayoutMethodIdentityCardTypeEnum SenderIdentityCardType { get; set; }
 
         /// <summary>
         /// Gets or Sets SenderIdentityCardId
         /// </summary>
-        [DataMember(Name="sender_identity_card_id", EmitDefaultValue=false)]
+        [DataMember(Name="sender_identity_card_id", EmitDefaultValue=)]
         public string SenderIdentityCardId { get; set; }
 
         /// <summary>
         /// Gets or Sets SenderCityOfBirth
         /// </summary>
-        [DataMember(Name="sender_city_of_birth", EmitDefaultValue=false)]
+        [DataMember(Name="sender_city_of_birth", EmitDefaultValue=)]
         public string SenderCityOfBirth { get; set; }
 
         /// <summary>
         /// Gets or Sets SenderCountryOfBirth
         /// </summary>
-        [DataMember(Name="sender_country_of_birth", EmitDefaultValue=false)]
+        [DataMember(Name="sender_country_of_birth", EmitDefaultValue=)]
         public string SenderCountryOfBirth { get; set; }
 
         /// <summary>
         /// Gets or Sets SenderGender
         /// </summary>
-        [DataMember(Name="sender_gender", EmitDefaultValue=false)]
+        [DataMember(Name="sender_gender", EmitDefaultValue=)]
         public PayoutMethodGenderEnum SenderGender { get; set; }
 
         /// <summary>
         /// Gets or Sets Reason
         /// </summary>
-        [DataMember(Name="reason", EmitDefaultValue=false)]
+        [DataMember(Name="reason", EmitDefaultValue=)]
         public string Reason { get; set; }
 
         /// <summary>
         /// Gets or Sets IdentityCardType
         /// </summary>
-        [DataMember(Name="identity_card_type", EmitDefaultValue=false)]
+        [DataMember(Name="identity_card_type", EmitDefaultValue=)]
         public PayoutMethodIdentityCardTypeEnum IdentityCardType { get; set; }
 
         /// <summary>
         /// Gets or Sets IdentityCardId
         /// </summary>
-        [DataMember(Name="identity_card_id", EmitDefaultValue=false)]
+        [DataMember(Name="identity_card_id", EmitDefaultValue=)]
         public string IdentityCardId { get; set; }
 
         /// <summary>

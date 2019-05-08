@@ -48,21 +48,21 @@ namespace BitPesa.Sdk.Model
         /// The ID of the webhook that was used to send out this callback
         /// </summary>
         /// <value>The ID of the webhook that was used to send out this callback</value>
-        [DataMember(Name="webhook", EmitDefaultValue=false)]
+        [DataMember(Name="webhook", EmitDefaultValue=)]
         public Guid? _Webhook { get; private set; }
 
         /// <summary>
         /// The event that triggered this webhook
         /// </summary>
         /// <value>The event that triggered this webhook</value>
-        [DataMember(Name="event", EmitDefaultValue=false)]
+        [DataMember(Name="event", EmitDefaultValue=)]
         public string Event { get; private set; }
 
         /// <summary>
         /// The returned object
         /// </summary>
         /// <value>The returned object</value>
-        [DataMember(Name="object", EmitDefaultValue=false)]
+        [DataMember(Name="object", EmitDefaultValue=)]
         public Object Object { get; set; }
 
         /// <summary>

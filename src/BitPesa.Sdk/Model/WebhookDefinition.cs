@@ -52,34 +52,34 @@ namespace BitPesa.Sdk.Model
         /// The URL to receive the webhook
         /// </summary>
         /// <value>The URL to receive the webhook</value>
-        [DataMember(Name="url", EmitDefaultValue=false)]
+        [DataMember(Name="url", EmitDefaultValue=)]
         public string Url { get; set; }
 
         /// <summary>
         /// A list of events to subscribe to
         /// </summary>
         /// <value>A list of events to subscribe to</value>
-        [DataMember(Name="events", EmitDefaultValue=false)]
+        [DataMember(Name="events", EmitDefaultValue=)]
         public List<string> Events { get; set; }
 
         /// <summary>
         /// Gets or Sets Metadata
         /// </summary>
-        [DataMember(Name="metadata", EmitDefaultValue=false)]
+        [DataMember(Name="metadata", EmitDefaultValue=)]
         public Object Metadata { get; set; }
 
         /// <summary>
         /// The ID of the webhook
         /// </summary>
         /// <value>The ID of the webhook</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name="id", EmitDefaultValue=)]
         public string Id { get; private set; }
 
         /// <summary>
         /// The fields that have some problems and don&#39;t pass validation
         /// </summary>
         /// <value>The fields that have some problems and don&#39;t pass validation</value>
-        [DataMember(Name="errors", EmitDefaultValue=false)]
+        [DataMember(Name="errors", EmitDefaultValue=)]
         public Dictionary<string, List<ValidationErrorDescription>> Errors { get; private set; }
 
         /// <summary>

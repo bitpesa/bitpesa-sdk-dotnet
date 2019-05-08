@@ -55,7 +55,7 @@ namespace BitPesa.Sdk.Api
         /// <param name="page">The page number to request (defaults to 1) (optional)</param>
         /// <param name="per">The number of results to load per page (defaults to 10) (optional)</param>
         /// <returns>DebitListResponse</returns>
-        DebitListResponse GetAccountsDebits (int? page = null, int? per = null);
+        DebitListResponse GetAccountsDebits (int?? page = null, int?? per = null);
 
         /// <summary>
         /// Listing Accounts debits
@@ -67,7 +67,7 @@ namespace BitPesa.Sdk.Api
         /// <param name="page">The page number to request (defaults to 1) (optional)</param>
         /// <param name="per">The number of results to load per page (defaults to 10) (optional)</param>
         /// <returns>ApiResponse of DebitListResponse</returns>
-        ApiResponse<DebitListResponse> GetAccountsDebitsWithHttpInfo (int? page = null, int? per = null);
+        ApiResponse<DebitListResponse> GetAccountsDebitsWithHttpInfo (int?? page = null, int?? per = null);
         /// <summary>
         /// Creating an account debit
         /// </summary>
@@ -122,7 +122,7 @@ namespace BitPesa.Sdk.Api
         /// <param name="page">The page number to request (defaults to 1) (optional)</param>
         /// <param name="per">The number of results to load per page (defaults to 10) (optional)</param>
         /// <returns>Task of DebitListResponse</returns>
-        System.Threading.Tasks.Task<DebitListResponse> GetAccountsDebitsAsync (int? page = null, int? per = null);
+        System.Threading.Tasks.Task<DebitListResponse> GetAccountsDebitsAsync (int?? page = null, int?? per = null);
 
         /// <summary>
         /// Listing Accounts debits
@@ -134,7 +134,7 @@ namespace BitPesa.Sdk.Api
         /// <param name="page">The page number to request (defaults to 1) (optional)</param>
         /// <param name="per">The number of results to load per page (defaults to 10) (optional)</param>
         /// <returns>Task of ApiResponse (DebitListResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DebitListResponse>> GetAccountsDebitsAsyncWithHttpInfo (int? page = null, int? per = null);
+        System.Threading.Tasks.Task<ApiResponse<DebitListResponse>> GetAccountsDebitsAsyncWithHttpInfo (int?? page = null, int?? per = null);
         /// <summary>
         /// Creating an account debit
         /// </summary>
@@ -441,7 +441,7 @@ namespace BitPesa.Sdk.Api
         /// <param name="page">The page number to request (defaults to 1) (optional)</param>
         /// <param name="per">The number of results to load per page (defaults to 10) (optional)</param>
         /// <returns>DebitListResponse</returns>
-        public DebitListResponse GetAccountsDebits (int? page = null, int? per = null)
+        public DebitListResponse GetAccountsDebits (int?? page = null, int?? per = null)
         {
              ApiResponse<DebitListResponse> localVarResponse = GetAccountsDebitsWithHttpInfo(page, per);
              return localVarResponse.Data;
@@ -454,7 +454,7 @@ namespace BitPesa.Sdk.Api
         /// <param name="page">The page number to request (defaults to 1) (optional)</param>
         /// <param name="per">The number of results to load per page (defaults to 10) (optional)</param>
         /// <returns>ApiResponse of DebitListResponse</returns>
-        public ApiResponse< DebitListResponse > GetAccountsDebitsWithHttpInfo (int? page = null, int? per = null)
+        public ApiResponse< DebitListResponse > GetAccountsDebitsWithHttpInfo (int?? page = null, int?? per = null)
         {
 
             var localVarPath = "/accounts/debits";
@@ -524,7 +524,7 @@ namespace BitPesa.Sdk.Api
         /// <param name="page">The page number to request (defaults to 1) (optional)</param>
         /// <param name="per">The number of results to load per page (defaults to 10) (optional)</param>
         /// <returns>Task of DebitListResponse</returns>
-        public async System.Threading.Tasks.Task<DebitListResponse> GetAccountsDebitsAsync (int? page = null, int? per = null)
+        public async System.Threading.Tasks.Task<DebitListResponse> GetAccountsDebitsAsync (int?? page = null, int?? per = null)
         {
              ApiResponse<DebitListResponse> localVarResponse = await GetAccountsDebitsAsyncWithHttpInfo(page, per);
              return localVarResponse.Data;
@@ -538,7 +538,7 @@ namespace BitPesa.Sdk.Api
         /// <param name="page">The page number to request (defaults to 1) (optional)</param>
         /// <param name="per">The number of results to load per page (defaults to 10) (optional)</param>
         /// <returns>Task of ApiResponse (DebitListResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<DebitListResponse>> GetAccountsDebitsAsyncWithHttpInfo (int? page = null, int? per = null)
+        public async System.Threading.Tasks.Task<ApiResponse<DebitListResponse>> GetAccountsDebitsAsyncWithHttpInfo (int?? page = null, int?? per = null)
         {
 
             var localVarPath = "/accounts/debits";

@@ -42,7 +42,7 @@ namespace BitPesa.Sdk.Model
         /// Indicates whether account balances are permitted to be debited below zero
         /// </summary>
         /// <value>Indicates whether account balances are permitted to be debited below zero</value>
-        [DataMember(Name="negative_balance", EmitDefaultValue=false)]
+        [DataMember(Name="negative_balance", EmitDefaultValue=)]
         public bool? NegativeBalance { get; private set; }
 
         /// <summary>

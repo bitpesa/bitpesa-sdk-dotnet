@@ -1,4 +1,6 @@
+
 # BitPesa.Sdk.Model.CurrencyOpposite
+
 ## Properties
 
 Name | Type | Description | Notes
@@ -15,5 +17,7 @@ Name | Type | Description | Notes
 **UsdEquivalent** | **string** | The equivalent of the currency to 1 USD | [optional] 
 **Rate** | **decimal?** | The rate of this particular currency with the base one | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to README]](../README.md)
 

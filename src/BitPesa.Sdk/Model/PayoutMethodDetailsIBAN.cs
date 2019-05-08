@@ -55,31 +55,31 @@ namespace BitPesa.Sdk.Model
         /// <summary>
         /// Gets or Sets FirstName
         /// </summary>
-        [DataMember(Name="first_name", EmitDefaultValue=false)]
+        [DataMember(Name="first_name", EmitDefaultValue=)]
         public string FirstName { get; set; }
 
         /// <summary>
         /// Gets or Sets LastName
         /// </summary>
-        [DataMember(Name="last_name", EmitDefaultValue=false)]
+        [DataMember(Name="last_name", EmitDefaultValue=)]
         public string LastName { get; set; }
 
         /// <summary>
         /// Gets or Sets BankName
         /// </summary>
-        [DataMember(Name="bank_name", EmitDefaultValue=false)]
+        [DataMember(Name="bank_name", EmitDefaultValue=)]
         public string BankName { get; set; }
 
         /// <summary>
         /// Gets or Sets Iban
         /// </summary>
-        [DataMember(Name="iban", EmitDefaultValue=false)]
+        [DataMember(Name="iban", EmitDefaultValue=)]
         public string Iban { get; set; }
 
         /// <summary>
         /// Gets or Sets Bic
         /// </summary>
-        [DataMember(Name="bic", EmitDefaultValue=false)]
+        [DataMember(Name="bic", EmitDefaultValue=)]
         public string Bic { get; set; }
 
         /// <summary>
