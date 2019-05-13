@@ -126,7 +126,7 @@ namespace BitPesa.Sdk.Client
         /// </summary>
         public Configuration()
         {
-            UserAgent = "BitPesa .NET Client";
+            UserAgent = "Transferzero-SDK/.NET/0.3.0";
             BasePath = "https://api-sandbox.bitpesa.co/v1";
             DefaultHeader = new ConcurrentDictionary<string, string>();
             ApiKey = "KEY";
@@ -183,7 +183,7 @@ namespace BitPesa.Sdk.Client
             string tempFolderPath = null,
             string dateTimeFormat = null,
             int timeout = 100000,
-            string userAgent = "BitPesa .NET Client"
+            string userAgent = "Transferzero-SDK/.NET/0.3.0"
             // ReSharper restore UnusedParameter.Local
             )
         {
@@ -429,7 +429,7 @@ namespace BitPesa.Sdk.Client
 			// and create a string.
 			StringBuilder sBuilder = new StringBuilder();
 
-			// Loop through each byte of the hashed data 
+			// Loop through each byte of the hashed data
 			// and format each one as a hexadecimal string.
 			for (int i = 0; i < data.Length; i++)
 			{
@@ -450,7 +450,7 @@ namespace BitPesa.Sdk.Client
 			// and create a string.
 			StringBuilder sBuilder = new StringBuilder();
 
-			// Loop through each byte of the hashed data 
+			// Loop through each byte of the hashed data
 			// and format each one as a hexadecimal string.
 			for (int i = 0; i < data.Length; i++)
 			{
