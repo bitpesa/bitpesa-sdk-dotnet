@@ -55,7 +55,7 @@ namespace BitPesa.Sdk.Api
         /// <param name="page">The page number to request (defaults to 1) (optional)</param>
         /// <param name="per">The number of results to load per page (defaults to 10) (optional)</param>
         /// <returns>DocumentListResponse</returns>
-        DocumentListResponse GetDocuments (int?? page = null, int?? per = null);
+        DocumentListResponse GetDocuments (int? page = null, int? per = null);
 
         /// <summary>
         /// Getting a list of documents
@@ -67,7 +67,7 @@ namespace BitPesa.Sdk.Api
         /// <param name="page">The page number to request (defaults to 1) (optional)</param>
         /// <param name="per">The number of results to load per page (defaults to 10) (optional)</param>
         /// <returns>ApiResponse of DocumentListResponse</returns>
-        ApiResponse<DocumentListResponse> GetDocumentsWithHttpInfo (int?? page = null, int?? per = null);
+        ApiResponse<DocumentListResponse> GetDocumentsWithHttpInfo (int? page = null, int? per = null);
         /// <summary>
         /// Creating a document
         /// </summary>
@@ -122,7 +122,7 @@ namespace BitPesa.Sdk.Api
         /// <param name="page">The page number to request (defaults to 1) (optional)</param>
         /// <param name="per">The number of results to load per page (defaults to 10) (optional)</param>
         /// <returns>Task of DocumentListResponse</returns>
-        System.Threading.Tasks.Task<DocumentListResponse> GetDocumentsAsync (int?? page = null, int?? per = null);
+        System.Threading.Tasks.Task<DocumentListResponse> GetDocumentsAsync (int? page = null, int? per = null);
 
         /// <summary>
         /// Getting a list of documents
@@ -134,7 +134,7 @@ namespace BitPesa.Sdk.Api
         /// <param name="page">The page number to request (defaults to 1) (optional)</param>
         /// <param name="per">The number of results to load per page (defaults to 10) (optional)</param>
         /// <returns>Task of ApiResponse (DocumentListResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DocumentListResponse>> GetDocumentsAsyncWithHttpInfo (int?? page = null, int?? per = null);
+        System.Threading.Tasks.Task<ApiResponse<DocumentListResponse>> GetDocumentsAsyncWithHttpInfo (int? page = null, int? per = null);
         /// <summary>
         /// Creating a document
         /// </summary>
@@ -441,7 +441,7 @@ namespace BitPesa.Sdk.Api
         /// <param name="page">The page number to request (defaults to 1) (optional)</param>
         /// <param name="per">The number of results to load per page (defaults to 10) (optional)</param>
         /// <returns>DocumentListResponse</returns>
-        public DocumentListResponse GetDocuments (int?? page = null, int?? per = null)
+        public DocumentListResponse GetDocuments (int? page = null, int? per = null)
         {
              ApiResponse<DocumentListResponse> localVarResponse = GetDocumentsWithHttpInfo(page, per);
              return localVarResponse.Data;
@@ -454,7 +454,7 @@ namespace BitPesa.Sdk.Api
         /// <param name="page">The page number to request (defaults to 1) (optional)</param>
         /// <param name="per">The number of results to load per page (defaults to 10) (optional)</param>
         /// <returns>ApiResponse of DocumentListResponse</returns>
-        public ApiResponse< DocumentListResponse > GetDocumentsWithHttpInfo (int?? page = null, int?? per = null)
+        public ApiResponse< DocumentListResponse > GetDocumentsWithHttpInfo (int? page = null, int? per = null)
         {
 
             var localVarPath = "/documents";
@@ -524,7 +524,7 @@ namespace BitPesa.Sdk.Api
         /// <param name="page">The page number to request (defaults to 1) (optional)</param>
         /// <param name="per">The number of results to load per page (defaults to 10) (optional)</param>
         /// <returns>Task of DocumentListResponse</returns>
-        public async System.Threading.Tasks.Task<DocumentListResponse> GetDocumentsAsync (int?? page = null, int?? per = null)
+        public async System.Threading.Tasks.Task<DocumentListResponse> GetDocumentsAsync (int? page = null, int? per = null)
         {
              ApiResponse<DocumentListResponse> localVarResponse = await GetDocumentsAsyncWithHttpInfo(page, per);
              return localVarResponse.Data;
@@ -538,7 +538,7 @@ namespace BitPesa.Sdk.Api
         /// <param name="page">The page number to request (defaults to 1) (optional)</param>
         /// <param name="per">The number of results to load per page (defaults to 10) (optional)</param>
         /// <returns>Task of ApiResponse (DocumentListResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<DocumentListResponse>> GetDocumentsAsyncWithHttpInfo (int?? page = null, int?? per = null)
+        public async System.Threading.Tasks.Task<ApiResponse<DocumentListResponse>> GetDocumentsAsyncWithHttpInfo (int? page = null, int? per = null)
         {
 
             var localVarPath = "/documents";

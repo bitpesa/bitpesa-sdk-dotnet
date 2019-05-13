@@ -395,6 +395,23 @@ namespace BitPesa.Sdk.Client
             return report;
         }
 
+        public Boolean ValidWebhookRequest(string url, string body, IDictionary<string, string> headers)
+        {
+            if (!headers.TryGetValue("Authorization-Key", out string key))
+                return false;
+
+            if (!headers.TryGetValue("Authorization-Nonce", out string nonce))
+                return false;
+
+            if (!headers.TryGetValue("Authorization-Signature", out string signature))
+                return false;
+
+            if (key != ApiKey)
+                return false;
+
+            return GetSignature(nonce, url, "POST", body) == signature;
+        }
+
         public string GetSignature(string nonce, string url, string requestMethod, string input) {
 			string shaHashOfBody = GetSHA512Hash(input);
 

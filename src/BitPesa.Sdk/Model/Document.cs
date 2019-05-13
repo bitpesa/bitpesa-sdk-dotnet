@@ -55,7 +55,7 @@ namespace BitPesa.Sdk.Model
         /// The side of the KYC ID. One of &#39;front&#39; or &#39;back&#39;
         /// </summary>
         /// <value>The side of the KYC ID. One of &#39;front&#39; or &#39;back&#39;</value>
-        [DataMember(Name="side", EmitDefaultValue=)]
+        [DataMember(Name="side", EmitDefaultValue=false)]
         public SideEnum? Side { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="Document" /> class.
@@ -79,40 +79,40 @@ namespace BitPesa.Sdk.Model
         /// Base64 encoded data uri of an image/pdf file or a fully qualified url
         /// </summary>
         /// <value>Base64 encoded data uri of an image/pdf file or a fully qualified url</value>
-        [DataMember(Name="upload", EmitDefaultValue=)]
+        [DataMember(Name="upload", EmitDefaultValue=false)]
         public string Upload { get; set; }
 
         /// <summary>
         /// Name of the upload
         /// </summary>
         /// <value>Name of the upload</value>
-        [DataMember(Name="upload_file_name", EmitDefaultValue=)]
+        [DataMember(Name="upload_file_name", EmitDefaultValue=false)]
         public string UploadFileName { get; set; }
 
         /// <summary>
         /// Metadata of document
         /// </summary>
         /// <value>Metadata of document</value>
-        [DataMember(Name="metadata", EmitDefaultValue=)]
+        [DataMember(Name="metadata", EmitDefaultValue=false)]
         public Object Metadata { get; set; }
 
         /// <summary>
         /// Gets or Sets UploadContentType
         /// </summary>
-        [DataMember(Name="upload_content_type", EmitDefaultValue=)]
+        [DataMember(Name="upload_content_type", EmitDefaultValue=false)]
         public string UploadContentType { get; private set; }
 
         /// <summary>
         /// Gets or Sets UploadFileSize
         /// </summary>
-        [DataMember(Name="upload_file_size", EmitDefaultValue=)]
+        [DataMember(Name="upload_file_size", EmitDefaultValue=false)]
         public int? UploadFileSize { get; private set; }
 
         /// <summary>
         /// uncategorised
         /// </summary>
         /// <value>uncategorised</value>
-        [DataMember(Name="category", EmitDefaultValue=)]
+        [DataMember(Name="category", EmitDefaultValue=false)]
         public string Category { get; private set; }
 
 
@@ -120,20 +120,20 @@ namespace BitPesa.Sdk.Model
         /// Issuing country of ID in 2-character alpha ISO 3166-2 country format
         /// </summary>
         /// <value>Issuing country of ID in 2-character alpha ISO 3166-2 country format</value>
-        [DataMember(Name="issuing_country", EmitDefaultValue=)]
+        [DataMember(Name="issuing_country", EmitDefaultValue=false)]
         public string IssuingCountry { get; private set; }
 
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        [DataMember(Name="id", EmitDefaultValue=)]
+        [DataMember(Name="id", EmitDefaultValue=false)]
         public Guid? Id { get; private set; }
 
         /// <summary>
         /// The fields that have some problems and don&#39;t pass validation
         /// </summary>
         /// <value>The fields that have some problems and don&#39;t pass validation</value>
-        [DataMember(Name="errors", EmitDefaultValue=)]
+        [DataMember(Name="errors", EmitDefaultValue=false)]
         public Dictionary<string, List<ValidationErrorDescription>> Errors { get; private set; }
 
         /// <summary>

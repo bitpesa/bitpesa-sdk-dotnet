@@ -42,7 +42,7 @@ namespace BitPesa.Sdk.Model
         /// Describes what the problem is with the field
         /// </summary>
         /// <value>Describes what the problem is with the field</value>
-        [DataMember(Name="error", EmitDefaultValue=)]
+        [DataMember(Name="error", EmitDefaultValue=false)]
         public string Error { get; private set; }
 
         /// <summary>

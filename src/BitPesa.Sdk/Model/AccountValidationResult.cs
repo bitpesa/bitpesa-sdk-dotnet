@@ -41,7 +41,7 @@ namespace BitPesa.Sdk.Model
         /// <summary>
         /// Gets or Sets AccountName
         /// </summary>
-        [DataMember(Name="account_name", EmitDefaultValue=)]
+        [DataMember(Name="account_name", EmitDefaultValue=false)]
         public string AccountName { get; private set; }
 
         /// <summary>

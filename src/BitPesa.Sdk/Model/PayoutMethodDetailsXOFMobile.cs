@@ -53,25 +53,25 @@ namespace BitPesa.Sdk.Model
         /// <summary>
         /// Gets or Sets FirstName
         /// </summary>
-        [DataMember(Name="first_name", EmitDefaultValue=)]
+        [DataMember(Name="first_name", EmitDefaultValue=false)]
         public string FirstName { get; set; }
 
         /// <summary>
         /// Gets or Sets LastName
         /// </summary>
-        [DataMember(Name="last_name", EmitDefaultValue=)]
+        [DataMember(Name="last_name", EmitDefaultValue=false)]
         public string LastName { get; set; }
 
         /// <summary>
         /// Gets or Sets PhoneNumber
         /// </summary>
-        [DataMember(Name="phone_number", EmitDefaultValue=)]
+        [DataMember(Name="phone_number", EmitDefaultValue=false)]
         public string PhoneNumber { get; set; }
 
         /// <summary>
         /// Gets or Sets MobileProvider
         /// </summary>
-        [DataMember(Name="mobile_provider", EmitDefaultValue=)]
+        [DataMember(Name="mobile_provider", EmitDefaultValue=false)]
         public PayoutMethodMobileProviderEnum MobileProvider { get; set; }
 
         /// <summary>

@@ -42,7 +42,7 @@ namespace BitPesa.Sdk.Model
         /// <summary>
         /// Gets or Sets Pagination
         /// </summary>
-        [DataMember(Name="pagination", EmitDefaultValue=)]
+        [DataMember(Name="pagination", EmitDefaultValue=false)]
         public Pagination Pagination { get; set; }
 
         /// <summary>

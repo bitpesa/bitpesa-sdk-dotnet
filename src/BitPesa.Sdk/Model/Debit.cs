@@ -56,69 +56,69 @@ namespace BitPesa.Sdk.Model
         /// The amount to be debited from your account.  The “amount” parameter is optional - - if included, it must equal the amount required to fund the transaction. - if omitted, it will default to the amount required to fund the transaction. 
         /// </summary>
         /// <value>The amount to be debited from your account.  The “amount” parameter is optional - - if included, it must equal the amount required to fund the transaction. - if omitted, it will default to the amount required to fund the transaction. </value>
-        [DataMember(Name="amount", EmitDefaultValue=)]
+        [DataMember(Name="amount", EmitDefaultValue=false)]
         public double? Amount { get; set; }
 
         /// <summary>
         /// The currency of the amount in 3-character alpha ISO 4217 currency format
         /// </summary>
         /// <value>The currency of the amount in 3-character alpha ISO 4217 currency format</value>
-        [DataMember(Name="currency", EmitDefaultValue=)]
+        [DataMember(Name="currency", EmitDefaultValue=false)]
         public string Currency { get; set; }
 
         /// <summary>
         /// Describes what the debit is funding
         /// </summary>
         /// <value>Describes what the debit is funding</value>
-        [DataMember(Name="to_type", EmitDefaultValue=)]
+        [DataMember(Name="to_type", EmitDefaultValue=false)]
         public string ToType { get; set; }
 
         /// <summary>
         /// The ID of the resource the debit is funding
         /// </summary>
         /// <value>The ID of the resource the debit is funding</value>
-        [DataMember(Name="to_id", EmitDefaultValue=)]
+        [DataMember(Name="to_id", EmitDefaultValue=false)]
         public Guid? ToId { get; set; }
 
         /// <summary>
         /// Metadata of account debit
         /// </summary>
         /// <value>Metadata of account debit</value>
-        [DataMember(Name="metadata", EmitDefaultValue=)]
+        [DataMember(Name="metadata", EmitDefaultValue=false)]
         public Object Metadata { get; set; }
 
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        [DataMember(Name="id", EmitDefaultValue=)]
+        [DataMember(Name="id", EmitDefaultValue=false)]
         public Guid? Id { get; private set; }
 
         /// <summary>
         /// Date and time that the debit was created
         /// </summary>
         /// <value>Date and time that the debit was created</value>
-        [DataMember(Name="created_at", EmitDefaultValue=)]
+        [DataMember(Name="created_at", EmitDefaultValue=false)]
         public DateTime? CreatedAt { get; private set; }
 
         /// <summary>
         /// The amount to be debited from your account converted to USD 
         /// </summary>
         /// <value>The amount to be debited from your account converted to USD </value>
-        [DataMember(Name="usd_amount", EmitDefaultValue=)]
+        [DataMember(Name="usd_amount", EmitDefaultValue=false)]
         public double? UsdAmount { get; private set; }
 
         /// <summary>
         /// The total amount remaining in your account after the debit call 
         /// </summary>
         /// <value>The total amount remaining in your account after the debit call </value>
-        [DataMember(Name="running_balance", EmitDefaultValue=)]
+        [DataMember(Name="running_balance", EmitDefaultValue=false)]
         public double? RunningBalance { get; private set; }
 
         /// <summary>
         /// The fields that have some problems and don&#39;t pass validation
         /// </summary>
         /// <value>The fields that have some problems and don&#39;t pass validation</value>
-        [DataMember(Name="errors", EmitDefaultValue=)]
+        [DataMember(Name="errors", EmitDefaultValue=false)]
         public Dictionary<string, List<ValidationErrorDescription>> Errors { get; private set; }
 
         /// <summary>

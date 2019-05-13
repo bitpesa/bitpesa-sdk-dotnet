@@ -43,13 +43,13 @@ namespace BitPesa.Sdk.Model
         /// Array of API log objects
         /// </summary>
         /// <value>Array of API log objects</value>
-        [DataMember(Name="object", EmitDefaultValue=)]
+        [DataMember(Name="object", EmitDefaultValue=false)]
         public List<ApiLog> Object { get; private set; }
 
         /// <summary>
         /// Gets or Sets Meta
         /// </summary>
-        [DataMember(Name="meta", EmitDefaultValue=)]
+        [DataMember(Name="meta", EmitDefaultValue=false)]
         public PaginationMeta Meta { get; set; }
 
         /// <summary>

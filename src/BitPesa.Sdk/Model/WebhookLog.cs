@@ -43,39 +43,39 @@ namespace BitPesa.Sdk.Model
         /// ID of the webhook log
         /// </summary>
         /// <value>ID of the webhook log</value>
-        [DataMember(Name="id", EmitDefaultValue=)]
+        [DataMember(Name="id", EmitDefaultValue=false)]
         public string Id { get; private set; }
 
         /// <summary>
         /// Message detailing webhook event
         /// </summary>
         /// <value>Message detailing webhook event</value>
-        [DataMember(Name="message", EmitDefaultValue=)]
+        [DataMember(Name="message", EmitDefaultValue=false)]
         public string Message { get; private set; }
 
         /// <summary>
         /// Gets or Sets Metadata
         /// </summary>
-        [DataMember(Name="metadata", EmitDefaultValue=)]
+        [DataMember(Name="metadata", EmitDefaultValue=false)]
         public WebhookLogMetadata Metadata { get; set; }
 
         /// <summary>
         /// Date and time of response
         /// </summary>
         /// <value>Date and time of response</value>
-        [DataMember(Name="created_at", EmitDefaultValue=)]
+        [DataMember(Name="created_at", EmitDefaultValue=false)]
         public string CreatedAt { get; private set; }
 
         /// <summary>
         /// Gets or Sets ParentId
         /// </summary>
-        [DataMember(Name="parent_id", EmitDefaultValue=)]
+        [DataMember(Name="parent_id", EmitDefaultValue=false)]
         public string ParentId { get; private set; }
 
         /// <summary>
         /// Gets or Sets ParentType
         /// </summary>
-        [DataMember(Name="parent_type", EmitDefaultValue=)]
+        [DataMember(Name="parent_type", EmitDefaultValue=false)]
         public string ParentType { get; private set; }
 
         /// <summary>

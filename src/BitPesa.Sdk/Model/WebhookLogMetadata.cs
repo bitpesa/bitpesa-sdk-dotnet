@@ -46,68 +46,68 @@ namespace BitPesa.Sdk.Model
         /// <summary>
         /// Gets or Sets Params
         /// </summary>
-        [DataMember(Name="params", EmitDefaultValue=)]
+        [DataMember(Name="params", EmitDefaultValue=false)]
         public WebhookDefinition Params { get; set; }
 
         /// <summary>
         /// Specific event that triggered the webhook
         /// </summary>
         /// <value>Specific event that triggered the webhook</value>
-        [DataMember(Name="event", EmitDefaultValue=)]
+        [DataMember(Name="event", EmitDefaultValue=false)]
         public string Event { get; private set; }
 
         /// <summary>
         /// Instance ID of the webhook event
         /// </summary>
         /// <value>Instance ID of the webhook event</value>
-        [DataMember(Name="instance_id", EmitDefaultValue=)]
+        [DataMember(Name="instance_id", EmitDefaultValue=false)]
         public string InstanceId { get; private set; }
 
         /// <summary>
         /// Type of instance event
         /// </summary>
         /// <value>Type of instance event</value>
-        [DataMember(Name="instance_type", EmitDefaultValue=)]
+        [DataMember(Name="instance_type", EmitDefaultValue=false)]
         public string InstanceType { get; private set; }
 
         /// <summary>
         /// Attempt ID
         /// </summary>
         /// <value>Attempt ID</value>
-        [DataMember(Name="attempt_id", EmitDefaultValue=)]
+        [DataMember(Name="attempt_id", EmitDefaultValue=false)]
         public string AttemptId { get; private set; }
 
         /// <summary>
         /// Number of tries at the point webhook was triggered
         /// </summary>
         /// <value>Number of tries at the point webhook was triggered</value>
-        [DataMember(Name="tries", EmitDefaultValue=)]
+        [DataMember(Name="tries", EmitDefaultValue=false)]
         public int? Tries { get; private set; }
 
         /// <summary>
         /// Gets or Sets Request
         /// </summary>
-        [DataMember(Name="request", EmitDefaultValue=)]
+        [DataMember(Name="request", EmitDefaultValue=false)]
         public WebhookLogMetadataRequest Request { get; set; }
 
         /// <summary>
         /// Gets or Sets Response
         /// </summary>
-        [DataMember(Name="response", EmitDefaultValue=)]
+        [DataMember(Name="response", EmitDefaultValue=false)]
         public WebhookLogMetadataResponse Response { get; set; }
 
         /// <summary>
         /// ID of app on which webhook event was triggered
         /// </summary>
         /// <value>ID of app on which webhook event was triggered</value>
-        [DataMember(Name="app_id", EmitDefaultValue=)]
+        [DataMember(Name="app_id", EmitDefaultValue=false)]
         public string AppId { get; private set; }
 
         /// <summary>
         /// ID of API key in use at point of webhook event
         /// </summary>
         /// <value>ID of API key in use at point of webhook event</value>
-        [DataMember(Name="api_key_id", EmitDefaultValue=)]
+        [DataMember(Name="api_key_id", EmitDefaultValue=false)]
         public string ApiKeyId { get; private set; }
 
         /// <summary>

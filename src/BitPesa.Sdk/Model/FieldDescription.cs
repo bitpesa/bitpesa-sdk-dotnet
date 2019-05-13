@@ -55,7 +55,7 @@ namespace BitPesa.Sdk.Model
         /// the type of the field.
         /// </summary>
         /// <value>the type of the field.</value>
-        [DataMember(Name="type", EmitDefaultValue=)]
+        [DataMember(Name="type", EmitDefaultValue=false)]
         public TypeEnum? Type { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="FieldDescription" /> class.
@@ -70,7 +70,7 @@ namespace BitPesa.Sdk.Model
         /// <summary>
         /// Gets or Sets Validations
         /// </summary>
-        [DataMember(Name="validations", EmitDefaultValue=)]
+        [DataMember(Name="validations", EmitDefaultValue=false)]
         public FieldValidation Validations { get; set; }
 
         /// <summary>

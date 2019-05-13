@@ -42,7 +42,7 @@ namespace BitPesa.Sdk.Model
         /// <summary>
         /// Gets or Sets Existing
         /// </summary>
-        [DataMember(Name="existing", EmitDefaultValue=)]
+        [DataMember(Name="existing", EmitDefaultValue=false)]
         public SenderResponseExisting Existing { get; set; }
 
         /// <summary>

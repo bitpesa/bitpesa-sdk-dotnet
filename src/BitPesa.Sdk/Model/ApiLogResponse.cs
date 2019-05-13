@@ -42,7 +42,7 @@ namespace BitPesa.Sdk.Model
         /// <summary>
         /// Gets or Sets Object
         /// </summary>
-        [DataMember(Name="object", EmitDefaultValue=)]
+        [DataMember(Name="object", EmitDefaultValue=false)]
         public ApiLog Object { get; set; }
 
         /// <summary>

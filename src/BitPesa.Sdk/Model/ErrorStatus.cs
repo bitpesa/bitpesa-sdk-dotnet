@@ -41,13 +41,13 @@ namespace BitPesa.Sdk.Model
         /// <summary>
         /// Gets or Sets Status
         /// </summary>
-        [DataMember(Name="status", EmitDefaultValue=)]
+        [DataMember(Name="status", EmitDefaultValue=false)]
         public int? Status { get; private set; }
 
         /// <summary>
         /// Gets or Sets Error
         /// </summary>
-        [DataMember(Name="error", EmitDefaultValue=)]
+        [DataMember(Name="error", EmitDefaultValue=false)]
         public string Error { get; private set; }
 
         /// <summary>

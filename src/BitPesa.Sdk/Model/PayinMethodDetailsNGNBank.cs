@@ -48,7 +48,7 @@ namespace BitPesa.Sdk.Model
         /// This is where the user should be redirected back when the payment has been finished
         /// </summary>
         /// <value>This is where the user should be redirected back when the payment has been finished</value>
-        [DataMember(Name="redirect_url", EmitDefaultValue=)]
+        [DataMember(Name="redirect_url", EmitDefaultValue=false)]
         public string RedirectUrl { get; set; }
 
         /// <summary>

@@ -42,13 +42,13 @@ namespace BitPesa.Sdk.Model
         /// <summary>
         /// Gets or Sets Object
         /// </summary>
-        [DataMember(Name="object", EmitDefaultValue=)]
+        [DataMember(Name="object", EmitDefaultValue=false)]
         public List<Document> Object { get; private set; }
 
         /// <summary>
         /// Gets or Sets Meta
         /// </summary>
-        [DataMember(Name="meta", EmitDefaultValue=)]
+        [DataMember(Name="meta", EmitDefaultValue=false)]
         public PaginationMeta Meta { get; set; }
 
         /// <summary>

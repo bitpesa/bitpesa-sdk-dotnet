@@ -58,136 +58,136 @@ namespace BitPesa.Sdk.Model
         /// the amount that should be paid to the recipient. This can be in any currency, usually either the input or the output currency. If the value here is not the output currency we will calculate how much the recipient is going to get using the exchange rates active when the transaction was created.
         /// </summary>
         /// <value>the amount that should be paid to the recipient. This can be in any currency, usually either the input or the output currency. If the value here is not the output currency we will calculate how much the recipient is going to get using the exchange rates active when the transaction was created.</value>
-        [DataMember(Name="requested_amount", EmitDefaultValue=)]
+        [DataMember(Name="requested_amount", EmitDefaultValue=false)]
         public decimal? RequestedAmount { get; set; }
 
         /// <summary>
         /// the currency of the amount in 3-character alpha ISO 4217 currency format
         /// </summary>
         /// <value>the currency of the amount in 3-character alpha ISO 4217 currency format</value>
-        [DataMember(Name="requested_currency", EmitDefaultValue=)]
+        [DataMember(Name="requested_currency", EmitDefaultValue=false)]
         public string RequestedCurrency { get; set; }
 
         /// <summary>
         /// Gets or Sets PayoutMethod
         /// </summary>
-        [DataMember(Name="payout_method", EmitDefaultValue=)]
+        [DataMember(Name="payout_method", EmitDefaultValue=false)]
         public PayoutMethod PayoutMethod { get; set; }
 
         /// <summary>
         /// Additional metadata that can be added to a recipient. These values will be returned on request
         /// </summary>
         /// <value>Additional metadata that can be added to a recipient. These values will be returned on request</value>
-        [DataMember(Name="metadata", EmitDefaultValue=)]
+        [DataMember(Name="metadata", EmitDefaultValue=false)]
         public Object Metadata { get; set; }
 
         /// <summary>
         /// Date and time that the recipient was created.
         /// </summary>
         /// <value>Date and time that the recipient was created.</value>
-        [DataMember(Name="created_at", EmitDefaultValue=)]
+        [DataMember(Name="created_at", EmitDefaultValue=false)]
         public DateTime? CreatedAt { get; private set; }
 
         /// <summary>
         /// Shows whether the recipient can be edited using the PATCH /v1/recipients/{id} endpoint or not
         /// </summary>
         /// <value>Shows whether the recipient can be edited using the PATCH /v1/recipients/{id} endpoint or not</value>
-        [DataMember(Name="editable", EmitDefaultValue=)]
+        [DataMember(Name="editable", EmitDefaultValue=false)]
         public bool? Editable { get; private set; }
 
         /// <summary>
         /// Shows how much this payment is worth in USD
         /// </summary>
         /// <value>Shows how much this payment is worth in USD</value>
-        [DataMember(Name="input_usd_amount", EmitDefaultValue=)]
+        [DataMember(Name="input_usd_amount", EmitDefaultValue=false)]
         public decimal? InputUsdAmount { get; private set; }
 
         /// <summary>
         /// Shows whether the payment can be cancelled using the DELETE /v1/recipients/{id} endpoint or not. The payment can not be cancelled if the payout is pending.
         /// </summary>
         /// <value>Shows whether the payment can be cancelled using the DELETE /v1/recipients/{id} endpoint or not. The payment can not be cancelled if the payout is pending.</value>
-        [DataMember(Name="may_cancel", EmitDefaultValue=)]
+        [DataMember(Name="may_cancel", EmitDefaultValue=false)]
         public bool? MayCancel { get; private set; }
 
         /// <summary>
         /// In case the payment is unsuccessful it holds the error message associated with the last unsuccessful payout.
         /// </summary>
         /// <value>In case the payment is unsuccessful it holds the error message associated with the last unsuccessful payout.</value>
-        [DataMember(Name="state_reason", EmitDefaultValue=)]
+        [DataMember(Name="state_reason", EmitDefaultValue=false)]
         public string StateReason { get; private set; }
 
         /// <summary>
         /// Gets or Sets State
         /// </summary>
-        [DataMember(Name="state", EmitDefaultValue=)]
+        [DataMember(Name="state", EmitDefaultValue=false)]
         public RecipientState State { get; set; }
 
         /// <summary>
         /// The ID of the transaction that is related to this recipient
         /// </summary>
         /// <value>The ID of the transaction that is related to this recipient</value>
-        [DataMember(Name="transaction_id", EmitDefaultValue=)]
+        [DataMember(Name="transaction_id", EmitDefaultValue=false)]
         public string TransactionId { get; private set; }
 
         /// <summary>
         /// Gets or Sets TransactionState
         /// </summary>
-        [DataMember(Name="transaction_state", EmitDefaultValue=)]
+        [DataMember(Name="transaction_state", EmitDefaultValue=false)]
         public TransactionState TransactionState { get; set; }
 
         /// <summary>
         /// The exchange rate used in this payment
         /// </summary>
         /// <value>The exchange rate used in this payment</value>
-        [DataMember(Name="exchange_rate", EmitDefaultValue=)]
+        [DataMember(Name="exchange_rate", EmitDefaultValue=false)]
         public decimal? ExchangeRate { get; private set; }
 
         /// <summary>
         /// The fee for this payment in fractional units (for example cents for USD transactions)
         /// </summary>
         /// <value>The fee for this payment in fractional units (for example cents for USD transactions)</value>
-        [DataMember(Name="fee_fractional", EmitDefaultValue=)]
+        [DataMember(Name="fee_fractional", EmitDefaultValue=false)]
         public decimal? FeeFractional { get; private set; }
 
         /// <summary>
         /// The amount that had to be paid in for this payment to proceed
         /// </summary>
         /// <value>The amount that had to be paid in for this payment to proceed</value>
-        [DataMember(Name="input_amount", EmitDefaultValue=)]
+        [DataMember(Name="input_amount", EmitDefaultValue=false)]
         public decimal? InputAmount { get; private set; }
 
         /// <summary>
         /// The currency this payment was paid in
         /// </summary>
         /// <value>The currency this payment was paid in</value>
-        [DataMember(Name="input_currency", EmitDefaultValue=)]
+        [DataMember(Name="input_currency", EmitDefaultValue=false)]
         public string InputCurrency { get; private set; }
 
         /// <summary>
         /// The amount that will be paid to the recipient
         /// </summary>
         /// <value>The amount that will be paid to the recipient</value>
-        [DataMember(Name="output_amount", EmitDefaultValue=)]
+        [DataMember(Name="output_amount", EmitDefaultValue=false)]
         public decimal? OutputAmount { get; private set; }
 
         /// <summary>
         /// The currency the payment will be delivered in
         /// </summary>
         /// <value>The currency the payment will be delivered in</value>
-        [DataMember(Name="output_currency", EmitDefaultValue=)]
+        [DataMember(Name="output_currency", EmitDefaultValue=false)]
         public string OutputCurrency { get; private set; }
 
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        [DataMember(Name="id", EmitDefaultValue=)]
+        [DataMember(Name="id", EmitDefaultValue=false)]
         public Guid? Id { get; private set; }
 
         /// <summary>
         /// The fields that have some problems and don&#39;t pass validation
         /// </summary>
         /// <value>The fields that have some problems and don&#39;t pass validation</value>
-        [DataMember(Name="errors", EmitDefaultValue=)]
+        [DataMember(Name="errors", EmitDefaultValue=false)]
         public Dictionary<string, List<ValidationErrorDescription>> Errors { get; private set; }
 
         /// <summary>

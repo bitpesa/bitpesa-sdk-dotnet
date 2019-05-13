@@ -95,7 +95,7 @@ namespace BitPesa.Sdk.Api
         /// <param name="page">The page number to request (defaults to 1) (optional)</param>
         /// <param name="per">The number of results to load per page (defaults to 10) (optional)</param>
         /// <returns>WebhookDefinitionListResponse</returns>
-        WebhookDefinitionListResponse GetWebhooks (int?? page = null, int?? per = null);
+        WebhookDefinitionListResponse GetWebhooks (int? page = null, int? per = null);
 
         /// <summary>
         /// Listing webhooks
@@ -107,7 +107,7 @@ namespace BitPesa.Sdk.Api
         /// <param name="page">The page number to request (defaults to 1) (optional)</param>
         /// <param name="per">The number of results to load per page (defaults to 10) (optional)</param>
         /// <returns>ApiResponse of WebhookDefinitionListResponse</returns>
-        ApiResponse<WebhookDefinitionListResponse> GetWebhooksWithHttpInfo (int?? page = null, int?? per = null);
+        ApiResponse<WebhookDefinitionListResponse> GetWebhooksWithHttpInfo (int? page = null, int? per = null);
         /// <summary>
         /// Creating a webhook
         /// </summary>
@@ -202,7 +202,7 @@ namespace BitPesa.Sdk.Api
         /// <param name="page">The page number to request (defaults to 1) (optional)</param>
         /// <param name="per">The number of results to load per page (defaults to 10) (optional)</param>
         /// <returns>Task of WebhookDefinitionListResponse</returns>
-        System.Threading.Tasks.Task<WebhookDefinitionListResponse> GetWebhooksAsync (int?? page = null, int?? per = null);
+        System.Threading.Tasks.Task<WebhookDefinitionListResponse> GetWebhooksAsync (int? page = null, int? per = null);
 
         /// <summary>
         /// Listing webhooks
@@ -214,7 +214,7 @@ namespace BitPesa.Sdk.Api
         /// <param name="page">The page number to request (defaults to 1) (optional)</param>
         /// <param name="per">The number of results to load per page (defaults to 10) (optional)</param>
         /// <returns>Task of ApiResponse (WebhookDefinitionListResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<WebhookDefinitionListResponse>> GetWebhooksAsyncWithHttpInfo (int?? page = null, int?? per = null);
+        System.Threading.Tasks.Task<ApiResponse<WebhookDefinitionListResponse>> GetWebhooksAsyncWithHttpInfo (int? page = null, int? per = null);
         /// <summary>
         /// Creating a webhook
         /// </summary>
@@ -843,7 +843,7 @@ namespace BitPesa.Sdk.Api
         /// <param name="page">The page number to request (defaults to 1) (optional)</param>
         /// <param name="per">The number of results to load per page (defaults to 10) (optional)</param>
         /// <returns>WebhookDefinitionListResponse</returns>
-        public WebhookDefinitionListResponse GetWebhooks (int?? page = null, int?? per = null)
+        public WebhookDefinitionListResponse GetWebhooks (int? page = null, int? per = null)
         {
              ApiResponse<WebhookDefinitionListResponse> localVarResponse = GetWebhooksWithHttpInfo(page, per);
              return localVarResponse.Data;
@@ -856,7 +856,7 @@ namespace BitPesa.Sdk.Api
         /// <param name="page">The page number to request (defaults to 1) (optional)</param>
         /// <param name="per">The number of results to load per page (defaults to 10) (optional)</param>
         /// <returns>ApiResponse of WebhookDefinitionListResponse</returns>
-        public ApiResponse< WebhookDefinitionListResponse > GetWebhooksWithHttpInfo (int?? page = null, int?? per = null)
+        public ApiResponse< WebhookDefinitionListResponse > GetWebhooksWithHttpInfo (int? page = null, int? per = null)
         {
 
             var localVarPath = "/webhooks";
@@ -926,7 +926,7 @@ namespace BitPesa.Sdk.Api
         /// <param name="page">The page number to request (defaults to 1) (optional)</param>
         /// <param name="per">The number of results to load per page (defaults to 10) (optional)</param>
         /// <returns>Task of WebhookDefinitionListResponse</returns>
-        public async System.Threading.Tasks.Task<WebhookDefinitionListResponse> GetWebhooksAsync (int?? page = null, int?? per = null)
+        public async System.Threading.Tasks.Task<WebhookDefinitionListResponse> GetWebhooksAsync (int? page = null, int? per = null)
         {
              ApiResponse<WebhookDefinitionListResponse> localVarResponse = await GetWebhooksAsyncWithHttpInfo(page, per);
              return localVarResponse.Data;
@@ -940,7 +940,7 @@ namespace BitPesa.Sdk.Api
         /// <param name="page">The page number to request (defaults to 1) (optional)</param>
         /// <param name="per">The number of results to load per page (defaults to 10) (optional)</param>
         /// <returns>Task of ApiResponse (WebhookDefinitionListResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<WebhookDefinitionListResponse>> GetWebhooksAsyncWithHttpInfo (int?? page = null, int?? per = null)
+        public async System.Threading.Tasks.Task<ApiResponse<WebhookDefinitionListResponse>> GetWebhooksAsyncWithHttpInfo (int? page = null, int? per = null)
         {
 
             var localVarPath = "/webhooks";

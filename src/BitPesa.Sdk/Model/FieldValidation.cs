@@ -43,20 +43,20 @@ namespace BitPesa.Sdk.Model
         /// Describes whether the field is mandatory or not
         /// </summary>
         /// <value>Describes whether the field is mandatory or not</value>
-        [DataMember(Name="presence", EmitDefaultValue=)]
+        [DataMember(Name="presence", EmitDefaultValue=false)]
         public bool? Presence { get; private set; }
 
         /// <summary>
         /// Gets or Sets Inclusion
         /// </summary>
-        [DataMember(Name="inclusion", EmitDefaultValue=)]
+        [DataMember(Name="inclusion", EmitDefaultValue=false)]
         public FieldSelectValidation Inclusion { get; set; }
 
         /// <summary>
         /// Contains the regex to use to validate the input field
         /// </summary>
         /// <value>Contains the regex to use to validate the input field</value>
-        [DataMember(Name="format", EmitDefaultValue=)]
+        [DataMember(Name="format", EmitDefaultValue=false)]
         public Object Format { get; private set; }
 
         /// <summary>

@@ -57,7 +57,7 @@ namespace BitPesa.Sdk.Api
         /// <param name="createdAtFrom">Start date to filter recipients by created_at range Allows filtering results by the specified &#x60;created_at&#x60; timeframe.  Example: &#x60;/v1/recipients?created_at_from&#x3D;2018-06-06&amp;created_at_to&#x3D;2018-06-08&#x60; (optional)</param>
         /// <param name="createdAtTo">End date to filter recipients by created_at range Allows filtering results by the specified &#x60;created_at&#x60; timeframe.  Example: &#x60;/v1/recipients?created_at_from&#x3D;2018-06-06&amp;created_at_to&#x3D;2018-06-08&#x60; (optional)</param>
         /// <returns>WebhookLogListResponse</returns>
-        WebhookLogListResponse GetWebhookLogs (int?? page = null, int?? per = null, string? createdAtFrom = null, string? createdAtTo = null);
+        WebhookLogListResponse GetWebhookLogs (int? page = null, int? per = null, string createdAtFrom = null, string createdAtTo = null);
 
         /// <summary>
         /// Fetch a list of webhook logs
@@ -71,7 +71,7 @@ namespace BitPesa.Sdk.Api
         /// <param name="createdAtFrom">Start date to filter recipients by created_at range Allows filtering results by the specified &#x60;created_at&#x60; timeframe.  Example: &#x60;/v1/recipients?created_at_from&#x3D;2018-06-06&amp;created_at_to&#x3D;2018-06-08&#x60; (optional)</param>
         /// <param name="createdAtTo">End date to filter recipients by created_at range Allows filtering results by the specified &#x60;created_at&#x60; timeframe.  Example: &#x60;/v1/recipients?created_at_from&#x3D;2018-06-06&amp;created_at_to&#x3D;2018-06-08&#x60; (optional)</param>
         /// <returns>ApiResponse of WebhookLogListResponse</returns>
-        ApiResponse<WebhookLogListResponse> GetWebhookLogsWithHttpInfo (int?? page = null, int?? per = null, string? createdAtFrom = null, string? createdAtTo = null);
+        ApiResponse<WebhookLogListResponse> GetWebhookLogsWithHttpInfo (int? page = null, int? per = null, string createdAtFrom = null, string createdAtTo = null);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -107,7 +107,7 @@ namespace BitPesa.Sdk.Api
         /// <param name="createdAtFrom">Start date to filter recipients by created_at range Allows filtering results by the specified &#x60;created_at&#x60; timeframe.  Example: &#x60;/v1/recipients?created_at_from&#x3D;2018-06-06&amp;created_at_to&#x3D;2018-06-08&#x60; (optional)</param>
         /// <param name="createdAtTo">End date to filter recipients by created_at range Allows filtering results by the specified &#x60;created_at&#x60; timeframe.  Example: &#x60;/v1/recipients?created_at_from&#x3D;2018-06-06&amp;created_at_to&#x3D;2018-06-08&#x60; (optional)</param>
         /// <returns>Task of WebhookLogListResponse</returns>
-        System.Threading.Tasks.Task<WebhookLogListResponse> GetWebhookLogsAsync (int?? page = null, int?? per = null, string? createdAtFrom = null, string? createdAtTo = null);
+        System.Threading.Tasks.Task<WebhookLogListResponse> GetWebhookLogsAsync (int? page = null, int? per = null, string createdAtFrom = null, string createdAtTo = null);
 
         /// <summary>
         /// Fetch a list of webhook logs
@@ -121,7 +121,7 @@ namespace BitPesa.Sdk.Api
         /// <param name="createdAtFrom">Start date to filter recipients by created_at range Allows filtering results by the specified &#x60;created_at&#x60; timeframe.  Example: &#x60;/v1/recipients?created_at_from&#x3D;2018-06-06&amp;created_at_to&#x3D;2018-06-08&#x60; (optional)</param>
         /// <param name="createdAtTo">End date to filter recipients by created_at range Allows filtering results by the specified &#x60;created_at&#x60; timeframe.  Example: &#x60;/v1/recipients?created_at_from&#x3D;2018-06-06&amp;created_at_to&#x3D;2018-06-08&#x60; (optional)</param>
         /// <returns>Task of ApiResponse (WebhookLogListResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<WebhookLogListResponse>> GetWebhookLogsAsyncWithHttpInfo (int?? page = null, int?? per = null, string? createdAtFrom = null, string? createdAtTo = null);
+        System.Threading.Tasks.Task<ApiResponse<WebhookLogListResponse>> GetWebhookLogsAsyncWithHttpInfo (int? page = null, int? per = null, string createdAtFrom = null, string createdAtTo = null);
         #endregion Asynchronous Operations
     }
 
@@ -409,7 +409,7 @@ namespace BitPesa.Sdk.Api
         /// <param name="createdAtFrom">Start date to filter recipients by created_at range Allows filtering results by the specified &#x60;created_at&#x60; timeframe.  Example: &#x60;/v1/recipients?created_at_from&#x3D;2018-06-06&amp;created_at_to&#x3D;2018-06-08&#x60; (optional)</param>
         /// <param name="createdAtTo">End date to filter recipients by created_at range Allows filtering results by the specified &#x60;created_at&#x60; timeframe.  Example: &#x60;/v1/recipients?created_at_from&#x3D;2018-06-06&amp;created_at_to&#x3D;2018-06-08&#x60; (optional)</param>
         /// <returns>WebhookLogListResponse</returns>
-        public WebhookLogListResponse GetWebhookLogs (int?? page = null, int?? per = null, string? createdAtFrom = null, string? createdAtTo = null)
+        public WebhookLogListResponse GetWebhookLogs (int? page = null, int? per = null, string createdAtFrom = null, string createdAtTo = null)
         {
              ApiResponse<WebhookLogListResponse> localVarResponse = GetWebhookLogsWithHttpInfo(page, per, createdAtFrom, createdAtTo);
              return localVarResponse.Data;
@@ -424,7 +424,7 @@ namespace BitPesa.Sdk.Api
         /// <param name="createdAtFrom">Start date to filter recipients by created_at range Allows filtering results by the specified &#x60;created_at&#x60; timeframe.  Example: &#x60;/v1/recipients?created_at_from&#x3D;2018-06-06&amp;created_at_to&#x3D;2018-06-08&#x60; (optional)</param>
         /// <param name="createdAtTo">End date to filter recipients by created_at range Allows filtering results by the specified &#x60;created_at&#x60; timeframe.  Example: &#x60;/v1/recipients?created_at_from&#x3D;2018-06-06&amp;created_at_to&#x3D;2018-06-08&#x60; (optional)</param>
         /// <returns>ApiResponse of WebhookLogListResponse</returns>
-        public ApiResponse< WebhookLogListResponse > GetWebhookLogsWithHttpInfo (int?? page = null, int?? per = null, string? createdAtFrom = null, string? createdAtTo = null)
+        public ApiResponse< WebhookLogListResponse > GetWebhookLogsWithHttpInfo (int? page = null, int? per = null, string createdAtFrom = null, string createdAtTo = null)
         {
 
             var localVarPath = "/logs/webhooks";
@@ -498,7 +498,7 @@ namespace BitPesa.Sdk.Api
         /// <param name="createdAtFrom">Start date to filter recipients by created_at range Allows filtering results by the specified &#x60;created_at&#x60; timeframe.  Example: &#x60;/v1/recipients?created_at_from&#x3D;2018-06-06&amp;created_at_to&#x3D;2018-06-08&#x60; (optional)</param>
         /// <param name="createdAtTo">End date to filter recipients by created_at range Allows filtering results by the specified &#x60;created_at&#x60; timeframe.  Example: &#x60;/v1/recipients?created_at_from&#x3D;2018-06-06&amp;created_at_to&#x3D;2018-06-08&#x60; (optional)</param>
         /// <returns>Task of WebhookLogListResponse</returns>
-        public async System.Threading.Tasks.Task<WebhookLogListResponse> GetWebhookLogsAsync (int?? page = null, int?? per = null, string? createdAtFrom = null, string? createdAtTo = null)
+        public async System.Threading.Tasks.Task<WebhookLogListResponse> GetWebhookLogsAsync (int? page = null, int? per = null, string createdAtFrom = null, string createdAtTo = null)
         {
              ApiResponse<WebhookLogListResponse> localVarResponse = await GetWebhookLogsAsyncWithHttpInfo(page, per, createdAtFrom, createdAtTo);
              return localVarResponse.Data;
@@ -514,7 +514,7 @@ namespace BitPesa.Sdk.Api
         /// <param name="createdAtFrom">Start date to filter recipients by created_at range Allows filtering results by the specified &#x60;created_at&#x60; timeframe.  Example: &#x60;/v1/recipients?created_at_from&#x3D;2018-06-06&amp;created_at_to&#x3D;2018-06-08&#x60; (optional)</param>
         /// <param name="createdAtTo">End date to filter recipients by created_at range Allows filtering results by the specified &#x60;created_at&#x60; timeframe.  Example: &#x60;/v1/recipients?created_at_from&#x3D;2018-06-06&amp;created_at_to&#x3D;2018-06-08&#x60; (optional)</param>
         /// <returns>Task of ApiResponse (WebhookLogListResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<WebhookLogListResponse>> GetWebhookLogsAsyncWithHttpInfo (int?? page = null, int?? per = null, string? createdAtFrom = null, string? createdAtTo = null)
+        public async System.Threading.Tasks.Task<ApiResponse<WebhookLogListResponse>> GetWebhookLogsAsyncWithHttpInfo (int? page = null, int? per = null, string createdAtFrom = null, string createdAtTo = null)
         {
 
             var localVarPath = "/logs/webhooks";

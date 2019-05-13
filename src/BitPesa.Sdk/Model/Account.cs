@@ -42,14 +42,14 @@ namespace BitPesa.Sdk.Model
         /// The account balance for the given currency
         /// </summary>
         /// <value>The account balance for the given currency</value>
-        [DataMember(Name="amount", EmitDefaultValue=)]
+        [DataMember(Name="amount", EmitDefaultValue=false)]
         public decimal? Amount { get; private set; }
 
         /// <summary>
         /// The currency of this balance
         /// </summary>
         /// <value>The currency of this balance</value>
-        [DataMember(Name="currency", EmitDefaultValue=)]
+        [DataMember(Name="currency", EmitDefaultValue=false)]
         public string Currency { get; private set; }
 
         /// <summary>

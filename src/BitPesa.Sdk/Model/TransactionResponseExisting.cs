@@ -44,13 +44,13 @@ namespace BitPesa.Sdk.Model
         /// <summary>
         /// Gets or Sets Sender
         /// </summary>
-        [DataMember(Name="sender", EmitDefaultValue=)]
+        [DataMember(Name="sender", EmitDefaultValue=false)]
         public Sender Sender { get; set; }
 
         /// <summary>
         /// Gets or Sets Transaction
         /// </summary>
-        [DataMember(Name="transaction", EmitDefaultValue=)]
+        [DataMember(Name="transaction", EmitDefaultValue=false)]
         public Transaction Transaction { get; set; }
 
         /// <summary>

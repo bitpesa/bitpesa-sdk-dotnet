@@ -42,7 +42,7 @@ namespace BitPesa.Sdk.Model
         /// <summary>
         /// Gets or Sets Transaction
         /// </summary>
-        [DataMember(Name="transaction", EmitDefaultValue=)]
+        [DataMember(Name="transaction", EmitDefaultValue=false)]
         public Transaction Transaction { get; set; }
 
         /// <summary>

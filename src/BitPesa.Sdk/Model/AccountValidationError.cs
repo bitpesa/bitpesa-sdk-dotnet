@@ -41,7 +41,7 @@ namespace BitPesa.Sdk.Model
         /// <summary>
         /// Gets or Sets Error
         /// </summary>
-        [DataMember(Name="error", EmitDefaultValue=)]
+        [DataMember(Name="error", EmitDefaultValue=false)]
         public string Error { get; private set; }
 
         /// <summary>
