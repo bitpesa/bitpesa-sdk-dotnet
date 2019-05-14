@@ -13,6 +13,8 @@ namespace BitPesa.Example.CS
     {
         static void AccountValidationExample(Configuration configuration)
         {
+            // See https://github.com/transferzero/api-documentation/blob/master/additional-features.md#bank-account-name-enquiry
+            // for more information on how this feature can be used
             AccountValidationRequest accountValidationRequest = new AccountValidationRequest(
                 bankAccount: "90400999999999",
                 bankCode: "190100",
@@ -47,10 +49,15 @@ namespace BitPesa.Example.CS
         {
             TransactionsApi api = new TransactionsApi(configuration);
 
+            // Please check our documentation at https://github.com/transferzero/api-documentation/blob/master/transaction-flow.md
+            // for details on how transactions work
+
             // When adding a sender to transaction, please use either an id or external_id. Providing both will result in a validation error.
-            // Please see our documentation at https://github.com/bitpesa/api-documentation/blob/master/transaction-flow.md#sender
+            // Please see our documentation at https://github.com/transferzero/api-documentation/blob/master/transaction-flow.md#sender
 
             Sender sender = new Sender(id: Guid.Parse("058de445-ffff-ffff-ffff-da9c751d14bf"));
+
+            // You can find the various payout options at https://github.com/transferzero/api-documentation/blob/master/transaction-flow.md#payout-details
 
             PayoutMethodDetails ngnBankDetails = new PayoutMethodDetails(
                     bankAccount: "123456789",
@@ -65,11 +72,19 @@ namespace BitPesa.Example.CS
                     details: ngnBankDetails
                 );
 
+            // Please see https://github.com/transferzero/api-documentation/blob/master/transaction-flow.md#requested-amount-and-currency
+            // on what the request amount and currencies do
+
             Recipient recipient = new Recipient(
                     requestedAmount: 10000,
                     requestedCurrency: "NGN",
                     payoutMethod: payoutMethod
                 );
+
+            // Similarly you can check https://github.com/transferzero/api-documentation/blob/master/transaction-flow.md#requested-amount-and-currency
+            // on details about the input currency parameter
+
+            // Find more details on external IDs at https://github.com/transferzero/api-documentation/blob/master/transaction-flow.md#external-id
 
             Transaction transaction = new Transaction(
                 inputCurrency: "USD",
@@ -110,6 +125,10 @@ namespace BitPesa.Example.CS
             {
                 return null;
             }
+
+            // Please see https://github.com/transferzero/api-documentation/blob/master/transaction-flow.md#funding-transactions
+            // on details about funding transactions
+
             Debit debit = new Debit(
                     currency: "USD",
                     toId: transactionId,
@@ -146,6 +165,9 @@ namespace BitPesa.Example.CS
 
         static string GetTransactionFromErrorMessageExample(Configuration configuration)
         {
+            // Please see https://github.com/transferzero/api-documentation/blob/master/transaction-flow.md#receiving-error-messages
+            // on details about error messages
+
             Guid transationId = Guid.Parse("2cf44191-ffff-ffff-ffff-f0d133a709f1");
 
             TransactionsApi transactionsApi = new TransactionsApi(configuration);
@@ -158,6 +180,9 @@ namespace BitPesa.Example.CS
 
         static Transaction GetTransactionFromExternalId(Configuration configuration)
         {
+            // Please see https://github.com/transferzero/api-documentation/blob/master/transaction-flow.md#external-id
+            // for more details on external IDs
+
             TransactionsApi transactionsApi = new TransactionsApi(configuration);
             String externalId = "TRANSACTION-00001";
 
@@ -178,6 +203,9 @@ namespace BitPesa.Example.CS
 
         static void ParseWebhookExample(Configuration configuration)
         {
+            // Please see https://github.com/transferzero/api-documentation#webhooks
+            // on more details about how webhooks / callbacks from from our system
+
             string webhookContent = "{\n" +
                 "  \"webhook\": \"02b769ff-ffff-ffff-ffff-820d285d76c7\",\n" +
                 "  \"event\": \"transaction.created\",\n" +
@@ -335,37 +363,61 @@ namespace BitPesa.Example.CS
                 "  }\n" +
                 "}";
 
-            Webhook webhook = configuration.ParseString<Webhook>(webhookContent);
+            string url = "<url>";
 
-            if (webhook.Event.StartsWith("transaction"))
+            Dictionary<string, string> headers = new Dictionary<string, string>();
+            headers.Add("Authorization-Nonce", "<nonce>");
+            headers.Add("Authorization-Signature", "<signature>");
+            headers.Add("Authorization-Key", "<key>");
+
+            // Once setting up an endpoint where you'll be receiving callbacks you can use the following code snippet
+            // to both verify that the webhook we sent out is legitimate, and then parse it's contents regardless of type.
+
+            // The details you need to provide is:
+            // - the body of the webhook/callback you received as a string
+            // - the url of your webhook, where you are awaiting the callbacks - this has to be the full URL
+            // - the authentication headers you have received on your webhook endpoint - as a dictionary
+
+            if (configuration.ValidWebhookRequest(url, webhookContent, headers))
             {
-                TransactionWebhook transactionWebhook = configuration.ParseString<TransactionWebhook>(webhookContent);
-                System.Console.WriteLine(transactionWebhook);
+                Webhook webhook = configuration.ParseString<Webhook>(webhookContent);
+
+                if (webhook.Event.StartsWith("transaction"))
+                {
+                    TransactionWebhook transactionWebhook = configuration.ParseString<TransactionWebhook>(webhookContent);
+                    System.Console.WriteLine(transactionWebhook);
+                }
+                else if (webhook.Event.StartsWith("recipient"))
+                {
+                    RecipientWebhook recipientWebhook = configuration.ParseString<RecipientWebhook>(webhookContent);
+                    System.Console.WriteLine(recipientWebhook);
+                }
+                else if (webhook.Event.StartsWith("sender"))
+                {
+                    SenderWebhook senderWebhook = configuration.ParseString<SenderWebhook>(webhookContent);
+                    System.Console.WriteLine(senderWebhook);
+                }
+                else if (webhook.Event.StartsWith("document"))
+                {
+                    DocumentWebhook documentWebhook = configuration.ParseString<DocumentWebhook>(webhookContent);
+                    System.Console.WriteLine(documentWebhook);
+                }
+                else if (webhook.Event.StartsWith("payout_method"))
+                {
+                    PayoutMethodWebhook payoutMethodWebhook = configuration.ParseString<PayoutMethodWebhook>(webhookContent);
+                    System.Console.WriteLine(payoutMethodWebhook);
+                }
             }
-            else if (webhook.Event.StartsWith("recipient"))
+            else
             {
-                RecipientWebhook recipientWebhook = configuration.ParseString<RecipientWebhook>(webhookContent);
-                System.Console.WriteLine(recipientWebhook);
-            }
-            else if (webhook.Event.StartsWith("sender"))
-            {
-                SenderWebhook senderWebhook = configuration.ParseString<SenderWebhook>(webhookContent);
-                System.Console.WriteLine(senderWebhook);
-            }
-            else if (webhook.Event.StartsWith("document"))
-            {
-                DocumentWebhook documentWebhook = configuration.ParseString<DocumentWebhook>(webhookContent);
-                System.Console.WriteLine(documentWebhook);
-            }
-            else if (webhook.Event.StartsWith("payout_method"))
-            {
-                PayoutMethodWebhook payoutMethodWebhook = configuration.ParseString<PayoutMethodWebhook>(webhookContent);
-                System.Console.WriteLine(payoutMethodWebhook);
+                System.Console.WriteLine("Webhook request has invalid signature");
             }
         }
 
         static Guid? CreateSenderExample(Configuration configuration)
         {
+            // For more details on senders please check https://github.com/transferzero/api-documentation/blob/master/transaction-flow.md#sender
+
             SendersApi sendersApi = new SendersApi(configuration);
             Sender sender = new Sender(
                     country: "UG",
@@ -413,6 +465,9 @@ namespace BitPesa.Example.CS
 
         static Sender GetSenderFromExternalId(Configuration configuration)
         {
+            // For more details on senders and external IDs on senders
+            // please check https://github.com/transferzero/api-documentation/blob/master/transaction-flow.md#sender
+
             SendersApi sendersApi = new SendersApi(configuration);
             String externalId = "SENDER-00001";
 
@@ -433,6 +488,8 @@ namespace BitPesa.Example.CS
 
         static void UpdateSenderExample(Configuration configuration)
         {
+            // For more details on senders please check https://github.com/transferzero/api-documentation/blob/master/transaction-flow.md#sender
+
             SendersApi sendersApi = new SendersApi(configuration);
 
             Sender sender = new Sender();
@@ -463,10 +520,14 @@ namespace BitPesa.Example.CS
 
         static void Main(string[] args)
         {
+            // Please see our documentation at https://github.com/transferzero/api-documentation
+            // and the API specification at http://api.transferzero.com/documentation/
+            // for more information.
+
             Configuration configuration = new Configuration();
-            configuration.ApiKey = "KEY";
-            configuration.ApiSecret = "SECRET";
-            configuration.BasePath = "https://api-sandbox.bitpesa.co/v1";
+            configuration.ApiKey = "<key>";
+            configuration.ApiSecret = "<secret>";
+            configuration.BasePath = "https://api-sandbox.transferzero.com/v1";
 
             //AccountValidationExample(configuration);
             //CreateSenderExample(configuration);

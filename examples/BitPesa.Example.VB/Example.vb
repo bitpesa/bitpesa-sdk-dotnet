@@ -9,6 +9,10 @@ Imports System.Threading.Tasks
 
 Module Example
     Sub AccountValidationExample(ByVal configuration As Configuration)
+
+        ' See https//github.com/transferzero/api-documentation/blob/master/additional-features.md#bank-account-name-enquiry
+        ' for more information on how this feature can be used
+
         Dim accountValidationRequest As AccountValidationRequest = New AccountValidationRequest(
             bankAccount:="9040099999999",
             bankCode:="190100",
@@ -32,23 +36,40 @@ Module Example
     End Sub
 
     Function CreateTransactionExample(ByVal configuration As Configuration) As Guid?
+        ' Please check our documentation at https://github.com/transferzero/api-documentation/blob/master/transaction-flow.md
+        ' for details on how transactions work
+
         Dim api As TransactionsApi = New TransactionsApi(configuration)
 
         ' When adding a sender to transaction, please use either an id Or external_id. Providing both will result in a validation error.
-        ' Please see our documentation at https://github.com/bitpesa/api-documentation/blob/master/transaction-flow.md#sender
+        ' Please see our documentation at https://github.com/transferzero/api-documentation/blob/master/transaction-flow.md#sender
 
         Dim sender As Sender = New Sender(id:=Guid.Parse("058de445-ffff-ffff-ffff-da9c751d14bf"))
+
+        ' You can find the various payout options at https//github.com/transferzero/api-documentation/blob/master/transaction-flow.md#payout-details
+
         Dim ngnBankDetails As PayoutMethodDetails = New PayoutMethodDetails(
             bankAccount:="123456789",
             bankAccountType:=PayoutMethodBankAccountTypeEnum._20,
             bankCode:="082",
             firstName:="First",
             lastName:="Last")
+
         Dim payoutMethod As PayoutMethod = New PayoutMethod(type:="NGN::Bank", details:=ngnBankDetails)
+
+        ' Please see https//github.com/transferzero/api-documentation/blob/master/transaction-flow.md#requested-amount-And-currency
+        ' on what the request amount And currencies do
+
         Dim recipient As Recipient = New Recipient(
             requestedAmount:=10000,
             requestedCurrency:="NGN",
             payoutMethod:=payoutMethod)
+
+        ' Similarly you can check https//github.com/transferzero/api-documentation/blob/master/transaction-flow.md#requested-amount-And-currency
+        ' on details about the input currency parameter
+
+        ' Find more details on external IDs at https//github.com/transferzero/api-documentation/blob/master/transaction-flow.md#external-id
+
         Dim transaction As Transaction = New Transaction(
             inputCurrency:="USD",
             sender:=sender,
@@ -83,6 +104,9 @@ Module Example
             Return Nothing
         End If
 
+        ' Please see https//github.com/transferzero/api-documentation/blob/master/transaction-flow.md#funding-transactions
+        ' on details about funding transactions
+
         Dim debit As Debit = New Debit(currency:="USD", toId:=transactionId, toType:="Transaction")
         Dim debitRequest As DebitRequestWrapper = New DebitRequestWrapper(debit:=New List(Of Debit)() From {
                 debit
@@ -108,6 +132,9 @@ Module Example
     End Function
 
     Function GetTransactionFromErrorMessageExample(ByVal configuration As Configuration) As String
+        ' Please see https://github.com/transferzero/api-documentation/blob/master/transaction-flow.md#receiving-error-messages
+        ' on details about error messages
+
         Dim transationId As Guid = Guid.Parse("2cf44191-ffff-ffff-ffff-f0d133a709f1")
         Dim transactionsApi As TransactionsApi = New TransactionsApi(configuration)
         Dim response As TransactionResponse = transactionsApi.GetTransaction(transactionID:=transationId)
@@ -116,6 +143,9 @@ Module Example
     End Function
 
     Function GetTransactionFromExternalId(ByVal configuration As Configuration) As Transaction
+        ' Please see https://github.com/transferzero/api-documentation/blob/master/transaction-flow.md#external-id
+        ' for more details on external IDs
+
         Dim transactionsApi As TransactionsApi = New TransactionsApi(configuration)
         Dim externalId As String = "TRANSACTION-00001"
         Dim transactionListResponse As TransactionListResponse = transactionsApi.GetTransactions(externalId:=externalId)
@@ -132,28 +162,53 @@ Module Example
     End Function
 
     Sub ParseWebhookExample(ByVal configuration As Configuration)
-        Dim webhookContent As String = "{  ""webhook"": ""02b769ff-ffff-ffff-ffff-820d285d76c7"",  ""event"": ""transaction.created"",  ""object"": {    ""id"": ""9170b966-ffff-ffff-ffff-7af5ad7e335f"",    ""metadata"": {},    ""state"": ""approved"",    ""input_amount"": 50.00,    ""input_currency"": ""EUR"",    ""sender"": {      ""id"": ""4be2a144-ffff-ffff-ffff-8ebcbfbbbe0c"",      ""type"": ""person"",      ""state"": ""initial"",      ""state_reason"": null,      ""country"": ""GB"",      ""street"": ""Test"",      ""postal_code"": ""EH1 1TT"",      ""city"": ""London"",      ""phone_country"": ""GB"",      ""phone_number"": ""+447123456789"",      ""email"": ""test@example.com"",      ""ip"": ""127.0.0.1"",      ""first_name"": ""Test"",      ""last_name"": ""Name"",      ""birth_date"": ""1990-01-01"",      ""metadata"": {},      ""providers"": {}    },    ""payin_methods"": [],    ""paid_amount"": 50.00,    ""due_amount"": 0,    ""recipients"": [      {        ""id"": ""69dee5aa-ffff-ffff-ffff-0a2c06353c6b"",        ""transaction_id"": ""9170b966-ffff-ffff-ffff-7af5ad7e335f"",        ""created_at"": ""2017-07-24T15:08:58Z"",        ""input_usd_amount"": 60.00,        ""state"": ""initial"",        ""transaction_state"": ""initial"",        ""requested_amount"": 50.00,        ""requested_currency"": ""EUR"",        ""input_amount"": 50.00,        ""input_currency"": ""EUR"",        ""output_amount"": 20001,        ""output_currency"": ""NGN"",        ""payout_method"": {          ""id"": ""c67580ee-ffff-ffff-ffff-ac51f1d0c035"",          ""type"": ""NGN::Bank"",          ""details"": {            ""email"": """",            ""bank_code"": ""011"",            ""last_name"": ""Test"",            ""first_name"": ""User"",            ""bank_account"": ""1111111111"",            ""bank_account_type"": ""10""          },          ""metadata"": {},          ""provider"": ""interswitch"",          ""fields"": {            ""email"": {              ""type"": ""input"",              ""validations"": {                ""format"": ""\\A((\\w+([\\-+.]\\w+)*@[a-zA-Z0-9]+([\\-\\.][a-zA-Z0-9]+)*)*){3,320}\\z""              }            },            ""first_name"": {              ""type"": ""input"",              ""validations"": {                ""presence"": true              }            },            ""last_name"": {              ""type"": ""input"",              ""validations"": {                ""presence"": true              }            },            ""bank_code"": {              ""type"": ""select"",              ""options"": {                ""063"": ""Diamond Bank"",                ""050"": ""EcoBank"",                ""214"": ""FCMB Bank"",                ""070"": ""Fidelity Bank"",                ""011"": ""First Bank of Nigeria"",                ""058"": ""Guaranty Trust Bank "",                ""030"": ""Heritage Bank"",                ""301"": ""Jaiz Bank"",                ""082"": ""Keystone "",                ""014"": ""Mainstreet "",                ""076"": ""Skye Bank"",                ""039"": ""Stanbic IBTC Bank "",                ""232"": ""Sterling bank"",                ""032"": ""Union Bank"",                ""033"": ""United Bank for Africa "",                ""215"": ""Unity Bank"",                ""035"": ""Wema Bank"",                ""057"": ""Zenith International ""              },              ""validations"": {                ""presence"": true,                ""inclusion"": {                  ""in"": {                    ""063"": ""Diamond Bank"",                    ""050"": ""EcoBank"",                    ""214"": ""FCMB Bank"",                    ""070"": ""Fidelity Bank"",                    ""011"": ""First Bank of Nigeria"",                    ""058"": ""Guaranty Trust Bank "",                    ""030"": ""Heritage Bank"",                    ""301"": ""Jaiz Bank"",                    ""082"": ""Keystone "",                    ""014"": ""Mainstreet "",                    ""076"": ""Skye Bank"",                    ""039"": ""Stanbic IBTC Bank "",                    ""232"": ""Sterling bank"",                    ""032"": ""Union Bank"",                    ""033"": ""United Bank for Africa "",                    ""215"": ""Unity Bank"",                    ""035"": ""Wema Bank"",                    ""057"": ""Zenith International ""                  }                }              }            },            ""bank_account"": {              ""type"": ""input"",              ""validations"": {                ""presence"": true              }            },            ""bank_account_type"": {              ""type"": ""select"",              ""options"": {                ""20"": ""Current"",                ""10"": ""Savings""              },              ""validations"": {                ""presence"": true,                ""inclusion"": {                  ""in"": {                    ""20"": ""Current"",                    ""10"": ""Savings""                  }                }              }            }          }        },        ""metadata"": {}      }    ],    ""created_at"": ""2017-07-24T15:08:58Z"",    ""expires_at"": ""2017-07-24T16:08:58Z""  }}"
-        Dim webhook As Webhook = configuration.ParseString(Of Webhook)(webhookContent)
+        ' Please see https://github.com/transferzero/api-documentation#webhooks
+        ' on more details about how webhooks / callbacks from from our system
 
-        If webhook.[Event].StartsWith("transaction") Then
-            Dim transactionWebhook As TransactionWebhook = configuration.ParseString(Of TransactionWebhook)(webhookContent)
-            System.Console.WriteLine(transactionWebhook)
-        ElseIf webhook.[Event].StartsWith("recipient") Then
-            Dim recipientWebhook As RecipientWebhook = configuration.ParseString(Of RecipientWebhook)(webhookContent)
-            System.Console.WriteLine(recipientWebhook)
-        ElseIf webhook.[Event].StartsWith("sender") Then
-            Dim senderWebhook As SenderWebhook = configuration.ParseString(Of SenderWebhook)(webhookContent)
-            System.Console.WriteLine(senderWebhook)
-        ElseIf webhook.[Event].StartsWith("document") Then
-            Dim documentWebhook As DocumentWebhook = configuration.ParseString(Of DocumentWebhook)(webhookContent)
-            System.Console.WriteLine(documentWebhook)
-        ElseIf webhook.[Event].StartsWith("payout_method") Then
-            Dim payoutMethodWebhook As PayoutMethodWebhook = configuration.ParseString(Of PayoutMethodWebhook)(webhookContent)
-            System.Console.WriteLine(payoutMethodWebhook)
+        Dim webhookContent As String = "{  ""webhook"": ""02b769ff-ffff-ffff-ffff-820d285d76c7"",  ""event"": ""transaction.created"",  ""object"": {    ""id"": ""9170b966-ffff-ffff-ffff-7af5ad7e335f"",    ""metadata"": {},    ""state"": ""approved"",    ""input_amount"": 50.00,    ""input_currency"": ""EUR"",    ""sender"": {      ""id"": ""4be2a144-ffff-ffff-ffff-8ebcbfbbbe0c"",      ""type"": ""person"",      ""state"": ""initial"",      ""state_reason"": null,      ""country"": ""GB"",      ""street"": ""Test"",      ""postal_code"": ""EH1 1TT"",      ""city"": ""London"",      ""phone_country"": ""GB"",      ""phone_number"": ""+447123456789"",      ""email"": ""test@example.com"",      ""ip"": ""127.0.0.1"",      ""first_name"": ""Test"",      ""last_name"": ""Name"",      ""birth_date"": ""1990-01-01"",      ""metadata"": {},      ""providers"": {}    },    ""payin_methods"": [],    ""paid_amount"": 50.00,    ""due_amount"": 0,    ""recipients"": [      {        ""id"": ""69dee5aa-ffff-ffff-ffff-0a2c06353c6b"",        ""transaction_id"": ""9170b966-ffff-ffff-ffff-7af5ad7e335f"",        ""created_at"": ""2017-07-24T15:08:58Z"",        ""input_usd_amount"": 60.00,        ""state"": ""initial"",        ""transaction_state"": ""initial"",        ""requested_amount"": 50.00,        ""requested_currency"": ""EUR"",        ""input_amount"": 50.00,        ""input_currency"": ""EUR"",        ""output_amount"": 20001,        ""output_currency"": ""NGN"",        ""payout_method"": {          ""id"": ""c67580ee-ffff-ffff-ffff-ac51f1d0c035"",          ""type"": ""NGN::Bank"",          ""details"": {            ""email"": """",            ""bank_code"": ""011"",            ""last_name"": ""Test"",            ""first_name"": ""User"",            ""bank_account"": ""1111111111"",            ""bank_account_type"": ""10""          },          ""metadata"": {},          ""provider"": ""interswitch"",          ""fields"": {            ""email"": {              ""type"": ""input"",              ""validations"": {                ""format"": ""\\A((\\w+([\\-+.]\\w+)*@[a-zA-Z0-9]+([\\-\\.][a-zA-Z0-9]+)*)*){3,320}\\z""              }            },            ""first_name"": {              ""type"": ""input"",              ""validations"": {                ""presence"": true              }            },            ""last_name"": {              ""type"": ""input"",              ""validations"": {                ""presence"": true              }            },            ""bank_code"": {              ""type"": ""select"",              ""options"": {                ""063"": ""Diamond Bank"",                ""050"": ""EcoBank"",                ""214"": ""FCMB Bank"",                ""070"": ""Fidelity Bank"",                ""011"": ""First Bank of Nigeria"",                ""058"": ""Guaranty Trust Bank "",                ""030"": ""Heritage Bank"",                ""301"": ""Jaiz Bank"",                ""082"": ""Keystone "",                ""014"": ""Mainstreet "",                ""076"": ""Skye Bank"",                ""039"": ""Stanbic IBTC Bank "",                ""232"": ""Sterling bank"",                ""032"": ""Union Bank"",                ""033"": ""United Bank for Africa "",                ""215"": ""Unity Bank"",                ""035"": ""Wema Bank"",                ""057"": ""Zenith International ""              },              ""validations"": {                ""presence"": true,                ""inclusion"": {                  ""in"": {                    ""063"": ""Diamond Bank"",                    ""050"": ""EcoBank"",                    ""214"": ""FCMB Bank"",                    ""070"": ""Fidelity Bank"",                    ""011"": ""First Bank of Nigeria"",                    ""058"": ""Guaranty Trust Bank "",                    ""030"": ""Heritage Bank"",                    ""301"": ""Jaiz Bank"",                    ""082"": ""Keystone "",                    ""014"": ""Mainstreet "",                    ""076"": ""Skye Bank"",                    ""039"": ""Stanbic IBTC Bank "",                    ""232"": ""Sterling bank"",                    ""032"": ""Union Bank"",                    ""033"": ""United Bank for Africa "",                    ""215"": ""Unity Bank"",                    ""035"": ""Wema Bank"",                    ""057"": ""Zenith International ""                  }                }              }            },            ""bank_account"": {              ""type"": ""input"",              ""validations"": {                ""presence"": true              }            },            ""bank_account_type"": {              ""type"": ""select"",              ""options"": {                ""20"": ""Current"",                ""10"": ""Savings""              },              ""validations"": {                ""presence"": true,                ""inclusion"": {                  ""in"": {                    ""20"": ""Current"",                    ""10"": ""Savings""                  }                }              }            }          }        },        ""metadata"": {}      }    ],    ""created_at"": ""2017-07-24T15:08:58Z"",    ""expires_at"": ""2017-07-24T16:08:58Z""  }}"
+
+        Dim url As String = "<url>"
+        Dim headers As Dictionary(Of String, String) = New Dictionary(Of String, String)()
+
+        headers.Add("Authorization-Nonce", "<nonce>")
+        headers.Add("Authorization-Signature", "<signature>")
+        headers.Add("Authorization-Key", "<key>")
+
+        ' Once setting up an endpoint where you'll be receiving callbacks you can use the following code snippet
+        ' to both verify that the webhook we sent out Is legitimate, And then parse it's contents regardless of type.
+
+        ' The details you need to provide Is
+        ' - the body of the webhook/callback you received as a string
+        ' - the url of your webhook, where you are awaiting the callbacks - this has to be the full URL
+        ' - the authentication headers you have received on your webhook endpoint - as a dictionary
+
+        If configuration.ValidWebhookRequest(url, webhookContent, headers) Then
+            Dim webhook As Webhook = configuration.ParseString(Of Webhook)(webhookContent)
+
+            If webhook.[Event].StartsWith("transaction") Then
+                Dim transactionWebhook As TransactionWebhook = configuration.ParseString(Of TransactionWebhook)(webhookContent)
+                System.Console.WriteLine(transactionWebhook)
+            ElseIf webhook.[Event].StartsWith("recipient") Then
+                Dim recipientWebhook As RecipientWebhook = configuration.ParseString(Of RecipientWebhook)(webhookContent)
+                System.Console.WriteLine(recipientWebhook)
+            ElseIf webhook.[Event].StartsWith("sender") Then
+                Dim senderWebhook As SenderWebhook = configuration.ParseString(Of SenderWebhook)(webhookContent)
+                System.Console.WriteLine(senderWebhook)
+            ElseIf webhook.[Event].StartsWith("document") Then
+                Dim documentWebhook As DocumentWebhook = configuration.ParseString(Of DocumentWebhook)(webhookContent)
+                System.Console.WriteLine(documentWebhook)
+            ElseIf webhook.[Event].StartsWith("payout_method") Then
+                Dim payoutMethodWebhook As PayoutMethodWebhook = configuration.ParseString(Of PayoutMethodWebhook)(webhookContent)
+                System.Console.WriteLine(payoutMethodWebhook)
+            End If
+        Else
+            System.Console.WriteLine("Webhook request has invalid signature")
         End If
     End Sub
 
     Function CreateSenderExample(ByVal configuration As Configuration) As Guid?
+        ' For more details on senders please check https://github.com/transferzero/api-documentation/blob/master/transaction-flow.md#sender
+
         Dim sendersApi As SendersApi = New SendersApi(configuration)
         Dim sender As Sender = New Sender(
             country:="UG",
@@ -191,6 +246,9 @@ Module Example
     End Function
 
     Function GetSenderFromExternalId(ByVal configuration As Configuration) As Sender
+        ' For more details on senders And external IDs on senders
+        ' please check https://github.com/transferzero/api-documentation/blob/master/transaction-flow.md#sender
+
         Dim sendersApi As SendersApi = New SendersApi(configuration)
         Dim externalId As String = "SENDER-00001"
         Dim senderListResponse As SenderListResponse = sendersApi.GetSenders(externalId:=externalId)
@@ -207,6 +265,8 @@ Module Example
     End Function
 
     Sub UpdateSenderExample(ByVal configuration As Configuration)
+        ' For more details on senders please check https://github.com/transferzero/api-documentation/blob/master/transaction-flow.md#sender
+
         Dim sendersApi As SendersApi = New SendersApi(configuration)
         Dim sender As Sender = New Sender()
         sender.City = "London"
@@ -229,10 +289,14 @@ Module Example
     End Sub
 
     Sub Main(ByVal args As String())
+        ' Please see our documentation at https://github.com/transferzero/api-documentation
+        ' and the API specification at http://api.transferzero.com/documentation/
+        ' for more information.
+
         Dim configuration As Configuration = New Configuration()
-        configuration.ApiKey = "KEY"
-        configuration.ApiSecret = "SECRET"
-        configuration.BasePath = "https://api-sandbox.bitpesa.co/v1"
+        configuration.ApiKey = "<key>"
+        configuration.ApiSecret = "<secret>"
+        configuration.BasePath = "https://api-sandbox.transferzero.com/v1"
 
         ' AccountValidationExample(configuration)
         ' CreateSenderExample(configuration)
