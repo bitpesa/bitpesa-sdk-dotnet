@@ -1,5 +1,5 @@
 
-# BitPesa.Sdk.Model.PayoutMethodDetailsGHSBank
+# TransferZero.Sdk.Model.PayoutMethodDetailsGHSBank
 
 ## Properties
 

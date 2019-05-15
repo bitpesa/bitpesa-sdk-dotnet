@@ -1,5 +1,5 @@
 
-# BitPesa.Sdk.Model.WebhookLogMetadata
+# TransferZero.Sdk.Model.WebhookLogMetadata
 
 ## Properties
 

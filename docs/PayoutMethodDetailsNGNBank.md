@@ -1,5 +1,5 @@
 
-# BitPesa.Sdk.Model.PayoutMethodDetailsNGNBank
+# TransferZero.Sdk.Model.PayoutMethodDetailsNGNBank
 
 ## Properties
 

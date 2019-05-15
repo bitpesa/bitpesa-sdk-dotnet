@@ -1,5 +1,5 @@
 
-# BitPesa.Sdk.Model.PayoutMethodDetailsXOFMobile
+# TransferZero.Sdk.Model.PayoutMethodDetailsXOFMobile
 
 ## Properties
 

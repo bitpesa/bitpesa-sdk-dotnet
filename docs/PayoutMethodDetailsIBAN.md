@@ -1,5 +1,5 @@
 
-# BitPesa.Sdk.Model.PayoutMethodDetailsIBAN
+# TransferZero.Sdk.Model.PayoutMethodDetailsIBAN
 
 ## Properties
 

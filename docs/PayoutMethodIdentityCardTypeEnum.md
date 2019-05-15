@@ -1,5 +1,5 @@
 
-# BitPesa.Sdk.Model.PayoutMethodIdentityCardTypeEnum
+# TransferZero.Sdk.Model.PayoutMethodIdentityCardTypeEnum
 
 ## Properties
 

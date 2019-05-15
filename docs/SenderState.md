@@ -1,5 +1,5 @@
 
-# BitPesa.Sdk.Model.SenderState
+# TransferZero.Sdk.Model.SenderState
 
 ## Properties
 

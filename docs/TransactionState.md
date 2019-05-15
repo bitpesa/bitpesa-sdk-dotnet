@@ -1,5 +1,5 @@
 
-# BitPesa.Sdk.Model.TransactionState
+# TransferZero.Sdk.Model.TransactionState
 
 ## Properties
 

@@ -1,5 +1,5 @@
 
-# BitPesa.Sdk.Model.CurrencyExchangeListResponse
+# TransferZero.Sdk.Model.CurrencyExchangeListResponse
 
 ## Properties
 

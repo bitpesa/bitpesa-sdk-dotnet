@@ -1,6 +1,6 @@
-# BitPesa.Sdk.Api.PaymentMethodsApi
+# TransferZero.Sdk.Api.PaymentMethodsApi
 
-All URIs are relative to *https://api-sandbox.bitpesa.co/v1*
+All URIs are relative to *https://api-sandbox.transferzero.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -23,9 +23,9 @@ Fetching possible payin methods.
 ```csharp
 using System;
 using System.Diagnostics;
-using BitPesa.Sdk.Api;
-using BitPesa.Sdk.Client;
-using BitPesa.Sdk.Model;
+using TransferZero.Sdk.Api;
+using TransferZero.Sdk.Client;
+using TransferZero.Sdk.Model;
 
 namespace Example
 {
@@ -36,7 +36,7 @@ namespace Example
             Configuration configuration = new Configuration();
             configuration.ApiKey = "<key>";
             configuration.ApiSecret = "<secret>";
-            configuration.BasePath = "https://api-sandbox.bitpesa.co/v1";
+            configuration.BasePath = "https://api-sandbox.transferzero.com/v1";
 
             var apiInstance = new PaymentMethodsApi(configuration);
 
@@ -63,9 +63,9 @@ namespace Example
 #### VB.NET
 
 ```vbnet
-Imports BitPesa.Sdk.Api;
-Imports BitPesa.Sdk.Client;
-Imports BitPesa.Sdk.Model;
+Imports TransferZero.Sdk.Api;
+Imports TransferZero.Sdk.Client;
+Imports TransferZero.Sdk.Model;
 Imports System
 Imports System.Collections.Generic
 Imports System.Linq
@@ -77,7 +77,7 @@ Module Example
         Dim configuration As Configuration = New Configuration()
         configuration.ApiKey = "KEY"
         configuration.ApiSecret = "SECRET"
-        configuration.BasePath = "https://api-sandbox.bitpesa.co/v1"
+        configuration.BasePath = "https://api-sandbox.transferzero.com/v1"
 
         Dim debitsApi As AccountDebitsApi = New AccountDebitsApi(configuration)
 
@@ -131,9 +131,9 @@ Fetching possible payout methods.
 ```csharp
 using System;
 using System.Diagnostics;
-using BitPesa.Sdk.Api;
-using BitPesa.Sdk.Client;
-using BitPesa.Sdk.Model;
+using TransferZero.Sdk.Api;
+using TransferZero.Sdk.Client;
+using TransferZero.Sdk.Model;
 
 namespace Example
 {
@@ -144,7 +144,7 @@ namespace Example
             Configuration configuration = new Configuration();
             configuration.ApiKey = "<key>";
             configuration.ApiSecret = "<secret>";
-            configuration.BasePath = "https://api-sandbox.bitpesa.co/v1";
+            configuration.BasePath = "https://api-sandbox.transferzero.com/v1";
 
             var apiInstance = new PaymentMethodsApi(configuration);
 
@@ -171,9 +171,9 @@ namespace Example
 #### VB.NET
 
 ```vbnet
-Imports BitPesa.Sdk.Api;
-Imports BitPesa.Sdk.Client;
-Imports BitPesa.Sdk.Model;
+Imports TransferZero.Sdk.Api;
+Imports TransferZero.Sdk.Client;
+Imports TransferZero.Sdk.Model;
 Imports System
 Imports System.Collections.Generic
 Imports System.Linq
@@ -185,7 +185,7 @@ Module Example
         Dim configuration As Configuration = New Configuration()
         configuration.ApiKey = "KEY"
         configuration.ApiSecret = "SECRET"
-        configuration.BasePath = "https://api-sandbox.bitpesa.co/v1"
+        configuration.BasePath = "https://api-sandbox.transferzero.com/v1"
 
         Dim debitsApi As AccountDebitsApi = New AccountDebitsApi(configuration)
 

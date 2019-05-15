@@ -1,5 +1,5 @@
 
-# BitPesa.Sdk.Model.FieldDescription
+# TransferZero.Sdk.Model.FieldDescription
 
 ## Properties
 
