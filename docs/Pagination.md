@@ -1,5 +1,5 @@
 
-# BitPesa.Sdk.Model.Pagination
+# TransferZero.Sdk.Model.Pagination
 
 ## Properties
 

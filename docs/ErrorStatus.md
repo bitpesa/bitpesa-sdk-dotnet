@@ -1,5 +1,5 @@
 
-# BitPesa.Sdk.Model.ErrorStatus
+# TransferZero.Sdk.Model.ErrorStatus
 
 ## Properties
 

@@ -1,5 +1,5 @@
 
-# BitPesa.Sdk.Model.AccountValidationError
+# TransferZero.Sdk.Model.AccountValidationError
 
 ## Properties
 

@@ -1,5 +1,5 @@
 
-# BitPesa.Sdk.Model.ApiLogListResponse
+# TransferZero.Sdk.Model.ApiLogListResponse
 
 ## Properties
 

@@ -1,5 +1,5 @@
 
-# BitPesa.Sdk.Model.PayoutMethodWebhook
+# TransferZero.Sdk.Model.PayoutMethodWebhook
 
 ## Properties
 

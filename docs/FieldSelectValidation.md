@@ -1,5 +1,5 @@
 
-# BitPesa.Sdk.Model.FieldSelectValidation
+# TransferZero.Sdk.Model.FieldSelectValidation
 
 ## Properties
 
