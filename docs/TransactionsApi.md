@@ -1,6 +1,6 @@
-# BitPesa.Sdk.Api.TransactionsApi
+# TransferZero.Sdk.Api.TransactionsApi
 
-All URIs are relative to *https://api-sandbox.bitpesa.co/v1*
+All URIs are relative to *https://api-sandbox.transferzero.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -28,9 +28,9 @@ Calculates the input, output and fee amounts for the recipients in a transaction
 ```csharp
 using System;
 using System.Diagnostics;
-using BitPesa.Sdk.Api;
-using BitPesa.Sdk.Client;
-using BitPesa.Sdk.Model;
+using TransferZero.Sdk.Api;
+using TransferZero.Sdk.Client;
+using TransferZero.Sdk.Model;
 
 namespace Example
 {
@@ -41,7 +41,7 @@ namespace Example
             Configuration configuration = new Configuration();
             configuration.ApiKey = "<key>";
             configuration.ApiSecret = "<secret>";
-            configuration.BasePath = "https://api-sandbox.bitpesa.co/v1";
+            configuration.BasePath = "https://api-sandbox.transferzero.com/v1";
 
             var apiInstance = new TransactionsApi(configuration);
             var transactionRequest = new TransactionRequest(); // TransactionRequest | 
@@ -69,9 +69,9 @@ namespace Example
 #### VB.NET
 
 ```vbnet
-Imports BitPesa.Sdk.Api;
-Imports BitPesa.Sdk.Client;
-Imports BitPesa.Sdk.Model;
+Imports TransferZero.Sdk.Api;
+Imports TransferZero.Sdk.Client;
+Imports TransferZero.Sdk.Model;
 Imports System
 Imports System.Collections.Generic
 Imports System.Linq
@@ -83,7 +83,7 @@ Module Example
         Dim configuration As Configuration = New Configuration()
         configuration.ApiKey = "KEY"
         configuration.ApiSecret = "SECRET"
-        configuration.BasePath = "https://api-sandbox.bitpesa.co/v1"
+        configuration.BasePath = "https://api-sandbox.transferzero.com/v1"
 
         Dim debitsApi As AccountDebitsApi = New AccountDebitsApi(configuration)
 
@@ -141,9 +141,9 @@ Finds and returns a Transaction created by the requesting API key, using the pro
 ```csharp
 using System;
 using System.Diagnostics;
-using BitPesa.Sdk.Api;
-using BitPesa.Sdk.Client;
-using BitPesa.Sdk.Model;
+using TransferZero.Sdk.Api;
+using TransferZero.Sdk.Client;
+using TransferZero.Sdk.Model;
 
 namespace Example
 {
@@ -154,7 +154,7 @@ namespace Example
             Configuration configuration = new Configuration();
             configuration.ApiKey = "<key>";
             configuration.ApiSecret = "<secret>";
-            configuration.BasePath = "https://api-sandbox.bitpesa.co/v1";
+            configuration.BasePath = "https://api-sandbox.transferzero.com/v1";
 
             var apiInstance = new TransactionsApi(configuration);
             var transactionID = new Guid?(); // Guid? | ID of the transaction.  Example: `/v1/transactions/bf9ff782-e182-45ac-abea-5bce83ad6670`
@@ -182,9 +182,9 @@ namespace Example
 #### VB.NET
 
 ```vbnet
-Imports BitPesa.Sdk.Api;
-Imports BitPesa.Sdk.Client;
-Imports BitPesa.Sdk.Model;
+Imports TransferZero.Sdk.Api;
+Imports TransferZero.Sdk.Client;
+Imports TransferZero.Sdk.Model;
 Imports System
 Imports System.Collections.Generic
 Imports System.Linq
@@ -196,7 +196,7 @@ Module Example
         Dim configuration As Configuration = New Configuration()
         configuration.ApiKey = "KEY"
         configuration.ApiSecret = "SECRET"
-        configuration.BasePath = "https://api-sandbox.bitpesa.co/v1"
+        configuration.BasePath = "https://api-sandbox.transferzero.com/v1"
 
         Dim debitsApi As AccountDebitsApi = New AccountDebitsApi(configuration)
 
@@ -254,9 +254,9 @@ Retrieves a paginated list of the Transactions created by your API key.
 ```csharp
 using System;
 using System.Diagnostics;
-using BitPesa.Sdk.Api;
-using BitPesa.Sdk.Client;
-using BitPesa.Sdk.Model;
+using TransferZero.Sdk.Api;
+using TransferZero.Sdk.Client;
+using TransferZero.Sdk.Model;
 
 namespace Example
 {
@@ -267,7 +267,7 @@ namespace Example
             Configuration configuration = new Configuration();
             configuration.ApiKey = "<key>";
             configuration.ApiSecret = "<secret>";
-            configuration.BasePath = "https://api-sandbox.bitpesa.co/v1";
+            configuration.BasePath = "https://api-sandbox.transferzero.com/v1";
 
             var apiInstance = new TransactionsApi(configuration);
             var page = 1;  // int? | The page number to request (defaults to 1) (optional) 
@@ -297,9 +297,9 @@ namespace Example
 #### VB.NET
 
 ```vbnet
-Imports BitPesa.Sdk.Api;
-Imports BitPesa.Sdk.Client;
-Imports BitPesa.Sdk.Model;
+Imports TransferZero.Sdk.Api;
+Imports TransferZero.Sdk.Client;
+Imports TransferZero.Sdk.Model;
 Imports System
 Imports System.Collections.Generic
 Imports System.Linq
@@ -311,7 +311,7 @@ Module Example
         Dim configuration As Configuration = New Configuration()
         configuration.ApiKey = "KEY"
         configuration.ApiSecret = "SECRET"
-        configuration.BasePath = "https://api-sandbox.bitpesa.co/v1"
+        configuration.BasePath = "https://api-sandbox.transferzero.com/v1"
 
         Dim debitsApi As AccountDebitsApi = New AccountDebitsApi(configuration)
 
@@ -373,9 +373,9 @@ This method is available only in sandbox environment and is supposed to be used 
 ```csharp
 using System;
 using System.Diagnostics;
-using BitPesa.Sdk.Api;
-using BitPesa.Sdk.Client;
-using BitPesa.Sdk.Model;
+using TransferZero.Sdk.Api;
+using TransferZero.Sdk.Client;
+using TransferZero.Sdk.Model;
 
 namespace Example
 {
@@ -386,7 +386,7 @@ namespace Example
             Configuration configuration = new Configuration();
             configuration.ApiKey = "<key>";
             configuration.ApiSecret = "<secret>";
-            configuration.BasePath = "https://api-sandbox.bitpesa.co/v1";
+            configuration.BasePath = "https://api-sandbox.transferzero.com/v1";
 
             var apiInstance = new TransactionsApi(configuration);
             var transactionID = new Guid?(); // Guid? | ID of the transaction to payin.  Example: `/v1/transactions/bf9ff782-e182-45ac-abea-5bce83ad6670/payin`
@@ -415,9 +415,9 @@ namespace Example
 #### VB.NET
 
 ```vbnet
-Imports BitPesa.Sdk.Api;
-Imports BitPesa.Sdk.Client;
-Imports BitPesa.Sdk.Model;
+Imports TransferZero.Sdk.Api;
+Imports TransferZero.Sdk.Client;
+Imports TransferZero.Sdk.Model;
 Imports System
 Imports System.Collections.Generic
 Imports System.Linq
@@ -429,7 +429,7 @@ Module Example
         Dim configuration As Configuration = New Configuration()
         configuration.ApiKey = "KEY"
         configuration.ApiSecret = "SECRET"
-        configuration.BasePath = "https://api-sandbox.bitpesa.co/v1"
+        configuration.BasePath = "https://api-sandbox.transferzero.com/v1"
 
         Dim debitsApi As AccountDebitsApi = New AccountDebitsApi(configuration)
 
@@ -489,9 +489,9 @@ This method is available only in sandbox environment and is supposed to be used 
 ```csharp
 using System;
 using System.Diagnostics;
-using BitPesa.Sdk.Api;
-using BitPesa.Sdk.Client;
-using BitPesa.Sdk.Model;
+using TransferZero.Sdk.Api;
+using TransferZero.Sdk.Client;
+using TransferZero.Sdk.Model;
 
 namespace Example
 {
@@ -502,7 +502,7 @@ namespace Example
             Configuration configuration = new Configuration();
             configuration.ApiKey = "<key>";
             configuration.ApiSecret = "<secret>";
-            configuration.BasePath = "https://api-sandbox.bitpesa.co/v1";
+            configuration.BasePath = "https://api-sandbox.transferzero.com/v1";
 
             var apiInstance = new TransactionsApi(configuration);
             var transactionID = new Guid?(); // Guid? | ID of the transaction to payout.  Example: `/v1/transactions/bf9ff782-e182-45ac-abea-5bce83ad6670/payout`
@@ -530,9 +530,9 @@ namespace Example
 #### VB.NET
 
 ```vbnet
-Imports BitPesa.Sdk.Api;
-Imports BitPesa.Sdk.Client;
-Imports BitPesa.Sdk.Model;
+Imports TransferZero.Sdk.Api;
+Imports TransferZero.Sdk.Client;
+Imports TransferZero.Sdk.Model;
 Imports System
 Imports System.Collections.Generic
 Imports System.Linq
@@ -544,7 +544,7 @@ Module Example
         Dim configuration As Configuration = New Configuration()
         configuration.ApiKey = "KEY"
         configuration.ApiSecret = "SECRET"
-        configuration.BasePath = "https://api-sandbox.bitpesa.co/v1"
+        configuration.BasePath = "https://api-sandbox.transferzero.com/v1"
 
         Dim debitsApi As AccountDebitsApi = New AccountDebitsApi(configuration)
 
@@ -593,7 +593,7 @@ Name | Type | Description  | Notes
 
 Creates a new transaction
 
-Transactions are the main objects in the BitPesa API, so it's important to understand how to create and manage them. Transactions facilitate money movement from one Sender in a specific currency to one or multiple Recipients in another currency.  The main flow of a successful transaction flow is the following - - Transaction is created linking the Sender to the Recipient(s) with the requested amounts. - Once the sender is KYC'd and approved the transaction can be funded. - Once the transaction is funded, we will initiate the payout to the recipient(s). - After the recipient (or all recipients) has received the money, the transaction is finished.
+Transactions are the main objects in the TransferZero API, so it's important to understand how to create and manage them. Transactions facilitate money movement from one Sender in a specific currency to one or multiple Recipients in another currency.  The main flow of a successful transaction flow is the following - - Transaction is created linking the Sender to the Recipient(s) with the requested amounts. - Once the sender is KYC'd and approved the transaction can be funded. - Once the transaction is funded, we will initiate the payout to the recipient(s). - After the recipient (or all recipients) has received the money, the transaction is finished.
 
 ### Example
 
@@ -602,9 +602,9 @@ Transactions are the main objects in the BitPesa API, so it's important to under
 ```csharp
 using System;
 using System.Diagnostics;
-using BitPesa.Sdk.Api;
-using BitPesa.Sdk.Client;
-using BitPesa.Sdk.Model;
+using TransferZero.Sdk.Api;
+using TransferZero.Sdk.Client;
+using TransferZero.Sdk.Model;
 
 namespace Example
 {
@@ -615,7 +615,7 @@ namespace Example
             Configuration configuration = new Configuration();
             configuration.ApiKey = "<key>";
             configuration.ApiSecret = "<secret>";
-            configuration.BasePath = "https://api-sandbox.bitpesa.co/v1";
+            configuration.BasePath = "https://api-sandbox.transferzero.com/v1";
 
             var apiInstance = new TransactionsApi(configuration);
             var transactionRequest = new TransactionRequest(); // TransactionRequest | 
@@ -643,9 +643,9 @@ namespace Example
 #### VB.NET
 
 ```vbnet
-Imports BitPesa.Sdk.Api;
-Imports BitPesa.Sdk.Client;
-Imports BitPesa.Sdk.Model;
+Imports TransferZero.Sdk.Api;
+Imports TransferZero.Sdk.Client;
+Imports TransferZero.Sdk.Model;
 Imports System
 Imports System.Collections.Generic
 Imports System.Linq
@@ -657,7 +657,7 @@ Module Example
         Dim configuration As Configuration = New Configuration()
         configuration.ApiKey = "KEY"
         configuration.ApiSecret = "SECRET"
-        configuration.BasePath = "https://api-sandbox.bitpesa.co/v1"
+        configuration.BasePath = "https://api-sandbox.transferzero.com/v1"
 
         Dim debitsApi As AccountDebitsApi = New AccountDebitsApi(configuration)
 
@@ -715,9 +715,9 @@ Validates fields in a transaction payload and displays invalid or missing fields
 ```csharp
 using System;
 using System.Diagnostics;
-using BitPesa.Sdk.Api;
-using BitPesa.Sdk.Client;
-using BitPesa.Sdk.Model;
+using TransferZero.Sdk.Api;
+using TransferZero.Sdk.Client;
+using TransferZero.Sdk.Model;
 
 namespace Example
 {
@@ -728,7 +728,7 @@ namespace Example
             Configuration configuration = new Configuration();
             configuration.ApiKey = "<key>";
             configuration.ApiSecret = "<secret>";
-            configuration.BasePath = "https://api-sandbox.bitpesa.co/v1";
+            configuration.BasePath = "https://api-sandbox.transferzero.com/v1";
 
             var apiInstance = new TransactionsApi(configuration);
             var transactionRequest = new TransactionRequest(); // TransactionRequest | 
@@ -756,9 +756,9 @@ namespace Example
 #### VB.NET
 
 ```vbnet
-Imports BitPesa.Sdk.Api;
-Imports BitPesa.Sdk.Client;
-Imports BitPesa.Sdk.Model;
+Imports TransferZero.Sdk.Api;
+Imports TransferZero.Sdk.Client;
+Imports TransferZero.Sdk.Model;
 Imports System
 Imports System.Collections.Generic
 Imports System.Linq
@@ -770,7 +770,7 @@ Module Example
         Dim configuration As Configuration = New Configuration()
         configuration.ApiKey = "KEY"
         configuration.ApiSecret = "SECRET"
-        configuration.BasePath = "https://api-sandbox.bitpesa.co/v1"
+        configuration.BasePath = "https://api-sandbox.transferzero.com/v1"
 
         Dim debitsApi As AccountDebitsApi = New AccountDebitsApi(configuration)
 

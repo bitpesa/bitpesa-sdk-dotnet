@@ -1,5 +1,5 @@
 
-# BitPesa.Sdk.Model.RecipientRequest
+# TransferZero.Sdk.Model.RecipientRequest
 
 ## Properties
 

@@ -1,5 +1,5 @@
 
-# BitPesa.Sdk.Model.PaymentMethodOpposite
+# TransferZero.Sdk.Model.PaymentMethodOpposite
 
 ## Properties
 

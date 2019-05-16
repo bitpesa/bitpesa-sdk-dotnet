@@ -1,5 +1,5 @@
 
-# BitPesa.Sdk.Model.AccountResponse
+# TransferZero.Sdk.Model.AccountResponse
 
 ## Properties
 

@@ -1,6 +1,6 @@
-# BitPesa.Sdk.Api.LogsApi
+# TransferZero.Sdk.Api.LogsApi
 
-All URIs are relative to *https://api-sandbox.bitpesa.co/v1*
+All URIs are relative to *https://api-sandbox.transferzero.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -23,9 +23,9 @@ Returns a single webhook log based on the webhook log ID.
 ```csharp
 using System;
 using System.Diagnostics;
-using BitPesa.Sdk.Api;
-using BitPesa.Sdk.Client;
-using BitPesa.Sdk.Model;
+using TransferZero.Sdk.Api;
+using TransferZero.Sdk.Client;
+using TransferZero.Sdk.Model;
 
 namespace Example
 {
@@ -36,7 +36,7 @@ namespace Example
             Configuration configuration = new Configuration();
             configuration.ApiKey = "<key>";
             configuration.ApiSecret = "<secret>";
-            configuration.BasePath = "https://api-sandbox.bitpesa.co/v1";
+            configuration.BasePath = "https://api-sandbox.transferzero.com/v1";
 
             var apiInstance = new LogsApi(configuration);
             var webhookLogID = new Guid?(); // Guid? | ID of the webhook log to retrieve  Example: `/v1/logs/9d1ad631-f34a-4cff-9a7e-2c83e3a556df`
@@ -64,9 +64,9 @@ namespace Example
 #### VB.NET
 
 ```vbnet
-Imports BitPesa.Sdk.Api;
-Imports BitPesa.Sdk.Client;
-Imports BitPesa.Sdk.Model;
+Imports TransferZero.Sdk.Api;
+Imports TransferZero.Sdk.Client;
+Imports TransferZero.Sdk.Model;
 Imports System
 Imports System.Collections.Generic
 Imports System.Linq
@@ -78,7 +78,7 @@ Module Example
         Dim configuration As Configuration = New Configuration()
         configuration.ApiKey = "KEY"
         configuration.ApiSecret = "SECRET"
-        configuration.BasePath = "https://api-sandbox.bitpesa.co/v1"
+        configuration.BasePath = "https://api-sandbox.transferzero.com/v1"
 
         Dim debitsApi As AccountDebitsApi = New AccountDebitsApi(configuration)
 
@@ -136,9 +136,9 @@ Returns a list of webhook logs. Response includes pagination.
 ```csharp
 using System;
 using System.Diagnostics;
-using BitPesa.Sdk.Api;
-using BitPesa.Sdk.Client;
-using BitPesa.Sdk.Model;
+using TransferZero.Sdk.Api;
+using TransferZero.Sdk.Client;
+using TransferZero.Sdk.Model;
 
 namespace Example
 {
@@ -149,7 +149,7 @@ namespace Example
             Configuration configuration = new Configuration();
             configuration.ApiKey = "<key>";
             configuration.ApiSecret = "<secret>";
-            configuration.BasePath = "https://api-sandbox.bitpesa.co/v1";
+            configuration.BasePath = "https://api-sandbox.transferzero.com/v1";
 
             var apiInstance = new LogsApi(configuration);
             var page = 1;  // int? | The page number to request (defaults to 1) (optional) 
@@ -180,9 +180,9 @@ namespace Example
 #### VB.NET
 
 ```vbnet
-Imports BitPesa.Sdk.Api;
-Imports BitPesa.Sdk.Client;
-Imports BitPesa.Sdk.Model;
+Imports TransferZero.Sdk.Api;
+Imports TransferZero.Sdk.Client;
+Imports TransferZero.Sdk.Model;
 Imports System
 Imports System.Collections.Generic
 Imports System.Linq
@@ -194,7 +194,7 @@ Module Example
         Dim configuration As Configuration = New Configuration()
         configuration.ApiKey = "KEY"
         configuration.ApiSecret = "SECRET"
-        configuration.BasePath = "https://api-sandbox.bitpesa.co/v1"
+        configuration.BasePath = "https://api-sandbox.transferzero.com/v1"
 
         Dim debitsApi As AccountDebitsApi = New AccountDebitsApi(configuration)
 

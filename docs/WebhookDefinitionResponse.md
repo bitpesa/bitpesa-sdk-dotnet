@@ -1,5 +1,5 @@
 
-# BitPesa.Sdk.Model.WebhookDefinitionResponse
+# TransferZero.Sdk.Model.WebhookDefinitionResponse
 
 ## Properties
 

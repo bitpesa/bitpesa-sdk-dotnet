@@ -1,5 +1,5 @@
 
-# BitPesa.Sdk.Model.SenderResponseMeta
+# TransferZero.Sdk.Model.SenderResponseMeta
 
 ## Properties
 
