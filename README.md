@@ -83,32 +83,42 @@ To parse webhooks you can use the following snippet:
 
 ```csharp
 string webhookContent = "<data from webhook>";
-Webhook webhook = configuration.ParseString<Webhook>(webhookContent);
 
-if (webhook.Event.StartsWith("transaction"))
-{
-    TransactionWebhook transactionWebhook = configuration.ParseString<TransactionWebhook>(webhookContent);
-    System.Console.WriteLine(transactionWebhook);
-}
-else if (webhook.Event.StartsWith("recipient"))
-{
-    RecipientWebhook recipientWebhook = configuration.ParseString<RecipientWebhook>(webhookContent);
-    System.Console.WriteLine(recipientWebhook);
-}
-else if (webhook.Event.StartsWith("sender"))
-{
-    SenderWebhook senderWebhook = configuration.ParseString<SenderWebhook>(webhookContent);
-    System.Console.WriteLine(senderWebhook);
-}
-else if (webhook.Event.StartsWith("document"))
-{
-    DocumentWebhook documentWebhook = configuration.ParseString<DocumentWebhook>(webhookContent);
-    System.Console.WriteLine(documentWebhook);
-}
-else if (webhook.Event.StartsWith("payout_method"))
-{
-    PayoutMethodWebhook payoutMethodWebhook = configuration.ParseString<PayoutMethodWebhook>(webhookContent);
-    System.Console.WriteLine(payoutMethodWebhook);
+string url = "<url of the webhook endpoint>";
+
+Dictionary<string, string> headers = new Dictionary<string, string>();
+headers.Add("Authorization-Nonce", "<nonce from webhook headers>");
+headers.Add("Authorization-Signature", "<signature from webhook headerse>");
+headers.Add("Authorization-Key", "<key from webhook headers>");
+
+if (configuration.ValidWebhookRequest(url, webhookContent, headers)) {
+    Webhook webhook = configuration.ParseString<Webhook>(webhookContent);
+
+    if (webhook.Event.StartsWith("transaction"))
+    {
+        TransactionWebhook transactionWebhook = configuration.ParseString<TransactionWebhook>(webhookContent);
+        System.Console.WriteLine(transactionWebhook);
+    }
+    else if (webhook.Event.StartsWith("recipient"))
+    {
+        RecipientWebhook recipientWebhook = configuration.ParseString<RecipientWebhook>(webhookContent);
+        System.Console.WriteLine(recipientWebhook);
+    }
+    else if (webhook.Event.StartsWith("sender"))
+    {
+        SenderWebhook senderWebhook = configuration.ParseString<SenderWebhook>(webhookContent);
+        System.Console.WriteLine(senderWebhook);
+    }
+    else if (webhook.Event.StartsWith("document"))
+    {
+        DocumentWebhook documentWebhook = configuration.ParseString<DocumentWebhook>(webhookContent);
+        System.Console.WriteLine(documentWebhook);
+    }
+    else if (webhook.Event.StartsWith("payout_method"))
+    {
+        PayoutMethodWebhook payoutMethodWebhook = configuration.ParseString<PayoutMethodWebhook>(webhookContent);
+        System.Console.WriteLine(payoutMethodWebhook);
+    }
 }
 ```
 
@@ -116,23 +126,33 @@ else if (webhook.Event.StartsWith("payout_method"))
 
 ```vbnet
 Dim webhookContent As String = "{<data from webhook>}"
-Dim webhook As Webhook = configuration.ParseString(Of Webhook)(webhookContent)
 
-If webhook.[Event].StartsWith("transaction") Then
-    Dim transactionWebhook As TransactionWebhook = configuration.ParseString(Of TransactionWebhook)(webhookContent)
-    System.Console.WriteLine(transactionWebhook)
-ElseIf webhook.[Event].StartsWith("recipient") Then
-    Dim recipientWebhook As RecipientWebhook = configuration.ParseString(Of RecipientWebhook)(webhookContent)
-    System.Console.WriteLine(recipientWebhook)
-ElseIf webhook.[Event].StartsWith("sender") Then
-    Dim senderWebhook As SenderWebhook = configuration.ParseString(Of SenderWebhook)(webhookContent)
-    System.Console.WriteLine(senderWebhook)
-ElseIf webhook.[Event].StartsWith("document") Then
-    Dim documentWebhook As DocumentWebhook = configuration.ParseString(Of DocumentWebhook)(webhookContent)
-    System.Console.WriteLine(documentWebhook)
-ElseIf webhook.[Event].StartsWith("payout_method") Then
-    Dim payoutMethodWebhook As PayoutMethodWebhook = configuration.ParseString(Of PayoutMethodWebhook)(webhookContent)
-    System.Console.WriteLine(payoutMethodWebhook)
+Dim url As String = "<url of webhook request>"
+Dim headers As Dictionary(Of String, String) = New Dictionary(Of String, String)()
+
+headers.Add("Authorization-Nonce", "<nonce from webhook headers>")
+headers.Add("Authorization-Signature", "<signature from webhook headers>")
+headers.Add("Authorization-Key", "<key from webhook headers>")
+
+If configuration.ValidWebhookRequest(url, webhookContent, headers) Then
+    Dim webhook As Webhook = configuration.ParseString(Of Webhook)(webhookContent)
+
+    If webhook.[Event].StartsWith("transaction") Then
+        Dim transactionWebhook As TransactionWebhook = configuration.ParseString(Of TransactionWebhook)(webhookContent)
+        System.Console.WriteLine(transactionWebhook)
+    ElseIf webhook.[Event].StartsWith("recipient") Then
+        Dim recipientWebhook As RecipientWebhook = configuration.ParseString(Of RecipientWebhook)(webhookContent)
+        System.Console.WriteLine(recipientWebhook)
+    ElseIf webhook.[Event].StartsWith("sender") Then
+        Dim senderWebhook As SenderWebhook = configuration.ParseString(Of SenderWebhook)(webhookContent)
+        System.Console.WriteLine(senderWebhook)
+    ElseIf webhook.[Event].StartsWith("document") Then
+        Dim documentWebhook As DocumentWebhook = configuration.ParseString(Of DocumentWebhook)(webhookContent)
+        System.Console.WriteLine(documentWebhook)
+    ElseIf webhook.[Event].StartsWith("payout_method") Then
+        Dim payoutMethodWebhook As PayoutMethodWebhook = configuration.ParseString(Of PayoutMethodWebhook)(webhookContent)
+        System.Console.WriteLine(payoutMethodWebhook)
+    End If
 End If
 ```
 
