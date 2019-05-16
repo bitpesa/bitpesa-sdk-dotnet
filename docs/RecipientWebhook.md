@@ -1,5 +1,5 @@
 
-# TransferZero.Sdk.Model.RecipientWebhook
+# BitPesa.Sdk.Model.RecipientWebhook
 
 ## Properties
 

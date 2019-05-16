@@ -1,5 +1,5 @@
 
-# TransferZero.Sdk.Model.Document
+# BitPesa.Sdk.Model.Document
 
 ## Properties
 

@@ -4,6 +4,6 @@
 language: csharp
 mono:
   - latest
-solution: TransferZero.Sdk.sln
+solution: BitPesa.Sdk.sln
 script:
   - /bin/sh ./mono_nunit_test.sh

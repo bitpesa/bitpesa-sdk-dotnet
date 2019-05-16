@@ -1,5 +1,5 @@
 
-# TransferZero.Sdk.Model.DebitResponse
+# BitPesa.Sdk.Model.DebitResponse
 
 ## Properties
 

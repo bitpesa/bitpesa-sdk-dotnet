@@ -1,5 +1,5 @@
 
-# TransferZero.Sdk.Model.DocumentWebhook
+# BitPesa.Sdk.Model.DocumentWebhook
 
 ## Properties
 

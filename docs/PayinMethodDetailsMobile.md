@@ -1,5 +1,5 @@
 
-# TransferZero.Sdk.Model.PayinMethodDetailsMobile
+# BitPesa.Sdk.Model.PayinMethodDetailsMobile
 
 ## Properties
 

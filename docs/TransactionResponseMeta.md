@@ -1,5 +1,5 @@
 
-# TransferZero.Sdk.Model.TransactionResponseMeta
+# BitPesa.Sdk.Model.TransactionResponseMeta
 
 ## Properties
 

@@ -1,5 +1,5 @@
 
-# TransferZero.Sdk.Model.PayoutMethodRequest
+# BitPesa.Sdk.Model.PayoutMethodRequest
 
 ## Properties
 

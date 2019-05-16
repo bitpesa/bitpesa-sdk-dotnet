@@ -1,5 +1,5 @@
 
-# TransferZero.Sdk.Model.PayoutMethodMobileProviderEnum
+# BitPesa.Sdk.Model.PayoutMethodMobileProviderEnum
 
 ## Properties
 

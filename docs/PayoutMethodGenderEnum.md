@@ -1,5 +1,5 @@
 
-# TransferZero.Sdk.Model.PayoutMethodGenderEnum
+# BitPesa.Sdk.Model.PayoutMethodGenderEnum
 
 ## Properties
 
